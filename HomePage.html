@@ -21,14 +21,17 @@
                     <h2>A global terrorism visualizer.</h2>
                 </div>
                 <div class="navigation">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#statistics">Statistics</a>
-                    <a href="#maps">Maps</a>
-                    <a href="#datatables">Data Tables</a>
-                    <input type="text" placeholder="Search...">
+                    <a class="coord" href="#home">Home</a>
+                    <a class="coord" href="#statistics">Statistics</a>
+                    <a class="coord" href="#maps">Maps</a>
+                    <a class="coord" href="#datatables">Data Tables</a>
+                    <form>
+                        <input type="search" name="q" placeholder="Search...">
+                        <input class="submit" type="submit" value="Go!">
+                    </form>
                 </div>
                 <hr>
-                <div class="pack" id="pack_sum_up" role="article">
+                <div class="summary" id="pack_sum_up" role="article">
 			        <h3>Short Summary</h2>
 			        <p>In our overview of terrorism, we try to understand how the number of terrorist acts varies around the world and how it has changed over time. To do this, we need a clear and consistent definition of what terrorism is, and how it’s different from any other form of violence. This is not straightforward.</p>
 			        <p>Terrorism is defined in the Oxford Dictionary as “the unlawful use of violence and intimidation, especially against civilians, in the pursuit of political aims.” We quickly see that this definition is unspecific and subjective. The issue of subjectivity in this case means that there is no internationally recognised legal definition of terrorism. Despite considerable discussion, the formation of a comprehensive convention against international terrorism by the <abbr title="United Nations">UN</abbr> has always been impeded by the lack of consensus on a definition.</p>
