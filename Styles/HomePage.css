@@ -1,8 +1,14 @@
+html {
+	margin: 0;
+	padding: 0;
+    }
+    
 body {
     height: 100%;
     width: 90%;
     font: 90% georgia, serif;
     line-height: 1.8;
+    margin-left: 30px;
     /*background: linear-gradient(180deg, #B1CCCA 20%, #6AB187 80%);*/
     background-image: url("robot.jpg");
     height: 100%;
@@ -19,22 +25,23 @@ h1 {
     font: bold 5em georgia, sans-serif;
     letter-spacing: 1px; 
     margin-bottom: 0;
-    margin-left: 20px;
+    margin-left: 10px;
     color: #6AB187;
 }
 
 h2 {
     font: bold 2em georgia, sans-serif;
     letter-spacing: 1px; 
-    margin-bottom: 0; 
-    margin-left: 20px;
+    margin-bottom: 0;
+    margin-left: 10px; 
     color: #6AB187;
 }
     
 h3 { 
     font: bold italic 1.7em georgia, sans-serif;
     letter-spacing: 1px; 
-    margin-bottom: 0; 
+    margin-bottom: 20px; 
+    width: 450px;
     color: #DE7A22;
 }
 
@@ -49,19 +56,18 @@ h3 {
     top:-100px;
 }
 
-/*a.active {
-    font: bold 1.4em georgia, sans-serif;
-    position: absolute;
-    left:800px;
-    top:-100px;
-}*/
+hr {
+    position: relative;
+    bottom: 10px;
+    top:-30px;
+}
 
 a.coord {
     display: block;
     position: relative;
     font: bold 1.4em georgia, sans-serif;
     letter-spacing: 1px; 
-    left: 350%;
+    left: 320%;
     color: #6AB187;
 }
 
@@ -84,21 +90,61 @@ a:hover, a:focus, a:active {
 
 input {
     position: absolute;
-    left: 20px;
     height: 35px;
     width: 200px;
+    margin-left: 10px;
+    padding: 0;
 }
 
 input.submit {
     position: relative;
-    left: 230px;
+    left: 210px;
     width: 50px;
+    margin-left: 10px;
 }
 
-.summary {
-    position: relative
+.summary .text {
+    position: relative;
+    clear: both; 
+    width: 400px; 
+    margin: 20px 20px 0px 20px; 
+    float:left;
 }
 
 .team {
+    clear: both; 
+    width: 300px; 
+    float:left;
+    left: 50px;
+}
+
+.team .presentation {
+    clear: both; 
+    width: 400px; 
+    margin: 10px 20px 30px 20px; 
+    float: left;
+}
+
+.team .text { 
+    clear: both; 
+    width: 600px; 
+    float: right; 
+    position:relative;
+    left:780px;
+    top: -560px;
+}
+
+.summary img {
     position: relative;
+    top:120px;
+    float: right;
+}
+
+.team img {
+    position: relative;
+    top:10px;
+    bottom: 20px;
+    top: -530px;
+    padding: 0;
+    margin-left: 50%;
 }
