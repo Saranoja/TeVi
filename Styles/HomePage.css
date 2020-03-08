@@ -15,6 +15,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
 
 p { 
@@ -130,7 +131,7 @@ input.submit {
     width: 600px; 
     float: right; 
     position:relative;
-    left:780px;
+    left:700px;
     top: -560px;
 }
 
@@ -147,4 +148,11 @@ input.submit {
     top: -530px;
     padding: 0;
     margin-left: 50%;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+footer img {
+    display: relative;
+    margin: 1750px -100px -190px -400px;
 }
