@@ -121,7 +121,6 @@ form {
 .summary img {
     position: relative;
     top:10px;
-    margin: 0px 0px 0px 20px; 
     width:300px;
     display: block;
     margin-left: auto;
@@ -130,12 +129,15 @@ form {
 
 .team {
     clear: both; 
-    width: 300px; 
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .team .presentation {
     clear: both; 
-    width: 250px; 
+    width: 300px; 
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -162,7 +164,7 @@ form {
     padding: 0;
     margin-bottom: 0;
     padding: 0;
-    width: 250px;
+    width: 300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
