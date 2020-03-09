@@ -8,7 +8,6 @@ body {
     width: 90%;
     font: 90% georgia, serif;
     line-height: 1.8;
-    margin-left: 30px;
     /*background: linear-gradient(180deg, #B1CCCA 20%, #6AB187 80%);*/
     background-image: url("robot.jpg");
     background-position: center;
@@ -186,7 +185,7 @@ footer img {
     h1 {
         font: bold 6em georgia, sans-serif;
         letter-spacing: 1px;
-        width: 500px;
+        width: 400px;
         margin-bottom: 0;
         margin-left: 10px;
         color: #6AB187;
@@ -195,7 +194,7 @@ footer img {
     h2 {
         font: bold 3em georgia, sans-serif;
         letter-spacing: 1px;
-        width: 500px;
+        width: 400px;
         margin-bottom: 0;
         margin-left: 10px; 
         color: #6AB187;
@@ -205,7 +204,7 @@ footer img {
         font: bold italic 1.7em georgia, sans-serif;
         letter-spacing: 1px; 
         margin-bottom: 20px; 
-        width: 500px;
+        width: 400px;
         color: #DE7A22;
     }
     
