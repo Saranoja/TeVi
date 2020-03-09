@@ -11,7 +11,6 @@ body {
     margin-left: 30px;
     /*background: linear-gradient(180deg, #B1CCCA 20%, #6AB187 80%);*/
     background-image: url("robot.jpg");
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,15 +45,37 @@ h3 {
     color: #DE7A22;
 }
 
-.navigation {
-    display: block;
-    position: relative;
+header {
+    display: flex;
+}
+
+/* @media screen and (max-width:500px) */
+
+.navigation ul {
+    list-style-type: none;
+    padding-left: 0;
     font: bold 1.4em georgia, sans-serif;
     letter-spacing: 1px; 
     color: #6AB187;
-    right: 0;
-    width: 300px;
-    top:-100px;
+}
+
+.nav_option {
+    display: block;
+}
+
+.nav_option {
+    color: #6AB187;
+}
+
+.nav_option a::after {
+    display: inline-block;
+    color: #6AB187;
+    font-size: 80%;
+    padding: 0 3px;
+}
+
+.nav_option li:link {
+    color: #6AB187;
 }
 
 hr {
@@ -63,46 +84,35 @@ hr {
     top:-30px;
 }
 
-a.coord {
+a.nav_option {
     display: block;
     position: relative;
-    font: bold 1.4em georgia, sans-serif;
+    text-decoration: none;
+    font: 1.4em georgia, sans-serif;
     letter-spacing: 1px; 
-    left: 320%;
+    left: 200%;
     color: #6AB187;
 }
 
-a:link {
-	font-weight: normal; 
-	text-decoration: none; 
-	color: #6AB187;
+a:hover, a:focus, a:active {
+    color: #DE7A22;
 }
 
-a:first-child { 
-	font-weight: bold; 
+li:first-child {
+    font-weight: bold; 
 	text-decoration: none; 
 	color: #264031;
 }
 
-a:hover, a:focus, a:active { 
-	text-decoration: underline; 
-	color: #DE7A22;
-}
-
-input {
-    position: absolute;
-    height: 35px;
-    width: 200px;
-    margin-left: 10px;
-    padding: 0;
-}
-
-input.submit {
+form {
+    display: block;
     position: relative;
-    left: 210px;
-    width: 50px;
-    margin-left: 10px;
-}
+    text-decoration: none;
+    font: 1.4em georgia, sans-serif;
+    letter-spacing: 1px; 
+    left: 200%;
+    color: #6AB187;
+} 
 
 .summary .text {
     position: relative;
