@@ -273,41 +273,49 @@ footer img {
     .summary .text {
         position: relative;
         clear: both;
-        margin-right:5%;
-        left:5%;
         width: 550px;
         font: 1.7em georgia, sans-serif;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .summary img {
         position: relative;
         top:10px;
-        margin: 0px 0px 0px 20px; 
         width: 600px;
-        left:2%;
-        margin-right:5%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .team {
         clear: both; 
         width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .team .presentation {
         clear: both; 
-        margin: 10px 20px 30px 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         width: 550px;
         font: 1.7em georgia, sans-serif;
     }
     
     .team .animations {
         width: 550px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .team .text { 
         clear: both; 
         width: 550px;
-        float: right; 
         position:relative;
     }
     
