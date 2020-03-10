@@ -1,13 +1,23 @@
-legend {
-    background-color: #000;
-    color: #fff;
-    padding: 3px 6px;
+h1 {
+    font: bold 5em georgia, sans-serif;    
+    padding: 10px;
+    color: #6AB187;
+}
+h3 {
+    color:#DE7A22;
+}
+li {
+    list-style-type: none;
 }
 
-.output {
-    font: 1rem 'Fira Sans', sans-serif;
+a{
+    color:#6AB187;
+    text-decoration: none;
+}
+a:hover{
+    color:#DE7A22;
+}
+a:visited{
+    color:none;
 }
 
-input {
-    margin: .4rem;
-}
