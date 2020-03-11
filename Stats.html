@@ -1,61 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
         <title> TeVi - Statistics Page </title>
 
-        <link rel="stylesheet" href="Styles/HomePage.css">
+        <link rel="stylesheet" href="Styles/Stats.css">
 
+        <meta charset="utf-8">
         <meta name="terrorism" content="all">
         <meta name="author" content="Irina Calin and Victor-Ionut Platon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
     </head>
-    <body id="whole_body">        
-        
-        <header role="banner">
-            <h1> Statistics </h1>
-        </header>
+    <body>        
+        <section class="upper_intro">
+            <header class="page_title">
+                <h1> Statistics </h1>
+            </header>
             <nav class="navigation">
-                <ul>
-                    <li><a class="active" href="HomePage.html">Home</a></li>
-                    <li><a href="Stats.html">Statistics</a></li>
-                    <li><a href="Maps.html">Maps</a></li>
-                    <li><a href="#datatables">Data Tables</a></li>
+                <ul class="nav_bar">
+                    <li><a class="nav_option" href="HomePage.html">Home</a></li>
+                    <li><a class="nav_option" href="Stats.html">Statistics</a></li>
+                    <li><a class="nav_option" href="Maps.html">Maps</a></li>
+                    <li><a class="nav_option" href="#resources">Resources</a></li>
                 </ul>
-                <form>
-                    <input type="search" name="q" placeholder="Search query">
-                    <input type="submit" value="Go!">
-                    </form>
             </nav>
-            <main>
+        </section>
+        <main>
 
-                <article>
-                    <p>In our overview of terrorism, we try to understand how the number of terrorist acts varies around the world and how it has changed over time. To do this, we need a clear and consistent definition of what terrorism is, and how it’s different from any other form of violence. This is not straightforward.</p>
-                    <p>Terrorism is defined in the Oxford Dictionary as “the unlawful use of violence and intimidation, especially against civilians, in the pursuit of political aims.” We quickly see that this definition is unspecific and subjective. The issue of subjectivity in this case means that there is no internationally recognised legal definition of terrorism. Despite considerable discussion, the formation of a comprehensive convention against international terrorism by the <abbr title="United Nations">UN</abbr> has always been impeded by the lack of consensus on a definition.</p>
-                    <p> The key problem is that terrorism is difficult to distinguish from other forms of political violence and violent crime, such as state-based armed conflict, non-state conflict, one-sided violence, hate crime, and homicide. The lines between these different forms of violence are often blurry. Here, we take a look at standard criteria of what constitutes terrorism, as well as how it might be distinguished from other forms of violence.</p>
-                </article>
+            <article>
+                <h3>Point of interest</h3>
+                <p>In our overview of terrorism, we try to understand how the number of terrorist acts varies around the world and how it has changed over time. To do this, we need a clear and consistent definition of what terrorism is, and how it’s different from any other form of violence. This is not straightforward.</p>
+                <p>Terrorism is defined in the Oxford Dictionary as “the unlawful use of violence and intimidation, especially against civilians, in the pursuit of political aims.” We quickly see that this definition is unspecific and subjective. The issue of subjectivity in this case means that there is no internationally recognised legal definition of terrorism. Despite considerable discussion, the formation of a comprehensive convention against international terrorism by the <abbr title="United Nations">UN</abbr> has always been impeded by the lack of consensus on a definition.</p>
+                <p> The key problem is that terrorism is difficult to distinguish from other forms of political violence and violent crime, such as state-based armed conflict, non-state conflict, one-sided violence, hate crime, and homicide. The lines between these different forms of violence are often blurry. Here, we take a look at standard criteria of what constitutes terrorism, as well as how it might be distinguished from other forms of violence.</p>
+            </article>
 
-                <form>
-                    <fieldset>
-                        <legend>Choose chart type:</legend>
-                        
-                        <input type="radio" id="flowChart" name="chart">
-                        <label for="flowchart">Flow Chart</label><br/>
-                        
-                        <input type="radio" id="pieChart" name="chart">
-                        <label for="pieChart">Pie Chart</label><br/>
+            <div>
+                <ul>
+                    <li>
+                        <label for="chart-select">Chart type:</label>
+                        <select name="chart" id="chart-select">
+                            <option value="">--Please choose a chart type--</option>
+                            <option value="pieChart">Pie Chart</option>
+                            <option value="barChart">Bar Chart</option>
+                        </select>
+                    </li>
 
-                        <input type="radio" id="barChart" name="chart">
-                        <label for="barchart">Bar Chart</label><br/>
+                    <li>
+                        <label for="stats-filter1">Attacks/Deaths</label>
+                        <select name="data-type" id="stats-filter1">
+                            <option value="">--Please choose an option--</option>
+                            <option value="attacks">Attacks</option>
+                            <option value="deaths">Deaths</option>
+                        </select>
+                    </li>
 
-                        <input type="radio" id="spiderChart" name="chart">
-                        <label for="spiderchart">Spider Chart</label><br/>
-                    </fieldset>
-                </form>	
+                    <li>
+                        <label for="stats-filter2">Affected persons</label>
+                        <select name="affected" id="stats-filter2">
+                            <option value="">--Please choose an option--</option>
+                            <option value="dog">Men</option>
+                            <option value="cat">Women</option>
+                            <option value="cat">Children</option>
+                            <option value="cat">Baby</option>
+                        </select>
+                    </li>
 
-                <img class="fit-picture" src="Images/tempStatChart.jpg" alt="a basic chart">
-                
-            </main>
+                    <li>
+                        <label for="stats-filter4">Area</label>
+                        <select name="area" id="stats-filter4">
+                            <option value="">--Please choose an option--</option>
+                            <option value="dog">Countryside</option>
+                            <option value="cat">City</option>
+                        </select>
+                    </li>
+                    <li><input type="submit" value="Search"></li>
+                </ul>
+            </div>	
+            
+
+            <img class="fit-picture" src="Images/tempStatChart.jpg" alt="a basic chart">
+            
+        </main>
     </body>
 </html>
