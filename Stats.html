@@ -13,20 +13,25 @@
     </head>
     <body>        
         <section class="upper_intro">
-            <header class="page_title">
-                <h1> Statistics </h1>
+            <header>
+                <div class="page_title">
+                    <h1> Statistics </h1>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav_bar">
+                        <li><a class="nav_option" href="HomePage.html">Home</a></li>
+                        <li><a class="nav_option" href="#stats">Statistics</a></li>
+                        <li><a class="nav_option" href="Maps.html">Maps</a></li>
+                        <li><a class="nav_option" href="Resources.html">Resources</a></li>
+                    </ul>
+                    <form>
+                        <input type="search" placeholder="Search...">
+                        <input type="submit" value="Submit">
+                    </form>
+                </nav>
             </header>
-            <nav class="navigation">
-                <ul class="nav_bar">
-                    <li><a class="nav_option" href="HomePage.html">Home</a></li>
-                    <li><a class="nav_option" href="Stats.html">Statistics</a></li>
-                    <li><a class="nav_option" href="Maps.html">Maps</a></li>
-                    <li><a class="nav_option" href="#resources">Resources</a></li>
-                </ul>
-            </nav>
         </section>
         <main>
-
             <article>
                 <h3>Point of interest</h3>
                 <p>In our overview of terrorism, we try to understand how the number of terrorist acts varies around the world and how it has changed over time. To do this, we need a clear and consistent definition of what terrorism is, and how it’s different from any other form of violence. This is not straightforward.</p>
@@ -36,13 +41,13 @@
 
             <div>
                 <h3>all the options</h3>
-                <h3>NO IDEA WHAT THIS ARE</h3>
+                <h3>NO IDEA WHAT THESE ARE</h3>
                 <p>resolution</p>
                 <p>specificity</p>
                 <p>vecinity</p>
                 <p>crit1,crit2,crit3</p>
                 <p>doubterr,alternative,alternative_txt,multiple</p>
-                <h3>THINKS TO SHOW</h3>
+                <h3>THINGS TO SHOW</h3>
                 <p>Choose what to display:</p>
                     <div>
                     <input type="checkbox" id="ID_event" name="ID_event">
@@ -206,7 +211,7 @@
                     </div>
 
 
-                <h3>FILTRE</h3>
+                <h3>Event filters</h3>
                 <div>
                     <label for="date">Date</label>
                     <input type="date" name="date" id="dateOfInfo">
@@ -488,7 +493,7 @@
             </div>	
             
 
-            <img class="fit-picture" src="Images/tempStatChart.jpg" alt="a basic chart">
+            <img class="fit-picture" src="Images/terrorism-percent-deaths.png" height="500px" alt="a basic chart">
             
         </main>
     </body>
