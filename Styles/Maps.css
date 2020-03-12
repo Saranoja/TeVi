@@ -11,6 +11,13 @@ legend {
 input {
     margin: .4rem;
 }
+
 p{
     color: black;
+}
+
+#hover {
+    font-weight: bold; 
+    text-decoration: none; 
+    color: #264031;
 }

@@ -16,6 +16,12 @@ body {
     margin: 0 auto;
 }
 
+#hover {
+    font-weight: bold; 
+    text-decoration: none; 
+    color: #264031;
+}
+
 p { 
     text-align: justify;
     font: 1.2em georgia, sans-serif;

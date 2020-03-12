@@ -21,10 +21,10 @@
                     </div>
                     <nav class="navigation">
                         <ul>
-                            <li><a class="nav_option" href="HomePage.html">Home</a></li>
-                            <li><a class="nav_option" href="Stats.html">Statistics</a></li>
-                            <li><a class="nav_option" href="Maps.html">Maps</a></li>
-                            <li><a class="nav_option" href="#resources">Resources</a></li>
+                            <li class="menu"><a class="nav_option" href="HomePage.html">Home</a></li>
+                            <li class="menu"><a class="nav_option" href="Stats.html">Statistics</a></li>
+                            <li class="menu"><a class="nav_option" href="Maps.html">Maps</a></li>
+                            <li class="menu"><a class="nav_option" id="hover" href="#resources">Resources</a></li>
                         </ul>
                         <form>
                             <input type="search" placeholder="Search...">
@@ -62,29 +62,26 @@
                 <h3> Structure </h3>
                 <p>
                     Our Web application should be three-tiered, based on the MVC architectural model. 
-                    <div class="pic">
-                        <img src="Images/MVCdiagram.png" alt="MVC" height="220px">
-                    </div>
+                    The web browser sends requests to the middle tier (written in PHP), which services them by making queries and updates against the database and generates a user interface.
                 </p>
+                <div class="pic">
+                    <img src="Images/MVCdiagram.png" alt="MVC" height="220px">
+                </div>
             </section>
             <section typeof="sa:References" id="references" role="doc-refs">
                 <h3>References</h3>
                 <ul class="ref_links">
                     <li class="bullet">
-                        <p> HTML </p>
-                        <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+                        <a href="https://html.spec.whatwg.org/multipage/">HTML</a>
                     </li>
                     <li class="bullet">
-                        <p> Web Technologies </p>
-                        <a href="https://study.com/academy/lesson/what-is-web-technology-definition-trends.html">https://study.com/academy/lesson/what-is-web-technology-definition-trends.html</a>
+                        <a href="https://study.com/academy/lesson/what-is-web-technology-definition-trends.html">Web Technologies</a>
                     </li>
                     <li class="bullet">
-                        <p> Our World in Data </p>
-                        <a href="https://ourworldindata.org/terrorism">https://ourworldindata.org/terrorism</a>
+                        <a href="https://ourworldindata.org/terrorism">Our World in Data</a>
                     </li>
                     <li class="bullet">
-                        <p> Kaggle </p>
-                        <a href="https://www.kaggle.com/START-UMD/gtd">https://www.kaggle.com/START-UMD/gtd</a>
+                        <a href="https://www.kaggle.com/START-UMD/gtd">Kaggle</a>
                     </li>
                 </ul>
             </section>
