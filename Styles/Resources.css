@@ -45,7 +45,7 @@ dt {
 }
 
 h1 {
-    font: bold 4em georgia, sans-serif;
+    font: bold 7em georgia, sans-serif;
     letter-spacing: 1px;
     width: 300px;
     margin-bottom: 0;
@@ -59,11 +59,11 @@ h2 {
     width: 300px;
     margin-bottom: 0;
     margin-left: 10px; 
-    color: #DE7A22;
+    color: #6AB187;
 }
     
 h3 { 
-    font: bold italic 1.7em georgia, sans-serif;
+    font: bold italic 3em georgia, sans-serif;
     letter-spacing: 1px; 
     margin-bottom: 20px; 
     width: 300px;
@@ -130,6 +130,10 @@ form {
     left:2%;
     color: #6AB187;
 } 
+
+.structure .pic {
+    height:200px;
+}
 
 footer img {
     width: 300px;
