@@ -138,7 +138,6 @@ video {
 
     .summary {
         display:block;
-        padding-bottom: auto;
     }
 
     .text {
@@ -176,7 +175,6 @@ video {
     
     .summary {
         display:block;
-        padding-bottom: auto;
     }
 
     .text {
@@ -211,7 +209,6 @@ video {
 @media screen and (min-width: 1024px) and (max-width: 1250px) {
     .summary {
         display:block;
-        padding-bottom: auto;
     }
 
     .text {
