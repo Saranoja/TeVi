@@ -34,7 +34,7 @@
             </header>
             <main>
                 <form action="Chart.php" method="post">
-                    <div>
+                    <div class="page_wrap">
                         <h3>Choose data to display:</h3>
                         <div class="criteria_wrap">
                             <div class="criteria">
@@ -44,6 +44,7 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                             <div class="criteria">
@@ -53,6 +54,7 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                             <div class="criteria">
@@ -62,15 +64,7 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
-                                <?php endforeach; ?>
-                            </div>
-                            <div class="criteria">
-                                <p> Target </p>
-                                <?php 
-                                    foreach($target_columns as $column): 
-                                ?>
-                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
-                                <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                             <div class="criteria">
@@ -80,6 +74,17 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Target </p>
+                                <?php 
+                                    foreach($target_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                             <div class="criteria">
@@ -89,6 +94,7 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                             <div class="criteria">
@@ -98,41 +104,74 @@
                                 ?>
                                 <input type="checkbox" id=<?=$column?> name=<?=$column?>>
                                 <label for=<?=$column?>> <?=$column?> </label>
+                                <br>
                                 <?php endforeach; ?>
                             </div>
                         </div>
                         <h3>Event filters</h3>
-                        <div>
-                            <label for="date">Date</label>
-                            <input type="date" name="date" id="dateOfInfo">
-                        </div>
-                        
-                        <div>
-                            <label for="country">Country</label>      
-                            <select id="country" name="country" class="country-control">
-                                <?php 
-                                    foreach($states as $state): 
-                                ?>
-                                <option value=<?=$state?>> <?=$state?> </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+                        <div class="selection">
+                            <div class="filter">
+                                <label for="date">Date</label>
+                                <input type="date" name="date" id="dateOfInfo">
+                            </div>
+                            
+                            <div class="filter">
+                                <label for="country">Country</label>      
+                                <select id="country" name="country" class="country-control">
+                                    <?php 
+                                        foreach($states as $state): 
+                                    ?>
+                                    <option value=<?=$state?>> <?=$state?> </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
-                        <div>
-                            <label for="region">Region</label>
-                            <select id="region" name="region" class="region-control">
-                                <?php 
-                                    foreach($regions as $region):
+                            <div class="filter">
+                                <label for="region">Region</label>
+                                <select id="region" name="region" class="region-control">
+                                    <?php 
+                                        foreach($regions as $region):
+                                    ?>
+                                    <option value=<?=$region?>> <?=$region?> </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="filter">
+                                <label for="entries">Entries number to show:</label>
+                                <select id="entry" name="entry" class="entries">
+                                <!-- auto incremental field with numbers from 1 to 100 -->
+                                <?php
+                                    for ($i=1; $i<=100; $i++)
+                                    {
+                                        ?>
+                                            <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                        <?php
+                                    }
                                 ?>
-                                <option value=<?=$region?>> <?=$region?> </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sorting">
+                            <label for="sort">Sort by</label>      
+                            <select id="sort" name="sort" class="sort-control">
+                                <?php 
+                                    foreach($all_columns as $column): 
+                                ?>
+                                <option value=<?=$column?>> <?=$column?> </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <!-- <div>
-                            <label for="city">City</label>
-                            <select id="city" name="city" class="city-control">
+                        <div class="visualisation">
+                            <label for="view">Data Visualisation Type</label>      
+                            <select id="view" name="view" class="view-control">
+                                <?php 
+                                    foreach($view_type as $type): 
+                                ?>
+                                <option value=<?=$type?>> <?=$type?> </option>
+                                <?php endforeach; ?>
                             </select>
-                        </div> -->
+                        </div>
                         <p><input type="submit" value="Submit" title="Click to generate your chart" /></p>
                     </div>
                 </form>	           

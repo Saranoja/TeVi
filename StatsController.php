@@ -34,6 +34,19 @@ function GetDeathsDetails(){
 }
 $deaths_columns=GetDeathsDetails();
 
+function GetAllColumns(){
+    return['Event ID','Summary','Success','Suicide','Attack Type','Tactics','Year','Month','Day','Approximate Date','Duration',
+    'Country','Country Code','Region','Provence','City','Latitude','Longitude','Corp',
+    'Target type','Target subtype','Target','Target Nationality','Group name', 'Group subname','Motive','Gun certain','Terrorists number','Claim','Claim Mode',
+    'Weapon type','Weapon subtype', 'Weapon details','Total fatalities','U.S. Citizens who died'];
+}
+$all_columns=GetAllColumns();
+
+function GetVisualisationType() {
+    return ['Table','Map','Pie chart','Vertical bars chart', 'Horizontal bars chart', 'Bubbles chart', 'Doughnut Chart'];
+}
+$view_type=GetVisualisationType();
+
 function GetStates() {
     return ['Afghanistan','Albania','Algeria','Andorra','Angola','Antigua and Barbuda','Argentina','Armenia','Australia','Austria','Azerbaijan','Bahamas',
 'Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Brazil','Brunei','Bulgaria',
