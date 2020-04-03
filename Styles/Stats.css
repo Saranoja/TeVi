@@ -56,123 +56,27 @@ header {
     display: flex;
 }
 
-.navigation ul {
-    list-style-type: none;
-    padding-left: 0;
-    font: bold 1em georgia, sans-serif;
+
+.upper_intro {
+    max-width: 100%;
+    display:flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.navigation {
+    display: block;
+    font: italic 1.5em georgia, sans-serif;
     letter-spacing: 1px; 
-    color: #6AB187;
+    text-decoration: none;
 }
 
 .nav_option {
-    display: block;
-}
-
-.nav_option {
-    color: #6AB187;
-}
-
-.nav_option a::after {
-    display: block;
-    color: #6AB187;
-    font-size: 80%;
-    padding: 0 3px;
-}
-
-.nav_option li:link {
-    color: #6AB187;
-}
-
-a.nav_option {
-    display: block;
-    position: relative;
     text-decoration: none;
-    font: 1.4em georgia, sans-serif;
-    letter-spacing: 1px; 
-    left: 50%;
     color: #6AB187;
-}
-
-a:hover, a:focus, a:active {
-    color: #DE7A22;
-}
-
-li:first-child {
-    font-weight: bold; 
-    text-decoration: none; 
-    color: #264031;
-}
-
-ul {
-    margin-top:20%;
-}
-
-form {
-    display: block;
-    position: relative;
-    text-decoration: none;
-    font: 1em georgia, sans-serif;
-    letter-spacing: 1px;
-    left: 50%;
-    color: #6AB187;
-}
-
-.summary {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 630px;
-    grid-gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.summary .text {
-    position: relative;
-    clear: both;
-    width: 400px;
-    float:left;
-    top: 30px;
-}
-
-.summary .pic {
-    margin-top: 135px;
-    width: 650px;
-    margin-left: 75%;
-}
-
-.summary .pic img {
-    height: 500px;
-}
-
-.team {
-    top:40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 620px;
-    grid-gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.team .first_column {
-    position: relative;
-    clear: both;
-    width: 400px;
-    float:left;
-    top: 30px;
-}
-
-.team .text { 
-    width: 650px;
-    margin-left: 75%;
-    margin-top: 155px;
-}
-
-footer img {
-    width: 1000px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 [type="date"] {

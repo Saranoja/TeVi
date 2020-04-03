@@ -74,6 +74,12 @@ h3 {
     color: #6AB187;
 }
 
+.measures img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100px;
+}
+
 footer img {
     max-width: 100%;
     display: block;
@@ -106,18 +112,6 @@ video {
 {
     p { 
         font-size:1.5vw;
-    }
-    
-    h1 {
-        font-size:5vw;
-    }
-    
-    h2 {
-        font-size:3vw;
-    }
-        
-    h3 { 
-        font-size:2vw;
     }
 
     .navigation {
