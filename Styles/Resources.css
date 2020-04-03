@@ -52,6 +52,12 @@ h3 {
     color: #DE7A22;
 }
 
+h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #DE7A22;
+}
+
 .upper_intro {
     max-width: 100%;
     display:flex;
@@ -74,10 +80,25 @@ h3 {
     color: #6AB187;
 }
 
+.remarks {
+    max-width: 100%;
+}
+
 .measures img {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     height: 100px;
+    justify-content: center;
+}
+
+.measures {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.icon {
+    flex: 50%;
+    max-width: 40%;
+    padding-right: 10%;
 }
 
 footer img {
