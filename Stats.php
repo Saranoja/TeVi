@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include "StatsController.php"; ?>
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
@@ -35,19 +36,71 @@
                 <form action="Chart.php" method="post">
                     <div>
                         <h3>Choose data to display:</h3>
-                            <div>
-                            <input type="checkbox" id="ID_event" name="ID_event">
-                            <label for="ID_event">Event ID</label>
+                        <div class="criteria_wrap">
+                            <div class="criteria">
+                                <p> Event </p>
+                                <?php 
+                                    foreach($event_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
                             </div>
-
-                            <?php 
-                                include "StatsController.php";
-                                foreach($columns as $column): 
-                            ?>
-                            <input type="checkbox" id=<?=$column?> name=<?=$column?>>
-                            <label for=<?=$column?>> <?=$column?> </label>
-                            <?php endforeach; ?>
-
+                            <div class="criteria">
+                                <p> Time </p>
+                                <?php 
+                                    foreach($time_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Location </p>
+                                <?php 
+                                    foreach($location_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Target </p>
+                                <?php 
+                                    foreach($target_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Attacker </p>
+                                <?php 
+                                    foreach($attacker_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Weapon details </p>
+                                <?php 
+                                    foreach($weapons_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="criteria">
+                                <p> Deaths </p>
+                                <?php 
+                                    foreach($deaths_columns as $column): 
+                                ?>
+                                <input type="checkbox" id=<?=$column?> name=<?=$column?>>
+                                <label for=<?=$column?>> <?=$column?> </label>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
                         <h3>Event filters</h3>
                         <div>
                             <label for="date">Date</label>

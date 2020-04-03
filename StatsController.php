@@ -1,11 +1,38 @@
 <?php
-function GetColumns(){
-    return ['Event ID','Extended','Approxdate','Country Code','Region Code','Event name','City Code','Latitude','Longitude','Location','Summary','Succes','Suicide','Attack Type Code','
-Attack Type','Target Type Code','Target Type','Target Subtype Code','Target Subtype','Corp','Target','Natality Code','Natality','Gang Name','Gang Subname','Motive','
-Gang uncertain','Individual','Number of terrorists participating','Number of terrorists captured','Claimed','Claimed Mode Code','Claimed Mode','Weapon Type Code','
-Weapon Type','Weapon Subtype Code','Weapon Subtype','Weapon detail','Number of kills','Number of U.S citizens killed'];
+function GetColumnsEvent(){
+    return ['Event ID','Summary','Success','Suicide','Attack Type','Tactics'];
 }
-$columns=GetColumns();
+$event_columns=GetColumnsEvent();
+
+function GetColumnsTime(){
+    return ['Year','Month','Day','Approximate Date','Duration'];
+}
+$time_columns=GetColumnsTime();
+
+function GetColumnsLocation(){
+    return ['Country','Country Code','Region','Provence','City','Latitude','Longitude','Corp'];
+}
+$location_columns=GetColumnsLocation();
+
+function GetColumnsTargetDetails(){
+    return ['Target type','Target subtype','Target','Target Nationality'];
+}
+$target_columns=GetColumnsTargetDetails();
+
+function GetColumnsAttackerDetails(){
+    return ['Group name', 'Group subname','Motive','Gun certain','Terrorists number','Claim','Claim Mode'];
+}
+$attacker_columns=GetColumnsAttackerDetails();
+
+function GetWeaponDetails(){
+    return ['Weapon type','Weapon subtype', 'Weapon details'];
+}
+$weapons_columns=GetWeaponDetails();
+
+function GetDeathsDetails(){
+    return ['Total fatalities','U.S. Citizens who died'];
+}
+$deaths_columns=GetDeathsDetails();
 
 function GetStates() {
     return ['Afghanistan','Albania','Algeria','Andorra','Angola','Antigua and Barbuda','Argentina','Armenia','Australia','Austria','Azerbaijan','Bahamas',
