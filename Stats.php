@@ -37,7 +37,7 @@
                     <div class="page_wrap">
                         <h3>Choose data to display:</h3>
                         <div class="criteria_wrap">
-                            <div class="criteria">
+                            <div class="event">
                                 <p> Event </p>
                                 <?php 
                                     foreach($event_columns as $column): 
@@ -47,7 +47,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="time">
                                 <p> Time </p>
                                 <?php 
                                     foreach($time_columns as $column): 
@@ -57,7 +57,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="location">
                                 <p> Location </p>
                                 <?php 
                                     foreach($location_columns as $column): 
@@ -67,7 +67,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="attacker">
                                 <p> Attacker </p>
                                 <?php 
                                     foreach($attacker_columns as $column): 
@@ -77,7 +77,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="target">
                                 <p> Target </p>
                                 <?php 
                                     foreach($target_columns as $column): 
@@ -87,7 +87,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="weapon">
                                 <p> Weapon details </p>
                                 <?php 
                                     foreach($weapons_columns as $column): 
@@ -97,7 +97,7 @@
                                 <br>
                                 <?php endforeach; ?>
                             </div>
-                            <div class="criteria">
+                            <div class="deaths">
                                 <p> Deaths </p>
                                 <?php 
                                     foreach($deaths_columns as $column): 

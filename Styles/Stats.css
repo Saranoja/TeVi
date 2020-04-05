@@ -1,3 +1,6 @@
+/* imported a free Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 html {
 	margin: 0;
 	padding: 0;
@@ -6,13 +9,9 @@ html {
 body {
     height: 100%;
     width: 90%;
-    font: 90% georgia, serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
-    /*background: linear-gradient(180deg, #B1CCCA 20%, #6AB187 80%);*/
-    background-image: url("robot.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom, white,white, white, rgb(168, 230, 193));
     margin: 0 auto;
 }
 
@@ -24,10 +23,11 @@ body {
 
 p { 
     text-align: justify;
-    font: 1.2em georgia, sans-serif;
+    font-size: 1.2em;
 }
+
 h1 {
-    font: bold 4em georgia, sans-serif;
+    font: bold 4em 'Montserrat', sans-serif;
     letter-spacing: 1px;
     max-width: 100%;
     margin-bottom: 0;
@@ -36,7 +36,7 @@ h1 {
 }
 
 h2 {
-    font: bold 3em georgia, sans-serif;
+    font: bold 3em 'Montserrat', sans-serif;
     letter-spacing: 1px;
     max-width: 100%;
     margin-bottom: 0;
@@ -45,7 +45,7 @@ h2 {
 }
     
 h3 { 
-    font: bold italic 2em georgia, sans-serif;
+    font: bold italic 2em 'Montserrat', sans-serif;
     letter-spacing: 1px; 
     margin-bottom: 30px; 
     max-width: 100%;
@@ -54,6 +54,10 @@ h3 {
 
 header {
     display: flex;
+}
+
+main {
+    max-width: 100%;
 }
 
 
@@ -69,7 +73,7 @@ header {
 
 .navigation {
     display: block;
-    font: italic 1.5em georgia, sans-serif;
+    font: italic 1.5em 'Montserrat', sans-serif;
     letter-spacing: 1px; 
     text-decoration: none;
 }
@@ -77,6 +81,77 @@ header {
 .nav_option {
     text-decoration: none;
     color: #6AB187;
+}
+
+.criteria_wrap {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 30px;
+    align-items: center;
+}
+
+.event {
+    grid-column: 1 ;
+    grid-row: 1;
+    background-image: url("Backgrounds/GridBackground3.png");
+    background-size: cover;
+}
+
+.time {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url("Backgrounds/GridBackground2.png");
+    background-size: cover;
+}
+
+.location {
+    grid-column: 3;
+    grid-row: 1;
+    grid-row: 1;
+    background-image: url("Backgrounds/GridBackground1.png");
+    background-size: cover;
+}
+
+.attacker {
+    grid-column: 4;
+    grid-row: 1;
+    grid-row: 1;
+    background-image: url("Backgrounds/GridBackground4.png");
+    background-size: cover;
+}
+
+.target {
+    grid-column: 1;
+    grid-row: 2;
+    background-image: url("Backgrounds/GridBackground5.png");
+    background-size: cover;
+}
+
+.weapon {
+    grid-column: 2;
+    grid-row: 2;
+    background-image: url("Backgrounds/GridBackground6.png");
+    background-size: cover;
+}
+
+.deaths {
+    grid-column: 3;
+    grid-row: 2;
+    background-image: url("Backgrounds/GridBackground7.png");
+    background-size: cover;
+}
+
+.filter {
+    padding-bottom: 10px;
+}
+
+.sorting {
+    padding-bottom: 10px;
+}
+
+.visualisation {
+    padding-bottom: 10px;
 }
 
 [type="date"] {

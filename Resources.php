@@ -110,7 +110,7 @@
                         <a href="https://study.com/academy/lesson/what-is-web-technology-definition-trends.html">Web Technologies</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://ourworldindata.org/terrorism">Our World in Data</a>
+                        <a href="https://ourworldindata.org/terrorism">Our World in Data on Terrorism</a>
                     </li>
                     <li class="bullet">
                         <a href="https://www.kaggle.com/START-UMD/gtd">Kaggle</a>
