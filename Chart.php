@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<?php include "StatsController.php"; ?>
+<?php include "WorldMap.php"; ?>
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
 
-        <link rel="stylesheet" href="Styles/Stats.css">
+        <link rel="stylesheet" href="Styles/Chart.css">
 
         <meta charset="utf-8">
         <meta name="terrorism" content="all">
         <meta name="author" content="Irina Calin and Victor-Ionut Platon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
+
     </head>
     <body id="whole_body">        
         <div class="page_wrapper">
@@ -34,6 +35,7 @@
             </header>
             <main>
                 <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
             </main>
         </div>
     </body>
