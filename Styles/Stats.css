@@ -96,14 +96,14 @@ main {
 
 .criteria_wrap div p{
     font-weight: bold;
-    text-shadow: -1px -1px 3px #DE7A22;
+    /* text-shadow: -1px -1px 3px #DE7A22; */
     letter-spacing: 1px;
     color: #6AB187;
     font-size: x-large;
 }
 
 .criteria_wrap div label {
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #264031;
     cursor: pointer;
 }

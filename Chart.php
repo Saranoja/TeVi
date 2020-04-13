@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<?php include "StatsController.php"; ?>
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
 
-        <link rel="stylesheet" href="Styles/Stats.css">
+        <link rel="stylesheet" href="Styles/Chart.css">
 
         <meta charset="utf-8">
         <meta name="terrorism" content="all">
         <meta name="author" content="Irina Calin and Victor-Ionut Platon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
+
     </head>
     <body id="whole_body">        
         <div class="page_wrapper">
@@ -32,9 +32,63 @@
                     </form>
                 </nav>
             </header>
+<?php 
+    $nume = $_REQUEST["view"];
+    $pie_chart = "Pie";
+    $bars_chart = "Vertical";
+    $horizontal_bars_chart = "Horizontal";
+    $map = "Map";
+    $donut = "Doughnut";
+    $bubbles = "Bubbles";
+    if(strcmp($nume,$pie_chart)==0) {
+       include "PieChart.php";
+?>
             <main>
                 <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
             </main>
+<?php
+    }
+    else if (strcmp($nume,$bars_chart)==0) {
+        include "BarsChart.php";
+?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>
+<?php } 
+    else if (strcmp($nume, $horizontal_bars_chart)==0) { 
+        include "HorizontalBars.php";?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>
+<?php } 
+    else if (strcmp($nume, $map)==0) {
+        include "WorldMap.php";?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>
+<?php } 
+    else if (strcmp($nume, $donut)==0) { 
+        include "DonutChart.php";?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>
+<?php } else if (strcmp($nume, $bubbles)==0) { 
+        include "BubblesChart.php";  ?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>
+<?php } else { include "ValueAxis.php";?>
+            <main>
+                <h3> Results for your request: </h3>
+                <div id="chartdiv"></div>
+            </main>  
+<?php } ?>       
         </div>
     </body>
 </html>

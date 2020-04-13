@@ -11,7 +11,7 @@ body {
     width: 90%;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
-    background-image: url("robot.jpg");
+    background: linear-gradient(to bottom, rgb(192, 235, 209), white, white, white, white, white, rgb(168, 230, 193));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
