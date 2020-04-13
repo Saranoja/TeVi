@@ -38,14 +38,14 @@
                     <p> But how many people die from terrorism relative to other causes? How often do these attacks happen, who makes them happen and what do they use? </p>
                 </div>
                 <div class="pic">
-                    <img src="Images/fatalities.png" alt="Fatalities">
+                    <img src="Images/deaths.png" alt="Fatalities">
                 </div>
             </section>
             <section class="team">
                 <div class="first_column">
                     <h3> The project. The team. </h3>
                     <video height="150" autoplay loop muted>
-                        <source src="Images/IrinaWhite.mov">
+                        <source src="Images/IMG_0223.mov">
                     </video>
                     <video height="150" autoplay loop muted>
                         <source src="Images/VicWhite.mov">
@@ -63,6 +63,33 @@
                 <div class="ipad_view">
                     <img src="Images/Coding.gif" alt="Fatalities">
                 </div>
+                <section class='social'>
+                    <h4>
+                        Where can you find us? 😄
+                    </h4>
+                    <div class="social_wrap">
+                        <div class="social_irina">
+                            <h5>
+                                Irina Calin 👩:
+                            </h5>
+                            <div class='social_links'>
+                                <a href="https://www.linkedin.com/in/irina-c-4aa058115/" target="_blank" class='img_link w-inline-block'> <img src='Images/linkedin.png' alt="linkedin"> </a>
+                                <a href="https://github.com/Saranoja" target="_blank" class='img_link w-inline-block'> <img src='Images/git.png' alt="github"> </a>
+                            </div>
+                        </div>
+                        <div class="social_victor">
+                            <h5>
+                                Victor-Ionut Platon 🕵‍♀:
+                            </h5>
+                            <div class='social_links'>
+                                <a href="https://github.com/Victronic" target="_blank" class='img_link w-inline-block'> <img src='Images/git.png' alt="github"> </a>
+                            </div>
+                        </div>
+                        <div class="additional_info">
+                            <p> Project developed for the 2nd year Web Technologies Course at the Faculty of Computer science, UAIC Iasi. </p>
+                        </div>
+                    </div>
+                </section>
             </footer>
         </div>
     </body>
