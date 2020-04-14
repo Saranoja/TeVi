@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title> TeVi - Home Page </title>
-
+        <link rel="icon" type="image/ico" href="Images/SEO.png" />
         <link rel="stylesheet" href="Styles/HomePage.css">
 
         <meta name="terrorism" content="all">
@@ -22,7 +22,6 @@
                     <ul class="nav_bar">
                         <li><a class="nav_option" id="hover" href="#home">Home</a></li>
                         <li><a class="nav_option" href="Stats.php">Statistics</a></li>
-                        <!-- <li><a class="nav_option" href="Maps.php">Maps</a></li> -->
                         <li><a class="nav_option" href="Resources.php">Resources</a></li>
                     </ul>
                     <form>
@@ -70,19 +69,22 @@
                     <div class="social_wrap">
                         <div class="social_irina">
                             <h5>
-                                Irina Calin 👩:
+                                Irina Calin 🕵️‍♀️:
                             </h5>
                             <div class='social_links'>
+                                
                                 <a href="https://www.linkedin.com/in/irina-c-4aa058115/" target="_blank" class='img_link w-inline-block'> <img src='Images/linkedin.png' alt="linkedin"> </a>
                                 <a href="https://github.com/Saranoja" target="_blank" class='img_link w-inline-block'> <img src='Images/git.png' alt="github"> </a>
+                                <a href="https://www.facebook.com/irina.psqa" target="_blank" class='img_link w-inline-block'> <img src='Images/facebook.png' alt="facebook"> </a>
                             </div>
                         </div>
                         <div class="social_victor">
                             <h5>
-                                Victor-Ionut Platon 🕵‍♀:
+                                Victor-Ionut Platon 🕵️‍♂️:
                             </h5>
                             <div class='social_links'>
                                 <a href="https://github.com/Victronic" target="_blank" class='img_link w-inline-block'> <img src='Images/git.png' alt="github"> </a>
+                                <a href="https://www.facebook.com/victor.platon.5686" target="_blank" class='img_link w-inline-block'> <img src='Images/facebook.png' alt="facebook"> </a>
                             </div>
                         </div>
                         <div class="additional_info">

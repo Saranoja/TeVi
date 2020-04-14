@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title> TeVi - Resources </title>
-
+        <link rel="icon" type="image/ico" href="Images/SEO.png" />
         <link rel="stylesheet" href="Styles/Resources.css">
 
         <meta name="terrorism" content="all">
@@ -14,15 +14,15 @@
     <body id="whole_body">
         <div class="page_wrapper">
             <header class="upper_intro">
+                
                 <div class="page_title">
                     <h1> TeVi </h1>
                     <h2> Resources </h2>
                 </div>
                 <nav class="navigation">
-                    <ul>
+                    <ul class="nav_bar">
                         <li><a class="nav_option" href="HomePage.php">Home</a></li>
                         <li><a class="nav_option" href="Stats.php">Statistics</a></li>
-                        <!-- <li><a class="nav_option" href="Maps.php">Maps</a></li> -->
                         <li><a class="nav_option" id="hover" href="#resources">Resources</a></li>
                     </ul>
                     <form>
