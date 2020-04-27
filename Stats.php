@@ -3,9 +3,9 @@
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
-
+        <link rel="icon" type="image/ico" href="Images/SEO.png" />
         <link rel="stylesheet" href="Styles/Stats.css">
-
+        <script src="Scrips/Stats.js"></script>
         <meta charset="utf-8">
         <meta name="terrorism" content="all">
         <meta name="author" content="Irina Calin and Victor-Ionut Platon">
@@ -23,7 +23,6 @@
                     <ul class="nav_bar">
                         <li><a class="nav_option" href="HomePage.php">Home</a></li>
                         <li><a class="nav_option" id="hover" href="#stats">Statistics</a></li>
-                        <!-- <li><a class="nav_option" href="Maps.php">Maps</a></li> -->
                         <li><a class="nav_option" href="Resources.php">Resources</a></li>
                     </ul>
                     <form>
