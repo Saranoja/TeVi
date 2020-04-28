@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title> TeVi - Resources </title>
         <link rel="icon" type="image/ico" href="Images/SEO.png" />
+        <link rel="stylesheet" href="Styles/All.css">
         <link rel="stylesheet" href="Styles/Resources.css">
 
         <meta name="terrorism" content="all">
@@ -23,7 +24,7 @@
                     <ul class="nav_bar">
                         <li><a class="nav_option" href="HomePage.php">Home</a></li>
                         <li><a class="nav_option" href="Stats.php">Statistics</a></li>
-                        <li><a class="nav_option" id="hover" href="#resources">Resources</a></li>
+                        <li><a class="nav_option" id="active" href="#resources">Resources</a></li>
                     </ul>
                     <form>
                         <input type="search" placeholder="Search...">
