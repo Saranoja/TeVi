@@ -8,14 +8,20 @@ html {
 
 body {
     height: 100%;
-    width: 90%;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
-    /* background-image: url("robot.jpg"); */
-    background: linear-gradient(to bottom, rgb(192, 235, 209), white,white,white, white, white, rgb(168, 230, 193));
+    background: linear-gradient(to bottom, white,white,white,white,white, white, white,rgb(0, 80, 171));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
+}
+
+
+.page_wrapper{
+    width: 90%;
+    padding-top: 40px;
     margin: 0 auto;
 }
 
