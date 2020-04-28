@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title> TeVi - Home Page </title>
         <link rel="icon" type="image/ico" href="Images/SEO.png" />
+        <link rel="stylesheet" href="Styles/All.css">
         <link rel="stylesheet" href="Styles/HomePage.css">
 
         <meta name="terrorism" content="all">
@@ -20,7 +21,7 @@
                 </div>
                 <nav class="navigation">
                     <ul class="nav_bar">
-                        <li><a class="nav_option" id="hover" href="#home">Home</a></li>
+                        <li><a class="nav_option" id="active" href="#home">Home</a></li>
                         <li><a class="nav_option" href="Stats.php">Statistics</a></li>
                         <li><a class="nav_option" href="Resources.php">Resources</a></li>
                     </ul>
