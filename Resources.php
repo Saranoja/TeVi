@@ -8,35 +8,31 @@
         <link rel="stylesheet" href="Styles/Resources.css">
 
         <meta name="terrorism" content="all">
-        <meta name="author" content="Irina Calin and Victor-Ionut Platon">
+        <meta name="author" content="Irina Calin, Victor-Ionut Platon and Bogdan-Mihail Peltea">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
     </head>
     <body id="whole_body">
+        <div class="menu-info">
+            <img class="img-logo" src="Styles/Backgrounds/LOGO.svg">
+                <ul class="nav-area">
+                <li><a href="HomePage.php" class="home">home</a></li>
+                <li><a href="Stats.php">statistics</a></li>
+                <li><a href="Resources.php">resources</a></li>
+            </ul>
+        </div>
         <div class="page_wrapper">
-            <header class="upper_intro">
-                
+            <header class="upper_intro">   
                 <div class="page_title">
                     <h1> TeVi </h1>
-                    <h2> Resources </h2>
+                    <h2> RESOURCES </h2>
                 </div>
-                <nav class="navigation">
-                    <ul class="nav_bar">
-                        <li><a class="nav_option" href="HomePage.php">Home</a></li>
-                        <li><a class="nav_option" href="Stats.php">Statistics</a></li>
-                        <li><a class="nav_option" id="active" href="#resources">Resources</a></li>
-                    </ul>
-                    <form>
-                        <input type="search" placeholder="Search...">
-                        <input type="submit" value="Submit">
-                    </form>
-                </nav>
             </header>
             <div class="contentinfo">
                 <dl>
                   <dt>Authors</dt>
                   <dd>
-                    Irina Calin &amp; Victor-Ionut Platon
+                    Irina Calin &amp; Victor-Ionut Platon &amp; Bogdan-Mihail Peltea
                   </dd>
                   <dt>Coordinator</dt>
                   <dd>

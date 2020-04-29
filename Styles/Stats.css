@@ -1,3 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-purple: #332285;
+    --light-purple: #D7D5FF;
+    --main-blue: #0090FF;
+    --dark-blue: #0050AB;
+    --darkest-blue: #0a0283;
+    --white-text: #FFFFFF;
+    --purplish-text: #c0abf1;
+    --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
+    --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
+    --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
+    --h1-font-size: 4em;
+    --h2-font-size: 2em;
+}
 
 .criteria_wrap {
     display: grid;
@@ -7,27 +26,32 @@
     align-items: center;
 }
 
-.criteria_wrap div p{
+.criteria_wrap div p {
     font-weight: bold;
     /* text-shadow: -1px -1px 3px #DE7A22; */
     letter-spacing: 1px;
-    color: #6AB187;
+    color: var(--darkest-blue);
     font-size: x-large;
 }
 
 .criteria_wrap div label {
     /* font-weight: bold; */
-    color: #264031;
     cursor: pointer;
+    padding-left: 5%;
+}
+
+.section2 {
+    padding-top: 5%;
 }
 
 /* In lucru*/
 input[type=checkbox] {
     position: relative;
     cursor: pointer;
+    z-index: -1;
 }
 input[type=checkbox]:before {
-    border: 2px solid #264031;
+    border: 2px solid var(--darkest-blue);
     border-radius: 3px;
     background-color: rgb(243, 234, 234);
     width: 15px;
@@ -35,6 +59,7 @@ input[type=checkbox]:before {
     content: "";
     position: absolute;
 }
+
 input[type=checkbox]:checked:after {
     content: "";
     display: block;

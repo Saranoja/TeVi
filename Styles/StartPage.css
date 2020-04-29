@@ -3,6 +3,21 @@
     padding: 0;
 }
 
+:root {
+    --main-purple: #332285;
+    --light-purple: #D7D5FF;
+    --main-blue: #0090FF;
+    --dark-blue: #0050AB;
+    --darkest-blue: #0a0283;
+    --white-text: #FFFFFF;
+    --purplish-text: #c0abf1;
+    --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
+    --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
+    --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
+    --h1-font-size: 4em;
+    --h2-font-size: 2em;
+}
+
 .img-left{
     position: absolute;
     width: 25%;
@@ -16,15 +31,11 @@
     height: 100%;
 }
 
-
-
 .nav-area {
     margin-left: 28%;
     line-height: 35px;
     padding: 18px;
-
 }
-
 
 .nav-area li{
     display: inline;
@@ -32,8 +43,8 @@
 
 li a {
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #332285;
+    font-family: var(--main-font-family);
+    color: var(--main-purple);
     text-transform: uppercase;
     font-weight:700;
     font-size: 1.2vw;
@@ -41,23 +52,23 @@ li a {
 }
 
 
-.wrapper{
+.wrapper {
     width: 600px;
     margin-top: 20%;
     margin-left: 10%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #332285;
+    font-family: var(--main-font-family);
+    color: var(--main-purple);
 }
 
-h5{
+h5 {
     font-size: 3vw;
 }
 
-p{
+p {
     text-transform: uppercase;
 }
 
-.info-page{
+.info-page {
     float:left;
 }
 
@@ -68,14 +79,14 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-      border-radius: 25px;
+    border-radius: 25px;
     /*background-color: transparent;*/
     border: none;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    color: #D7D5FF;
+    color: var(--light-purple);
     font-weight:600;
     margin-top: 150px;
     margin-right: 150px;
