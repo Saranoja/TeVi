@@ -20,7 +20,7 @@
 
 .criteria_wrap {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-auto-rows: minmax(100px, auto);
     gap: 30px;
     align-items: center;
@@ -75,55 +75,52 @@ input[type=checkbox]:checked:after {
     left: 6px;
 }
 /**/
+
+.pic1 img {
+    height: 400px;
+    grid-column: 3 ;
+    grid-row: 1/2;
+}
+
+.pic2 img {
+    height: 200px;
+    grid-column: 1 ;
+    grid-row: 2;
+}
+
 .event {
     grid-column: 1 ;
     grid-row: 1;
-    background-image: url("Backgrounds/GridBackground3.png");
-    background-size: cover;
 }
 
 .time {
     grid-column: 2;
     grid-row: 1;
-    background-image: url("Backgrounds/GridBackground2.png");
-    background-size: cover;
 }
 
 .location {
-    grid-column: 3;
-    grid-row: 1;
-    grid-row: 1;
-    background-image: url("Backgrounds/GridBackground1.png");
-    background-size: cover;
+    grid-column: 2;
+    grid-row: 2;
 }
 
 .attacker {
-    grid-column: 4;
-    grid-row: 1;
-    grid-row: 1;
-    background-image: url("Backgrounds/GridBackground4.png");
-    background-size: cover;
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .target {
-    grid-column: 1;
-    grid-row: 2;
-    background-image: url("Backgrounds/GridBackground5.png");
-    background-size: cover;
+    grid-column: 3;
+    grid-row: 3;
 }
 
 .weapon {
-    grid-column: 2;
-    grid-row: 2;
-    background-image: url("Backgrounds/GridBackground6.png");
-    background-size: cover;
+    grid-column: 1;
+    grid-row: 3;
 }
 
 .deaths {
-    grid-column: 3;
-    grid-row: 2;
-    background-image: url("Backgrounds/GridBackground7.png");
-    background-size: cover;
+    grid-column: 2;
+    grid-row: 3;
 }
 
 .filter {

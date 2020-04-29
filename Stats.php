@@ -48,6 +48,12 @@ include "StatsControllers/IncrementalField.php";
                                     <p> Time </p>
                                     <?php DisplayChecksFor($time_columns); ?>
                                 </div>
+                                <div class="pic1">
+                                    <img src="Images/worldmap.svg" alt="Events">
+                                </div>
+                                <div class="pic2">
+                                    <img src="Images/undraw_data_xmfy.svg" alt="Events">
+                                </div>
                                 <div class="location">
                                     <p> Location </p>
                                     <?php DisplayChecksFor($location_columns); ?>
