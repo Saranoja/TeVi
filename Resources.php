@@ -74,22 +74,22 @@
                 <h3> Remarks regarding our design </h3>
                 <div class="measures">
                     <div class="icon">
-                        <img src="Images/Practices.png" alt="BestPractices">
+                        <img src="Images/Practices.svg" alt="BestPractices">
                         <h4> Best Practices </h4>
                         <p>  </p>
                     </div>
                     <div class="icon">
-                        <img src="Images/SEO.png" alt="SEO">
+                        <img src="Images/SEO.svg" alt="SEO">
                         <h4> SEO </h4>
                         <p>  </p>
                     </div>
                     <div class="icon">
-                        <img src="Images/Accessibility.png" alt="Accessibility">
+                        <img src="Images/Accessibility.svg" alt="Accessibility">
                         <h4> Accessibility </h4>
                         <p>  </p>
                     </div>
                     <div class="icon">
-                        <img src="Images/Speed.png" alt="Speed">
+                        <img src="Images/Speed.svg" alt="Speed">
                         <h4> Hosting </h4>
                         <p>
 
@@ -101,22 +101,22 @@
                 <h3>References</h3>
                 <ul class="ref_links">
                     <li class="bullet">
-                        <a href="https://html.spec.whatwg.org/multipage/">HTML</a>
+                        <a href="https://html.spec.whatwg.org/multipage/" target="_blank">HTML</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://study.com/academy/lesson/what-is-web-technology-definition-trends.html">Web Technologies</a>
+                        <a href="https://study.com/academy/lesson/what-is-web-technology-definition-trends.html" target="_blank">Web Technologies</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://ourworldindata.org/terrorism">Our World in Data on Terrorism</a>
+                        <a href="https://ourworldindata.org/terrorism" target="_blank">Our World in Data on Terrorism</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://www.kaggle.com/START-UMD/gtd">Kaggle</a>
+                        <a href="https://www.kaggle.com/START-UMD/gtd" target="_blank">Kaggle</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://validator.w3.org/">W3C Validator</a>
+                        <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>
                     </li>
                     <li class="bullet">
-                        <a href="https://web.dev/measure/">Measure @web.dev</a>
+                        <a href="https://web.dev/measure/" target="_blank">Measure @web.dev</a>
                     </li>
                 </ul>
             </section>

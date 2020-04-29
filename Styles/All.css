@@ -108,20 +108,25 @@ input[type=search] {
   }
 
 input[type=submit]{
-    width:100px;
+    width: 160px;
+    height: 44px;
     color:white;
-    background-color: var(--main-blue);
+    background-image: url("Backgrounds/get-started-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     font-size: 16px;
     padding: 12px;
     border: none;
-    border-radius: 12px;
     cursor: pointer;
     border: none;
+    font-weight:600;
+    font-size: 20px;
+    text-align: center;
 }
 input[type=submit]:hover{
     background-color: white;
     color:var(--main-blue);
-    border: 2px solid var(--main-blue);
 }
 
 .menu-info {

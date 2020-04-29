@@ -45,6 +45,14 @@
     padding-right: 10%;
 }
 
+.icon {
+    margin-top: 3%;
+}
+
+.pic img {
+    margin-top: 3%;
+}
+
 .bullet a {
     color: var(--main-purple);
 }
