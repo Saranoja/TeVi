@@ -18,6 +18,10 @@
     --h2-font-size: 2em;
 }
 
+body {
+    font: var(--main-font-family);
+}
+
 .img-left{
     position: absolute;
     width: 25%;
