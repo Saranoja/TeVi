@@ -1,5 +1,6 @@
-@import "./Scripts/StickyNav.js";
-
+/*Property names that are prefixed with --, like --example-name, 
+represent custom properties that contain a value that can be used
+in other declarations using the var() function.*/
 :root {
     --main-purple: #332285;
     --light-purple: #D7D5FF;
@@ -13,36 +14,83 @@
     --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
     --h1-font-size: 4em;
     --h2-font-size: 2em;
+    --h3:2em;
 }
 
-html {
-    margin: 0;
-    padding: 0;
-    }
-
 body {
-    height: 100%;
-    width: 100%;
-    line-height: 1.8;
-    /* background: linear-gradient(to bottom, white,white,white,white,white, var(--darkest-blue)); */
-    background-position: center;
-    background-repeat: no-repeat;
+    line-height: 1.5;
     font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.menu-info {
+    position: sticky;
+    width: 100%;
+    background-image: url("Backgrounds/bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    margin: 0 auto;
+    border: none;
+    top: 0;
+}
+
+.img-logo{
+    height: 2.2em;
+    padding: 18px;
+}
+
+.nav-area li{
+    display: inline;
+}
+
+li a {
+    text-decoration: none;
+    font-family: var(--main-font-family);
+    color: white;
+    font-weight:700;
+    font-size: 20px;
+    padding: 0 10px 0;
 }
 
 .page_wrapper{
     width: 90%;
     padding-top: 40px;
     margin: 0 auto;
+    position: relative;
 }
 
 #active {
     font-weight: bold; 
-    text-decoration: none; 
-    color: var(--dark-blue); /* may be changed, this is just for testing purpose */
+    color: var(--main-blue); /* may be changed, this is just for testing purpose */
 }
+
+/*There is nothing you can do to validate vendor extensions except to not use them.*/
+
+input[type=search] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+input[type=submit]{
+    width:100px;
+    color:white;
+    background-color: var(--main-blue);
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+}
+input[type=submit]:hover{
+    background-color: white;
+    color:var(--main-blue);
+    border: 2px solid var(--main-blue);
+}
+
 
 p { 
     text-align: justify;
@@ -86,80 +134,3 @@ h5 {
     font-size: 1em;
 }
 
-/*There is nothing you can do to validate vendor extensions except to not use them.*/
-
-.upper_intro {
-    max-width: 100%;
-    display:flex;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-flex: 1;
-    flex: 1;
-}
-
-input[type=search] {
-    width: 200px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 12px;
-  }
-
-input[type=submit]{
-    width:100px;
-    color:white;
-    background-color: var(--main-blue);
-    font-size: 16px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    border: none;
-}
-input[type=submit]:hover{
-    background-color: white;
-    color:var(--main-blue);
-    border: 2px solid var(--main-blue);
-}
-
-.menu-info {
-    position: sticky;
-    width: 100%;
-    background-image: url("Backgrounds/bg.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: none;
-    position: sticky;
-    top: 0;
-}
-
-
-.img-logo{
-    height: 2.2em;
-    padding: 18px;
-
-}
-
-.nav-area {
-    display: inline;
-    float: right;
-    line-height: 35px;
-    padding: 18px;
-}
-
-.nav-area li{
-    display: inline;
-}
-
-li a {
-    text-decoration: none;
-    font-family: var(--main-font-family);
-    color: white;
-    text-transform: uppercase;
-    font-weight:700;
-    font-size: 20px;
-    padding: 0 10px 0;
-}
