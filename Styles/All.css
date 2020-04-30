@@ -150,7 +150,6 @@ input[type=submit]:hover{
 }
 
 .nav-area {
-    display: inline;
     float: right;
     line-height: 35px;
     padding: 18px;

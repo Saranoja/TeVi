@@ -12,6 +12,7 @@
         <meta name="description" content="A web global terrorism visualizer">
     </head>
     <body id="whole_body">
+
         <div class="menu-info">
           <img class="img-logo" src="Styles/Backgrounds/LOGO.svg">
             <ul class="nav-area">
@@ -19,7 +20,27 @@
                 <li><a href="Stats.php">statistics</a></li>
                 <li><a href="Resources.php">resources</a></li>
             </ul>
+            
         </div>
+
+        <button onclick="openPopout()" id="menu" class="mobile-menu" type="button"></button>
+
+        <!--    Pop-out menu-->
+        <div class="bg-modal">
+            <div class="modal-contents">
+
+                <div onclick="closePopout()" class="close">+</div>
+                <form action="">
+                    <ul class="mobile-menu-text">
+                        <li><a href="HomePage.php">home</a></li>
+                        <li><a href="Stats.php">statistics</a></li>
+                        <li><a href="Resources.php">resources</a></li>
+                    </ul>
+                </form>
+             </div>
+        </div>
+
+
         <div class="page_wrapper">
             <header class="upper_intro">
                 <div class="page_title">
@@ -111,5 +132,6 @@
                 </section>
             </footer>
         </div>
+        <script src="Scripts/mobileMenu.js"></script>
     </body>
 </html>
