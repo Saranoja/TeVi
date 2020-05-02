@@ -1,6 +1,5 @@
 function openPopout() {
     document.querySelector('.bg-modal').style.display = "flex";
-
 }
 
 function closePopout() {

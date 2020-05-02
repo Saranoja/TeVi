@@ -13,8 +13,8 @@
         <img class="img-right-mobile" src="Styles/Backgrounds/bg-right-mobile.svg">
 
         <ul class="nav-area">
-            <li><a href="HomePage.php">home</a></li>
-            <li>|</li>
+            <!-- <li><a href="HomePage.php">home</a></li>
+            <li>|</li> -->
             <li><a href="Stats.php">statistics</a></li>
             <li>|</li>
             <li><a href="Resources.php">resources</a></li>

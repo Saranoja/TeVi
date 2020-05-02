@@ -23,12 +23,12 @@ body{
 }
 
 .img-left{
-	position: absolute;
+	position: fixed;
 	width: 25%;
 }
 
 .img-right{
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	right: 0;
 	top: 0;
@@ -60,7 +60,7 @@ body{
 	text-transform: uppercase;
 	font-weight:700;
 	font-size: 1.2vw;
-	padding: 0 10px 0;
+	padding: 0 3% 0;
 }
 
 .mobile-nav-area{
@@ -116,7 +116,6 @@ p {
 	padding: 20px 160px 20px 130px;
 }
 
-
 .bg-modal {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
@@ -154,7 +153,6 @@ list-style: none;
 }
 
 
-
 .close {
     position: absolute;
     top: 0;
@@ -165,9 +163,52 @@ list-style: none;
     cursor: pointer;
 }
 
+/* Scaling for responsiveness */
 
-@media only screen and (max-width: 1024px){
+/* @media only screen and (max-width: 376px){	
+	.wrapper{
+		width: 100%;
+		margin: 40% auto;
+	}
 
+	.mobile-menu{
+	width: 20px;
+	height: 20px;
+	}
+
+	.img-left{
+		width: 50%;
+	}
+
+	.img-right-mobile{
+		width: 100%;
+	}
+
+	.extra-info p{
+		font-size: 2.5vw;
+	}
+
+	.wrapper .extra-info {
+		display: none;
+	}
+
+	.mobile-menu{
+		margin-top: 10px;
+		margin-right: 40px;
+	}
+
+	.extra-info {
+		display: none;
+	}
+} */
+
+@media only screen and (min-width: 377px) and (max-width: 767px) and (orientation: portrait){
+	.img-right-mobile{
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
 	.nav-area li{
 		display: none
 	}
@@ -184,27 +225,25 @@ list-style: none;
 	}
 	.mobile-menu{
 	width: 30px;
-    height: 30px;
-    background-image: url("Backgrounds/menu-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    background-color: transparent;
-    border:0;
-    text-decoration: none;
-    margin-top: 30px;
-    float: right;
-    margin-right: 70px;
+	height: 30px;
+	background-image: url("Backgrounds/menu-mobile.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	background-color: transparent;
+	border:0;
+	text-decoration: none;
+	margin-top: 30px;
+	float: right;
+	margin-right: 70px;
 	}
 
 	.wrapper {
 		margin: 30% auto;
 		text-align: center;
-
 	}
 
 	.get-started-button{
-		
 		margin-top: 50px;
 		margin-right: unset;
 	}	
@@ -225,47 +264,187 @@ list-style: none;
 	h5 {
 		font-size: 8vw;
 	}
-
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (min-width: 1024px) and (max-width: 1400px) and (orientation: portrait) {
+	.nav-area li{
+		display: none
+	}
+
+	.img-left{
+		width: 40%;
+	}
+
+	.img-right{
+		display: none;
+	}
 	.img-right-mobile{
-		width: 90%;
+		display: unset;
+	}
+	.mobile-menu{
+	width: 30px;
+	height: 30px;
+	background-image: url("Backgrounds/menu-mobile.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	background-color: transparent;
+	border:0;
+	text-decoration: none;
+	margin-top: 30px;
+	float: right;
+	margin-right: 70px;
 	}
 
+	.wrapper {
+		margin: 30% auto;
+		text-align: center;
+	}
+
+	.get-started-button{
+		margin-top: 50px;
+		margin-right: unset;
+	}	
+
+	.info-page{
+		float:unset;
+	}
+
+	.extra-info{
+		margin: 40px;
+	}
+
+	.extra-info p{
+		font-size: 1.5vw;
+		padding: unset;
+	}
+
+	h5 {
+		font-size: 8vw;
+	}
 }
 
-@media only screen and (max-width: 414px){
-	
 
-	.wrapper{
-		width: 100%;
-		margin: 40% auto;
+@media screen and (min-width: 1400px)
+{
+    p { 
+        font-size:1.5vw;
+    }
+}
+
+@media screen and (max-device-aspect-ratio: 16/10) and (orientation: landscape) {
+	/* .img-left{
+		display: none;
+	} */
+
+	.img-right{
+		display: none;
 	}
 
-	.mobile-menu{
-	width: 20px;
-	height: 20px;
+	.img-right-mobile {
+		display: unset;
+		max-width: 50%;
+		position: fixed;
+	}
+}
+
+@media screen and (max-device-aspect-ratio: 16/10) and (orientation: portrait) {
+	/* .img-left{
+		display: none;
+	} */
+
+	.img-right{
+		display: none;
+	}
+
+	.img-right-mobile {
+		display: unset;
+		max-width: 80%;
+		position: fixed;
+	}
+}
+
+@media screen and (max-device-aspect-ratio: 16/10) and (orientation: portrait) and (max-width: 376px) {
+	.nav-area li{
+		display: none
+	}
+
+	h5 {
+		font-size: 8vw;
+	}
+
+	.img-right{
+		display: none;
 	}
 
 	.img-left{
 		width: 50%;
 	}
 
-.img-right-mobile{
+	.img-right-mobile{
+		width: 100%;
+	}
 
-	width: 100%;
+	.mobile-menu{
+	width: 30px;
+    height: 30px;
+    background-image: url("Backgrounds/menu-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: transparent;
+    border:0;
+    text-decoration: none;
+    margin-top: 10px;
+    float: right;
+    margin-right: 40px;
+	}
 
-}
+	.get-started-button{
+		
+		margin-top: 50px;
+		margin-right: unset;
+	}	
 
-.extra-info p{
+	.info-page{
+		float:unset;
+	}
+
+	.extra-info{
+		margin: 40px;
+	}
+
+	.extra-info p{
 		font-size: 2.5vw;
+		padding: unset;
+	}
+
+	.wrapper {
+		text-align: center;
+		width: 100%;
+		margin: 40% auto;
+	}
 }
 
-.mobile-menu{
-	 margin-top: 10px;
-     margin-right: 40px;
-}
+@media screen and (min-device-aspect-ratio: 16/10) and (orientation: landscape) and (max-width : 1024px) {
+	.body {
+		max-width: 100%;
+	}
+	
+	.img-right{
+		display: none;
+	}
+
+	.img-left {
+		display: none;
+	}
+
+	.nav-area a {
+		font-size: 2vw;
+	}
+
+	.info-page h5 {
+		font-size: 8vw;
+	}
 
 }
-
