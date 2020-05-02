@@ -46,12 +46,6 @@ include_once "StatsControllers/modalInit.php";
             <section class="team">
                 <div class="first_column">
                     <h3> The project. The team. </h3>
-                    <!-- <video height="150" autoplay loop muted>
-                        <source src="Images/IMG_0223.mov">
-                    </video>
-                    <video height="150" autoplay loop muted>
-                        <source src="Images/VicWhite.mov">
-                    </video> -->
                     <p> In our overview of terrorism, we try to understand how the number of terrorist acts varies around the world and how it has changed over time. To do this, we need a clear and consistent definition of what terrorism is, and how it’s different from any other form of violence. This is not straightforward.</p>
 
                 </div>
@@ -62,9 +56,6 @@ include_once "StatsControllers/modalInit.php";
                 </div>
             </section>
             <footer>
-               <!-- <div class="ipad_view">
-                    <img src="Images/fatalities.png" alt="Fatalities">
-                </div> -->
                 <section class='social'>
                     <h4>
                         Where can you find us? 😄

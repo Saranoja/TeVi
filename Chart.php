@@ -24,7 +24,7 @@ include_once "StatsControllers/modalInit.php";
                 $donut = "Doughnut";
                 $bubbles = "Bubbles";
                 if(strcmp($nume,$pie_chart)==0) {
-                include "Charts/PieChart.php";
+                include "Charts/PieChart.js";
             ?>
                 <main>
                     <h3> Results for your request: </h3>
@@ -33,7 +33,7 @@ include_once "StatsControllers/modalInit.php";
             <?php
                 }
                 else if (strcmp($nume,$bars_chart)==0) {
-                    include "Charts/BarsChart.php";
+                    include "Charts/BarsChart.js";
             ?>
                     <main>
                         <h3> Results for your request: </h3>
@@ -41,32 +41,32 @@ include_once "StatsControllers/modalInit.php";
                     </main>
             <?php } 
                 else if (strcmp($nume, $horizontal_bars_chart)==0) { 
-                    include "Charts/HorizontalBarsChart.php";?>
+                    include "Charts/HorizontalBarsChart.js";?>
                     <main>
                         <h3> Results for your request: </h3>
                         <div id="chartdiv"></div>
                     </main>
             <?php } 
                 else if (strcmp($nume, $map)==0) {
-                    include "Charts/WorldMapChart.php";?>
+                    include "Charts/WorldMapChart.js";?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
                         </main>
             <?php } 
                 else if (strcmp($nume, $donut)==0) { 
-                    include "Charts/DonutChart.php";?>
+                    include "Charts/DonutChart.js";?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
                         </main>
             <?php } else if (strcmp($nume, $bubbles)==0) { 
-                    include "Charts/BubblesChart.php";  ?>
+                    include "Charts/BubblesChart.js";  ?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
                         </main>
-            <?php } else { include "Charts/ValueAxisChart.php";?>
+            <?php } else { include "Charts/ValueAxisChart.js";?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
