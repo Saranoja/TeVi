@@ -69,10 +69,10 @@ include "StatsControllers/IncrementalField.php";
                                     <?php DisplayChecksFor($time_columns); ?>
                                 </div>
                                 <div class="pic1">
-                                    <img src="Images/worldmap.svg" alt="Events">
+                                    <img src="Images/worldmap.svg" alt="Statistics">
                                 </div>
                                 <div class="pic2">
-                                    <img src="Images/undraw_data_xmfy.svg" alt="Events">
+                                    <img src="Images/undraw_data_xmfy.svg" alt="Statistics">
                                 </div>
                                 <div class="location">
                                     <p> Location </p>
@@ -93,6 +93,9 @@ include "StatsControllers/IncrementalField.php";
                                 <div class="deaths">
                                     <p> Deaths </p>
                                     <?php DisplayChecksFor($deaths_columns); ?>
+                                </div>
+                                <div class="pic3">
+                                    <img src="Images/fatalities.png" alt="Statistics">
                                 </div>
                             </div>
 
