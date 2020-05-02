@@ -11,8 +11,8 @@ include_once "StatsControllers/modalInit.php";
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
-        <link rel="stylesheet" href="Styles/Stats.css">
         <?php getBaseHead(); ?>
+        <link rel="stylesheet" href="Styles/Stats.css">
         <script src="Scripts/mobileMenu.js"></script>
         <script src="Scripts/CollapsedFilter.js"></script>
     </head>

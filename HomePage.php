@@ -7,8 +7,8 @@ include_once "StatsControllers/modalInit.php";
 <html lang="en">
     <head>
         <title> TeVi - Home Page </title>
-        <link rel="stylesheet" href="Styles/HomePage.css">
         <?php getBaseHead(); ?>
+        <link rel="stylesheet" href="Styles/HomePage.css">
         <script src="Scripts/mobileMenu.js"></script>
     </head>
     <body id="whole_body">
