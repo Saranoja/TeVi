@@ -17,6 +17,8 @@ include "StatsControllers/IncrementalField.php";
         <meta name="author" content="Irina Calin, Victor-Ionut Platon and Bogdan-Mihail Peltea">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
+        <script src="Scripts/mobileMenu.js"></script>
+        <script src="Scripts/CollapsedFilter.js"></script>
     </head>
     <body id="whole_body">
         <div class="menu-info">
@@ -26,7 +28,25 @@ include "StatsControllers/IncrementalField.php";
                 <li><a href="Stats.php">statistics</a></li>
                 <li><a href="Resources.php">resources</a></li>
             </ul>
-        </div>        
+        </div>   
+        
+        <button onclick="openPopout()" id="menu" class="mobile-menu" type="button"></button>
+
+        <!--Pop-up menu-->
+        <div class="bg-modal">
+            <div class="modal-contents">
+
+                <div onclick="closePopout()" class="close">+</div>
+                <form action="">
+                    <ul class="mobile-menu-text">
+                        <li><a href="HomePage.php">home</a></li>
+                        <li><a href="Stats.php">statistics</a></li>
+                        <li><a href="Resources.php">resources</a></li>
+                    </ul>
+                </form>
+             </div>
+        </div>
+
         <div class="page_wrapper">
             <header class="upper_intro">
                 <div class="page_title">
@@ -75,6 +95,58 @@ include "StatsControllers/IncrementalField.php";
                                     <?php DisplayChecksFor($deaths_columns); ?>
                                 </div>
                             </div>
+
+                            <div class="shrink">
+                                <div class="event">
+                                    <button type="button" onclick="col()" class="collapsible"> Event </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($event_columns); ?>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <button type="button" onclick="col()" class="collapsible"> Time </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($time_columns); ?>
+                                    </div>
+                                </div>
+                                <!-- <div class="pic1">
+                                    <img src="Images/worldmap.svg" alt="Events">
+                                </div>
+                                <div class="pic2">
+                                    <img src="Images/undraw_data_xmfy.svg" alt="Events">
+                                </div> -->
+                                <div class="location">
+                                    <button type="button" onclick="col()" class="collapsible"> Location </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($location_columns); ?>
+                                    </div>
+                                </div>
+                                <div class="attacker">
+                                    <button type="button" onclick="col()" class="collapsible"> Attacker </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($attacker_columns); ?>
+                                    </div>
+                                </div>
+                                <div class="target">
+                                    <button type="button" onclick="col()" class="collapsible"> Target </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($target_columns); ?>
+                                    </div>
+                                </div>
+                                <div class="weapon">
+                                    <button type="button" onclick="col()" class="collapsible"> Weapon details </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($weapons_columns); ?>
+                                    </div>
+                                </div>
+                                <div class="deaths">
+                                    <button type="button" onclick="col()" class="collapsible"> Deaths </button>
+                                    <div class="content">
+                                        <?php DisplayChecksFor($deaths_columns); ?>
+                                    </div>
+                                </div>
+                            </div>
+
                         </section>
                         <section class="section2">
                             <h3>Event filters</h3>

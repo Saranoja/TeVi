@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="Styles/StartPage.css">
+        <script src="Scripts/mobileMenu.js"></script>
         <title>TeVi</title>
     </head>
     <body>
@@ -49,7 +50,5 @@
                 <p >TeVi is a flexible Web data visualizer regarding worldwide terrorism, based on our own RESTful API. The statistics, views and maps can be exported as CSV, PNG or SVG.</p>
             </div>
         </div>
-
-        <script src="Scripts/mobileMenu.js"></script>
     </body>
 </html>

@@ -11,6 +11,7 @@
         <meta name="author" content="Irina Calin, Victor-Ionut Platon and Bogdan-Mihail Peltea">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A web global terrorism visualizer">
+        <script src="Scripts/mobileMenu.js"></script>
     </head>
     <body id="whole_body">
         <div class="menu-info">
@@ -21,6 +22,24 @@
                 <li><a href="Resources.php">resources</a></li>
             </ul>
         </div>
+
+        <button onclick="openPopout()" id="menu" class="mobile-menu" type="button"></button>
+
+        <!--    Pop-out menu-->
+        <div class="bg-modal">
+            <div class="modal-contents">
+
+                <div onclick="closePopout()" class="close">+</div>
+                <form action="">
+                    <ul class="mobile-menu-text">
+                        <li><a href="HomePage.php">home</a></li>
+                        <li><a href="Stats.php">statistics</a></li>
+                        <li><a href="Resources.php">resources</a></li>
+                    </ul>
+                </form>
+             </div>
+        </div>
+
         <div class="page_wrapper">
             <header class="upper_intro">   
                 <div class="page_title">
