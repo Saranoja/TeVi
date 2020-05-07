@@ -1,7 +1,7 @@
 @import "All.css";
 
 *{
-    padding: 0;
+    
     margin:0;
 }
 
@@ -20,7 +20,12 @@
     --h2-font-size: 2em;
 }
 
-.page_wrapper section {
+body{
+    max-width: 90%;
+    margin: auto;
+}
+
+section {
     padding-top: 50px;
 }
 
@@ -37,6 +42,12 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
+}
+
+img{
+    max-width: 40%;
+    height: 100px;
+    justify-content: center;
 }
 
 .icon {
@@ -63,6 +74,14 @@ footer img {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
+}
+
+ol{
+    list-style: none;
+}
+ol li a{
+    color:var(--main-blue);
+
 }
 
 @media screen and (max-width: 1024px) {
