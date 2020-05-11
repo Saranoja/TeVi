@@ -9,6 +9,7 @@ include_once "StatsControllers/modalInit.php";
         <title> TeVi - Statistics Page </title>
         <?php getBaseHead(); ?>
         <link rel="stylesheet" href="Styles/Chart.css">
+        <link rel="stylesheet" href="Charts/ChartsStyle.css">
         <script src="Scripts/mobileMenu.js"></script>
     </head>
     <body id="whole_body">    
@@ -24,7 +25,7 @@ include_once "StatsControllers/modalInit.php";
                 $donut = "Doughnut";
                 $bubbles = "Bubbles";
                 if(strcmp($nume,$pie_chart)==0) {
-                include "Charts/PieChart.js";
+                include "Charts/Temp.php";
             ?>
                 <main>
                     <h3> Results for your request: </h3>
@@ -33,7 +34,7 @@ include_once "StatsControllers/modalInit.php";
             <?php
                 }
                 else if (strcmp($nume,$bars_chart)==0) {
-                    include "Charts/BarsChart.js";
+                    include "Charts/Temp.php";
             ?>
                     <main>
                         <h3> Results for your request: </h3>

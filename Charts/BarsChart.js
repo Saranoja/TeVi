@@ -5,12 +5,12 @@
 }
 </style>
 
-<!-- Resources -->
+//<!-- Resources -->
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
-<!-- Chart code -->
+//<!-- Chart code -->
 <script>
 am4core.ready(function() {
 
@@ -56,28 +56,28 @@ function createSeries(value, name) {
 
 chart.data = [
     {
-        category: 'Place #1',
-        first: 40,
-        second: 55,
-        third: 60
+        "category": 'Place #1',
+        "first": 40,
+        "second": 55,
+        "third": 60
     },
     {
-        category: 'Place #2',
-        first: 30,
-        second: 78,
-        third: 69
+        "category": 'Place #55',
+        "first": 30,
+        "second": 78,
+        "third": 69
     },
     {
-        category: 'Place #3',
-        first: 27,
-        second: 40,
-        third: 45
+        "category": 'Place #3',
+        "first": 27,
+        "second": 40,
+        "third": 45
     },
     {
-        category: 'Place #4',
-        first: 50,
-        second: 33,
-        third: 22
+        "category": 'Place #4',
+        "first": 50,
+        "second": 33,
+        "third": 22
     }
 ]
 
