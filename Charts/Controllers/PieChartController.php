@@ -14,7 +14,7 @@ class PieChartController {
     }
 
     public function createQuery($connection, $field) {
-        $this->sql = "SELECT " . $field . " as `category`, COUNT(" . $field . ") AS `value` FROM data GROUP BY " . $field . " ORDER BY `value` DESC LIMIT 10";
+        $this->sql = "SELECT " . $field . " as `category`, COUNT(" . $field . ") AS `value` FROM data GROUP BY " . $field . " ORDER BY `value` DESC LIMIT 15";
         $this->result = mysqli_query($connection, $this->sql);
     }
 

@@ -17,15 +17,37 @@ include_once "StatsControllers/modalInit.php";
 
         <div class="page_wrapper">
             <?php 
-                $nume = $_REQUEST["view"];
+              //optiune de la StatsV2;
                 $pie_chart = "Pie";
                 $bars_chart = "Vertical";
                 $horizontal_bars_chart = "Horizontal";
                 $map = "Map";
                 $donut = "Doughnut";
                 $bubbles = "Bubbles";
-                if(strcmp($nume,$pie_chart)==0) {
-                include "Charts/Temp.php";
+                
+
+                 if (isset($_POST['generate-chart']))
+                     {
+                            // foreach( $_POST["checkboxFilterRestriction"] as $checkboxVal)
+                            //     {
+                            //         // $choice->addFilterChoice($checkboxVal);   
+                            //         echo '<p>'.$checkboxVal.'</p>';
+                            //     }
+                    
+                    
+                    $groupBy = $_POST["groupByChoice"];
+                    $chartChoice = $_POST["chartChoice"];
+
+                        // echo $groupBy;
+                        // echo $chartChoice;
+
+                    }
+
+
+
+                if(strcmp($chartChoice,$pie_chart)==0) {
+                          include "Charts/Temp.php";
+                          getChart($groupBy);
             ?>
                 <main>
                     <h3> Results for your request: </h3>
@@ -33,35 +55,35 @@ include_once "StatsControllers/modalInit.php";
                 </main>
             <?php
                 }
-                else if (strcmp($nume,$bars_chart)==0) {
-                    include "Charts/Temp.php";
+                else if (strcmp($chartChoice,$bars_chart)==0) {
+                    include "Charts/BarsChart.js";
             ?>
                     <main>
                         <h3> Results for your request: </h3>
                         <div id="chartdiv"></div>
                     </main>
             <?php } 
-                else if (strcmp($nume, $horizontal_bars_chart)==0) { 
+                else if (strcmp($chartChoice, $horizontal_bars_chart)==0) { 
                     include "Charts/HorizontalBarsChart.js";?>
                     <main>
                         <h3> Results for your request: </h3>
                         <div id="chartdiv"></div>
                     </main>
             <?php } 
-                else if (strcmp($nume, $map)==0) {
+                else if (strcmp($chartChoice, $map)==0) {
                     include "Charts/WorldMapChart.js";?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
                         </main>
             <?php } 
-                else if (strcmp($nume, $donut)==0) { 
+                else if (strcmp($chartChoice, $donut)==0) { 
                     include "Charts/DonutChart.js";?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>
                         </main>
-            <?php } else if (strcmp($nume, $bubbles)==0) { 
+            <?php } else if (strcmp($chartChoice, $bubbles)==0) { 
                     include "Charts/BubblesChart.js";  ?>
                         <main>
                             <h3> Results for your request: </h3>

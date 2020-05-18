@@ -7,19 +7,18 @@
 include_once "./Database/Database.php";
 include_once "Controllers/PieChartController.php";
 
+function getChart($param) {
 $db = Database::getInstance();
 $mysqli = $db->getConnection();
 
 $pieChart = new PieChartController();
-$pieChart->createQuery($mysqli, 'success');
+$param = str_replace('-', '_',$param);
+$pieChart->createQuery($mysqli, $param);
 $pieChart->setStructure();
 $json = $pieChart->doAll();
 
-//echo $json;
-
 ?>
 
-<!-- Chart code -->
 <script>
 am4core.ready(function() {
 
@@ -39,3 +38,8 @@ series.dataFields.category = "category";
 
 }); // end am4core.ready()
 </script>
+
+<?php
+}
+?>
+

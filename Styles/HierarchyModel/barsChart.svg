@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="938" height="541.5" viewBox="0 0 938 541.5">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="18" height="502" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="chart" transform="translate(-360 -390)">
+    <g id="chart-2" data-name="chart">
+      <g id="bg" transform="translate(-4 -100)">
+        <line id="Line_47" data-name="Line 47" y2="530" transform="translate(412 500)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+        <g id="Group_37" data-name="Group 37" transform="translate(412 500)">
+          <line id="Line_48" data-name="Line 48" x1="890" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-2" data-name="Line 48" x1="890" transform="translate(0 53)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-3" data-name="Line 48" x1="890" transform="translate(0 106)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-4" data-name="Line 48" x1="890" transform="translate(0 159)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-5" data-name="Line 48" x1="890" transform="translate(0 212)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-6" data-name="Line 48" x1="890" transform="translate(0 265)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-7" data-name="Line 48" x1="890" transform="translate(0 318)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-8" data-name="Line 48" x1="890" transform="translate(0 371)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-9" data-name="Line 48" x1="890" transform="translate(0 424)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-10" data-name="Line 48" x1="890" transform="translate(0 477)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+          <line id="Line_48-11" data-name="Line 48" x1="890" transform="translate(0 530)" fill="none" stroke="#edf3ff" stroke-width="3"/>
+        </g>
+      </g>
+      <g id="Repeat_Grid_1" data-name="Repeat Grid 1" transform="translate(360 390)" clip-path="url(#clip-path)">
+        <g transform="translate(-361 -390)">
+          <text id="_10" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -337)">
+          <text id="_10-2" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -284)">
+          <text id="_10-3" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -231)">
+          <text id="_10-4" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -178)">
+          <text id="_10-5" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -125)">
+          <text id="_10-6" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -72)">
+          <text id="_10-7" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 -19)">
+          <text id="_10-8" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 34)">
+          <text id="_10-9" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+        <g transform="translate(-361 87)">
+          <text id="_10-10" data-name="10" transform="translate(361 407)" fill="#707070" font-size="16" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="Group_38" data-name="Group 38">
+      <rect id="Rectangle_14" data-name="Rectangle 14" width="64" height="87" transform="translate(527 844)" fill="#e1ecfe"/>
+      <rect id="Rectangle_15" data-name="Rectangle 15" width="64" height="148" transform="translate(642 783)" fill="#c9dbfa"/>
+      <rect id="Rectangle_16" data-name="Rectangle 16" width="64" height="229" transform="translate(758 702)" fill="#a9c8ff"/>
+      <rect id="Rectangle_17" data-name="Rectangle 17" width="64" height="378" transform="translate(873 553)" fill="#92c1ff"/>
+      <rect id="Rectangle_18" data-name="Rectangle 18" width="64" height="425" transform="translate(989 506)" fill="#5892df"/>
+      <rect id="Rectangle_19" data-name="Rectangle 19" width="64" height="512" transform="translate(1104 419)" fill="#385a64"/>
+    </g>
+  </g>
+</svg>
