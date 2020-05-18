@@ -136,6 +136,7 @@ h4 {
 h5 {
     font: var(--main-font-family);
     font-size: 1em;
+    color: var(--dark-blue);
 }
 
 /*There is nothing you can do to validate vendor extensions except to not use them.*/

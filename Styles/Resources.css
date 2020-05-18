@@ -1,9 +1,6 @@
 @import "All.css";
 
-*{
-    
-    margin:0;
-}
+
 
 :root {
     --main-purple: #332285;
@@ -20,28 +17,42 @@
     --h2-font-size: 2em;
 }
 
+ul.nav-area{
+    margin:0;
+}
+
 body{
     max-width: 90%;
     margin: auto;
 }
 
+[role=contentinfo] dt {
+    font-weight: 700;
+}
+ 
+h5 {
+    font: var(--main-font-family);
+    font-size: 1.5em;
+    color: var(--dark-blue);
+}
+
+h6{
+    font: var(--main-font-family);
+    font-size: 1.2em;
+    color: var(--dark-blue);
+}
+
+p{
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.bold{
+    font-weight: bold;
+}
+
 section {
     padding-top: 50px;
-}
-
-.remarks {
-    max-width: 100%;
-}
-
-.measures img {
-    height: 100px;
-    justify-content: center;
-}
-
-.measures {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
 }
 
 img{
@@ -50,30 +61,9 @@ img{
     justify-content: center;
 }
 
-.icon {
-    flex: 50%;
-    max-width: 40%;
-    padding-right: 10%;
-}
-
-.icon {
-    margin-top: 3%;
-}
-
-.pic img {
-    margin-top: 3%;
-}
-
-.bullet a {
-    color: var(--main-purple);
-}
-
-footer img {
-    max-width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
+img.big-picture{
+    max-width: 60%;
+    height: 30%;
 }
 
 ol{
@@ -82,6 +72,11 @@ ol{
 ol li a{
     color:var(--main-blue);
 
+}
+
+.menu-info{
+    margin-left: -5.6%;
+    width: 111.1%;
 }
 
 @media screen and (max-width: 1024px) {
