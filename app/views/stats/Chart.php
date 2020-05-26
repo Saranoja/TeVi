@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<?php 
-include_once "../StatsControllers/headInit.php";
-include_once "../StatsControllers/menuInit.php";
-include_once "../StatsControllers/modalInit.php";
-?>
 <html lang="en">
     <head>
         <title> TeVi - Statistics Page </title>
         <?php getBaseHead(); ?>
-        <link rel="stylesheet" href="../styles/Chart.css">
-        <link rel="stylesheet" href="../styles/ChartsStyle.css">
-        <script src="js/mobileMenu.js"></script>
+        <link rel="stylesheet" href="http://localhost/TeVi/public/style/Chart.css">
+        <link rel="stylesheet" href="http://localhost/TeVi/public/style/ChartsStyle.css">
+        <script src="http://localhost/TeVi/public/js/mobileMenu.js"></script>
     </head>
     <body id="whole_body">    
         <?php getMenuInfo(); initModal(); ?>
@@ -46,7 +41,6 @@ include_once "../StatsControllers/modalInit.php";
 
 
                 if(strcmp($chartChoice,$pie_chart)==0) {
-                          include "../Charts/Temp.php";
                           getChart($groupBy);
             ?>
                 <main>
@@ -84,7 +78,7 @@ include_once "../StatsControllers/modalInit.php";
                             <div id="chartdiv"></div>
                         </main>
             <?php } else if (strcmp($chartChoice, $bubbles)==0) { 
-                    include "./Charts/BubblesChart.js";  ?>
+                    include "../Charts/BubblesChart.js";  ?>
                         <main>
                             <h3> Results for your request: </h3>
                             <div id="chartdiv"></div>

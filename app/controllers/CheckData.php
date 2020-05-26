@@ -6,9 +6,8 @@
  * */
 
 class CheckData extends Controller {
-    function default(){
+    function index(){
         
     }
 }
-
 ?>

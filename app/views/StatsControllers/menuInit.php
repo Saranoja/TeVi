@@ -1,11 +1,11 @@
 <?php
 function getMenuInfo() { ?>
     <div class="menu-info">
-        <img class="img-logo" src="Styles/Backgrounds/LOGO.svg">
+        <img class="img-logo" src="http://localhost/TeVi/public/style/Backgrounds/LOGO.svg">
         <ul class="nav-area">
-            <li><a href="../about/HomePage.php">home</a></li>
-            <li><a href="../stats/StatsV2.php">statistics</a></li>
-            <li><a href="../res/Resources.php">resources</a></li>
+            <li><a href="http://localhost/TeVi/public/Home/index">home</a></li>
+            <li><a href="http://localhost/TeVi/public/Stats/index">statistics</a></li>
+            <li><a href="http://localhost/TeVi/public/Resources/index">resources</a></li>
         </ul>
     </div>
 <?php

@@ -1,98 +1,83 @@
 <!DOCTYPE html>
-<?php 
-include_once "../StatsControllers/criteriaWrap.php";
-include_once "../StatsControllers/filtersWrap.php";
-include_once "../StatsControllers/mobileWrap.php";
-include_once "../StatsControllers/sortWrap.php";
-include_once "../StatsControllers/headInit.php";
-include_once "../StatsControllers/menuInit.php";
-include_once "../StatsControllers/modalInit.php";
-?>
 <html lang="en">
     <head>
-        <title> TeVi - Statistics Page </title>
+        <title> TeVi - Statistics </title>
         <?php getBaseHead(); ?>
-        <link rel="stylesheet" href="../styles/StatsV2.css">
-        <script src="js/mobileMenu.js"></script>
-        <script src="js/CollapsedFilter.js"></script>
+        <link rel="stylesheet" href="http://localhost/TeVi/public/style/StatsV2.css">
+        <script src="http://localhost/TeVi/public/js/mobileMenu.js"></script>
+        <script src="http://localhost/TeVi/public/js/CollapsedFilter.js"></script>
     </head>
     <body>
         <?php getMenuInfo();?>  
        
         <div class="wrapper">
           <div class="model-hierarchy">
-               <img src="../styles/HierarchyModel/step1.svg">
+               <img src="http://localhost/TeVi/public/img/HierarchyModel/step1.svg">
             </div>
   
            <div class="chart-container">
               <div class="pie-chart">
-                <img src="../styles/HierarchyModel/Piechart.svg">
+                <img src="http://localhost/TeVi/public/img/HierarchyModel/Piechart.svg">
             </div>
 
            <div class="map-chart">
-              <img src="../styles/HierarchyModel/mapChart.png">
+              <img src="http://localhost/TeVi/public/img/HierarchyModel/mapChart.png">
              </div>
          
            <div class="table-chart">
-            <img src="../styles/HierarchyModel/tableChart.svg">
+            <img src="http://localhost/TeVi/public/img/HierarchyModel/tableChart.svg">
               </div>
      
         <div class="bars-chart">
-              <img src="../styles/HierarchyModel/barsChart.svg">
+              <img src="http://localhost/TeVi/public/img/HierarchyModel/barsChart.svg">
               </div>
      
       </div>
 
           
-<form action="StatsStep2.php" method="post" class="check-box" name="check-box">
-  <input id="a" type="radio" name="hopping" value="Pie" checked>
-  <label for="a"><span></span>Pie Chart</label>
-  <input id="b" type="radio" name="hopping" value="Map">
-  <label for="b"><span></span>Map Chart</label>
-  <input id="c" type="radio" name="hopping" value="Table">
-  <label for="c"><span></span>Table Chart</label>
-  <input id="d" type="radio" name="hopping" value="Bars">
-  <label for="d"><span></span>Bars Chart</label>
-  <div class="worm">
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-    <div class="worm__segment"></div>
-  </div>
-<button  class="next-button" name="Result" type="submit"></button>
-
-
-</form>
-
+      <form action="http://localhost/TeVi/public/Stats/Step2" method="post" class="check-box" name="check-box">
+        <input id="a" type="radio" name="hopping" value="Pie" checked>
+        <label for="a"><span></span>Pie Chart</label>
+        <input id="b" type="radio" name="hopping" value="Map">
+        <label for="b"><span></span>Map Chart</label>
+        <input id="c" type="radio" name="hopping" value="Table">
+        <label for="c"><span></span>Table Chart</label>
+        <input id="d" type="radio" name="hopping" value="Bars">
+        <label for="d"><span></span>Bars Chart</label>
+        <div class="worm">
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
+          <div class="worm__segment"></div>
         </div>
-      
-
-            
-      </body>
+        <button  class="next-button" name="Result" type="submit"></button>
+      </form>
+    </div>          
+  </body>
 </html>

@@ -1,6 +1,4 @@
 
-
-
 *{
     margin:0;
     padding: 0;
@@ -32,18 +30,20 @@
     display: flex;
     width: 100%;
     align-items: center;
+    /*background-color: blue;*/
 
 }
 
 .model-hierarchy img{
     width: 100%;
+    /*background-color: red;*/
 }
 
 
-.next-button {
+.finish-button {
     width: 303px;
     height: 68px;
-    background-image: url("HierarchyModel/step3nextButton.svg");
+    background-image: url("http://localhost/TeVi/public/img/HierarchyModel/finishButton.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -56,7 +56,7 @@
 .back-button {
     width: 303px;
     height: 68px;
-    background-image: url("HierarchyModel/step2backButton.svg");
+    background-image: url("http://localhost/TeVi/public/img/HierarchyModel/step2backButton.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -67,24 +67,16 @@
 
 }
 
-
-.groupBy-wrapper{
+.criteria_wrap {
     display: grid;
-    grid-template-columns: repeat(3,6fr);
+    grid-template-columns: repeat(4,1fr);
     grid-auto-rows: minmax(100px, auto);
-    gap: 60px;
-    margin-left: 30px;
+    gap: 30px;
+    align-items: center;
 }
 
-.groupBy-wrapper p{
-    font-weight: bold;
+.criteria_wrap div p {
     letter-spacing: 1px;
     color: var(--darkest-blue);
     font-size: x-large;
-
 }
-/*
-.chartchoice {
-    display: none;
-}
-*/

@@ -1,4 +1,4 @@
-@import "./js/StickyNav.js";
+@import "../js/StickyNav.js";
 
 :root {
     --main-purple: #332285;

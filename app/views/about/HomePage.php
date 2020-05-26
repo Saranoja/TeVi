@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <?php 
-include_once "../StatsControllers/headInit.php";
-include_once "../StatsControllers/menuInit.php";
-include_once "../StatsControllers/modalInit.php";
+//include_once "../StatsControllers/headInit.php";
+//include_once "../StatsControllers/menuInit.php";
+//include_once "../StatsControllers/modalInit.php";
 ?>
 <html lang="en">
     <head>
         <title> TeVi - Home Page </title>
         <?php getBaseHead(); ?>
-        <link rel="stylesheet" href="../styles/HomePage.css">
-        <script src="js/mobileMenu.js"></script>
+        <link rel="stylesheet" href="http://localhost/TeVi/public/style/HomePage.css">
+        <script src="http://localhost/TeVi/public/js/mobileMenu.js"></script>
     </head>
     <body id="whole_body">
         <?php getMenuInfo(); initModal(); ?>
@@ -28,13 +28,13 @@ include_once "../StatsControllers/modalInit.php";
                     <p> But how many people die from terrorism relative to other causes? How often do these attacks happen, who makes them happen and what do they use? </p>
                 </div>
                 <div class="pic">
-                    <img src="../img/undraw_statistic_chart_38b6.svg" alt="DataAnalysis">
+                    <img src="http://localhost/TeVi/public/img/undraw_statistic_chart_38b6.svg" alt="DataAnalysis">
                 </div>
             </section>
             <section class="team">
                 <div class="first_column">
                     <div class="pic">
-                        <img src="../img/undraw_online_transactions_02ka.svg" alt="DataAnalysis">
+                        <img src="http://localhost/TeVi/public/img/undraw_online_transactions_02ka.svg" alt="DataAnalysis">
                     </div>
                 </div>
                 <div class="second_column">
@@ -51,7 +51,7 @@ include_once "../StatsControllers/modalInit.php";
                 </div>
                 <div class="second_column">
                     <div class="pic">
-                        <img src="../img/undraw_work_together_h63l.svg" alt="DataAnalysis">
+                        <img src="http://localhost/TeVi/public/img/undraw_work_together_h63l.svg" alt="DataAnalysis">
                     </div>
                 </div>
             </section>
@@ -66,9 +66,9 @@ include_once "../StatsControllers/modalInit.php";
                                 Irina Calin 🕵️‍♀️:
                             </h5>
                             <div class='social_links'>
-                                <a href="https://www.linkedin.com/in/irina-c-4aa058115/" target="_blank" class='img_link w-inline-block'> <img src='../img/linkedin.png' alt="linkedin"> </a>
-                                <a href="https://github.com/Saranoja" target="_blank" class='img_link w-inline-block'> <img src='../img/git.png' alt="github"> </a>
-                                <a href="https://www.facebook.com/irina.psqa" target="_blank" class='img_link w-inline-block'> <img src='../img/facebook.png' alt="facebook"> </a>
+                                <a href="https://www.linkedin.com/in/irina-c-4aa058115/" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/linkedin.png' alt="linkedin"> </a>
+                                <a href="https://github.com/Saranoja" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/git.png' alt="github"> </a>
+                                <a href="https://www.facebook.com/irina.psqa" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/facebook.png' alt="facebook"> </a>
                             </div>
                         </div>
                         <div class="social_victor">
@@ -76,8 +76,8 @@ include_once "../StatsControllers/modalInit.php";
                                 Victor-Ionut Platon 🕵️‍♂️:
                             </h5>
                             <div class='social_links'>
-                                <a href="https://github.com/Victronic" target="_blank" class='img_link w-inline-block'> <img src='../img/git.png' alt="github"> </a>
-                                <a href="https://www.facebook.com/victor.platon.5686" target="_blank" class='img_link w-inline-block'> <img src='../img/facebook.png' alt="facebook"> </a>
+                                <a href="https://github.com/Victronic" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/git.png' alt="github"> </a>
+                                <a href="https://www.facebook.com/victor.platon.5686" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/facebook.png' alt="facebook"> </a>
                             </div>
                         </div>
                         <div class="social_bogdan">
@@ -85,8 +85,8 @@ include_once "../StatsControllers/modalInit.php";
                                 Bogdan-Mihail Peltea 🕵️‍♂️:
                             </h5>
                             <div class='social_links'>
-                                <a href="https://github.com/BogdanMhi" target="_blank" class='img_link w-inline-block'> <img src='../img/git.png' alt="github"> </a>
-                                <a href="https://www.facebook.com/mhibogdan" target="_blank" class='img_link w-inline-block'> <img src='../img/facebook.png' alt="facebook"> </a>
+                                <a href="https://github.com/BogdanMhi" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/git.png' alt="github"> </a>
+                                <a href="https://www.facebook.com/mhibogdan" target="_blank" class='img_link w-inline-block'> <img src='http://localhost/TeVi/public/img/facebook.png' alt="facebook"> </a>
                             </div>
                         </div>
                     </div>

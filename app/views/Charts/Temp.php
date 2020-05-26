@@ -4,8 +4,6 @@
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
 <?php 
-include_once "../../core/database/Database.php";
-include_once "Controllers/PieChartController.php";
 
 function getChart($param) {
 $db = Database::getInstance();

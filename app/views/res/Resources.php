@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<?php 
-include_once "../StatsControllers/headInit.php";
-include_once "../StatsControllers/menuInit.php";
-include_once "../StatsControllers/modalInit.php";
-?>
 <html lang="en">
     <head>
         <title> TeVi - Resources </title>
         <?php getBaseHead(); ?>
-        <link rel="stylesheet" href="../styles/Resources.css">
-        <script src="js/mobileMenu.js"></script>
+        <link rel="stylesheet" href="http://localhost/TeVi/public/style/Resources.css">
+        <script src="../js/mobileMenu.js"></script>
     </head>
     <body id="whole_body">
         <?php getMenuInfo(); initModal(); ?>

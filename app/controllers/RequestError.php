@@ -9,9 +9,9 @@ class RequestError extends Controller {
     /**
      * @return respose
      */
-    function default() {
-        return $this->response;
+    function index() {
         echo 'Request Error';
+        return $this->response;
     }
 }
 
