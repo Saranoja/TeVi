@@ -1,6 +1,6 @@
 <?php
-/*
-* Mysql database class - singleton
+/**
+ * Mysql database class - singleton
 */
 class Database {
 	private $_connection;
@@ -10,7 +10,7 @@ class Database {
 	private $_password = "";
 	private $_database = "tevi";
 
-	/*
+	/**
 	Get an instance of the Database
 	@return Instance
 	*/

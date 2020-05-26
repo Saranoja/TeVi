@@ -1,0 +1,134 @@
+@import "All.css";
+
+
+
+:root {
+    --main-purple: #332285;
+    --light-purple: #D7D5FF;
+    --main-blue: #0090FF;
+    --dark-blue: #0050AB;
+    --darkest-blue: #0a0283;
+    --white-text: #FFFFFF;
+    --purplish-text: #c0abf1;
+    --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
+    --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
+    --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
+    --h1-font-size: 4em;
+    --h2-font-size: 2em;
+}
+
+ul.nav-area{
+    margin:0;
+}
+
+body{
+    max-width: 90%;
+    margin: auto;
+}
+
+[role=contentinfo] dt {
+    font-weight: 700;
+}
+ 
+h5 {
+    font: var(--main-font-family);
+    font-size: 1.5em;
+    color: var(--dark-blue);
+}
+
+h6{
+    font: var(--main-font-family);
+    font-size: 1.2em;
+    color: var(--dark-blue);
+}
+
+p{
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.bold{
+    font-weight: bold;
+}
+
+section {
+    padding-top: 50px;
+}
+
+img{
+    max-width: 40%;
+    height: 100px;
+    justify-content: center;
+}
+
+img.big-picture{
+    max-width: 60%;
+    height: 30%;
+}
+
+ol{
+    list-style: none;
+}
+ol li a{
+    color:var(--main-blue);
+
+}
+
+.menu-info{
+    margin-left: -5.6%;
+    width: 111.1%;
+}
+
+@media screen and (max-width: 1024px) {
+    .menu-info {
+        display: none;
+    }
+    
+    .mobile-menu{
+        display: unset;
+        width: 30px;
+        height: 30px;
+        background-image: url("Backgrounds/menu-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-color: transparent;
+        border:0;
+        text-decoration: none;
+        margin-top: 20px;
+        float: right;
+        margin-right: 40px;
+    }
+
+    img {
+        padding-top: 20px;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+
+
+}
+
+@media screen and (min-width: 377px) and (max-width: 805px)
+{
+
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1250px) {
+
+
+}
+
+@media screen and (min-width: 1400px)
+{
+    p { 
+        font-size:1.5vw;
+    }
+
+    .navigation {
+        font-size:1.5vw;
+    }
+}

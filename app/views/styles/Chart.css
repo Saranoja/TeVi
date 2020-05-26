@@ -1,0 +1,47 @@
+@import "All.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-purple: #332285;
+    --light-purple: #D7D5FF;
+    --main-blue: #0090FF;
+    --dark-blue: #0050AB;
+    --darkest-blue: #0a0283;
+    --white-text: #FFFFFF;
+    --purplish-text: #c0abf1;
+    --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
+    --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
+    --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
+    --h1-font-size: 4em;
+    --h2-font-size: 2em;
+}
+
+h3 {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+    .menu-info {
+        display: none;
+    }
+    
+    .mobile-menu{
+        display: unset;
+        width: 30px;
+        height: 30px;
+        background-image: url("Backgrounds/menu-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-color: transparent;
+        border:0;
+        text-decoration: none;
+        margin-top: 20px;
+        float: right;
+        margin-right: 40px;
+    }
+}
