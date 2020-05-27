@@ -7,6 +7,7 @@ require_once 'core/App.php';
 require_once 'core/Model.php';
 require_once 'core/Controller.php';
 require_once 'core/database/Database.php';
+
 require_once 'views/StatsControllers/headInit.php';
 require_once 'views/StatsControllers/menuInit.php';
 require_once 'views/StatsControllers/modalInit.php';

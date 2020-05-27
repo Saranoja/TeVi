@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php 
-//include_once "../StatsControllers/headInit.php";
-//include_once "../StatsControllers/menuInit.php";
-//include_once "../StatsControllers/modalInit.php";
-?>
 <html lang="en">
     <head>
         <title> TeVi - Home Page </title>
