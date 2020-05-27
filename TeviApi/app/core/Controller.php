@@ -1,0 +1,28 @@
+<?php
+/** 
+ * @author Calin Irina 
+ * */
+
+class Controller {
+    protected $response;
+    protected $body;
+
+    function __construct() {
+        $this->response['status'] = 405;
+        $this->response['body'] = null;
+    }
+
+    protected function service($service, $data) {
+        require_once '../app/services/' . $service . '.php';
+        return new $service($data);
+    }
+
+    /**
+     * @return formatted string
+     * htmlspecialchars converts special characters to HTML entities
+     * stripslashes un-quotes a quoted string
+     */
+    protected function sanitizeString($string) {
+        return htmlspecialchars(stripslashes(trim($string)));
+    }
+}
