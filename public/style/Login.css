@@ -73,3 +73,9 @@ body{
 .box input[type="submit"]:hover{
     background:var(--purplish-text);
 }
+
+.box a{
+    display: block;
+    color: var(--white-text);
+    margin-bottom: 10px;
+}
