@@ -19,15 +19,37 @@ class Attack extends Model {
 
     }
 
-    public function read($data) {
+    public function read($params, $values) {
+
+    }
+
+    /**
+     * @param data in json
+     * @return httpresponse
+     */
+
+    public function filter($data) {
         $obj = new Query($data);
         $query = $obj->query;
         $this->result = mysqli_query($this->connection, $query);
         $this->response = array();
 
-        while ($row = mysqli_fetch_assoc($this->result))
-        {
-            $this->response[] = $row;
+        try {
+            if($this->result == false)
+            {
+                $res['body'] = "Database error. Your query makes no sense";
+                $res['status'] = 404;
+                return $res;
+            }
+            else
+                while ($row = mysqli_fetch_assoc($this->result))
+                {
+                    $this->response[] = $row;
+                }
+        } catch (Exception $e) {
+            $res['body'] = "Unexpected database error";
+            $res['status'] = 404;
+            return $res;
         }
 
         $json = json_encode($this->response);

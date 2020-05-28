@@ -11,8 +11,8 @@ class Database {
 	private $_database = "tevi";
 
 	/**
-	Get an instance of the Database
-	@return Instance
+	* Get an instance of the Database
+	* @return Instance
 	*/
 	public static function getInstance() {
 		if(!self::$_instance) {

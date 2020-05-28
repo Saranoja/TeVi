@@ -9,7 +9,7 @@ class RequestError extends Controller {
     /**
      * @return respose
      */
-    function default($data=[]) {
+    function default($data) {
         //echo 'Request Error';
         return $this->response;
     }

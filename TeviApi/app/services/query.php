@@ -12,16 +12,16 @@
 
     public function __construct($data) {
 
-        //$data = json_decode($json, true);
-
         $select_arr = array();
         $where_arr = array();
         $group_arr = array();
         
-        $select_arr = $data["selectColumns"];
-        $where_arr = $data["whereConditions"];
-        $group_arr = $data["groupByColumns"];
+        $select_arr = $data["select"];
+        $where_arr = $data["where"];
+        $group_arr = $data["groupBy"];
+        $limit = $data["limit"];
         
+
         $select = array();
         $where_columns = array();
         $where_operators = array();
@@ -65,12 +65,13 @@
         if($group_expr!=null)
             $optional2 = " GROUP BY " . $group_expr;
         
-        $this->query = $mandatory . $optional  . $optional2 . " LIMIT 10";
+        $this->query = $mandatory . $optional  . $optional2 . " LIMIT " . $limit;
     }
 }
 
 /* $json = '{
-    "selectColumns":
+    "limit": "100",
+    "select":
         [{
             "column":"country"
         },
@@ -80,7 +81,7 @@
         {
             "column":"attack_type"
         }],
-    "whereConditions":
+    "where":
         [{
             "column":"country",
             "operator":"=",
@@ -96,7 +97,7 @@
             "operator":"=",
             "value":"0"
         }],
-    "groupByColumns":
+    "groupBy":
         [{
             "column":"country"
         },
@@ -104,3 +105,26 @@
             "column":"year"
         }]
 }';*/
+
+/*
+{
+    "limit": "100",
+    "select":
+        [{
+            "column":"sum(total_fatalities)"
+        },
+        {
+            "column":"country"
+        }],
+    "where":
+        [{
+        	"column":"year",
+            "operator":">",
+            "value":"2006"
+        }],
+    "groupBy":
+        [{
+            "column":"country"
+        }]
+}
+*/

@@ -11,9 +11,15 @@ header("Content-Type: application/json; charset=UTF-8");
 class Get {
     private $response;
 
-    public function get($data) {
+    public function filter($data) {
         $attack = new Attack;
-        $this->response = $attack->read($data);
+        $this->response = $attack->filter($data);
+        return $this->response;
+    }
+
+    public function get($params, $values) {
+        $attack = new Attack;
+        $this->response = $attack->filter($values);
         return $this->response;
     }
 }
