@@ -17,7 +17,7 @@
     --h2-font-size: 2em;
 }
 
-ul.nav-area{
+.nav-area{
     margin:0;
 }
 
@@ -60,11 +60,22 @@ img{
     height: 100px;
     justify-content: center;
 }
-
-img.big-picture{
+img:hover {
+    width: 500px;
+    height: 400px;
+}
+.big-picture{
     max-width: 60%;
     height: 30%;
 }
+.long-img{
+    max-width: 100%;
+}
+.long-img:hover{
+    width: 70%;
+    height: 150px;
+}
+
 
 ol{
     list-style: none;

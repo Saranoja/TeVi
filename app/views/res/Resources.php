@@ -43,7 +43,14 @@
                                 <li><a href="#validation"><span>3.1.6</span> Validation</a></li> 
                             </ol>
                         </li>
-                        <li><a href="#interaction"><span>3.2</span> User interaction</a></li>
+                        <li>
+                            <a href="#interaction"><span>3.2</span> User interaction</a>
+                            <ol role="directory">
+                                <li><a href="#mobile_nav_bar"><span>3.2.1</span> Modal Window</a></li>
+                                <li><a href="#scroll_view"><span>3.2.2</span> Scroll</a></li>
+                                <li><a href="#buttons"><span>3.2.3</span> Buttons</a></li>
+                            </ol>
+                        </li>
                         <li>
                             <a href="#remarks"><span>3.3</span> Remarks regarding our design</a>
                             <ol role="directory">
@@ -262,7 +269,46 @@
             </section>
             <section id="interaction">
                 <h4><span>3.2</span> User interaction</h4>
-                <p></p>
+                <p>
+                    This section describes various features that allow authors to enable users to edit documents and
+                    parts of documents interactively.
+                </p>
+                <section id="mobile_nav_bar">
+                    <h5><span>3.2.1</span> Modal Window</h5>
+                    <img class="big-picture" src="../img/Menu_button.PNG" alt="Mobile menu icon">
+                    <p>
+                        A modal window requires users to interact with it in some way before they can
+                        return to the system.
+                    </p>
+                    <p>
+                        Although it's only for mobile users, our website has a special navigation menu for them.
+                        By clicking on the right-top button, a menu will be displayed from which the user can 
+                        selec the page on which he/she wants to go.
+                    </p>
+                    <img class="big-picture" src="../img/Mobile_Menu.PNG" alt="Mobile menu icon">
+                </section>
+                <section id="scroll_view">
+                    <h5><span>3.2.2</span> Scrolling elements into view</h5>
+                    <p>
+                        The resource page allows the user to go directly to it's topic of interest. By clicking on 
+                        one of the elements in the list at the top of the screen the page current playback
+                        position will move to the start of the given element.
+                    </p>
+                    <img class="big-picture" src="../img/Scroll_list.PNG" alt="Mobile menu icon">
+                </section>
+                <section id="buttons">
+                    <h5><span>3.2.3</span> Buttons</h5>
+                    <p>
+                        Our website has the usual navigation buttons, whichs allow the user to move bettwen pages:
+                    </p>
+                    <img src="../img/Home.PNG" alt="Mobile menu icon">
+                    <p>
+                        Also it has buttons at the bottom of the Home page, at the footer of the page,
+                        which will lead to an external page for each member of the project:
+                    </p>
+                    <img class="long-img" src="../img/Social.PNG" alt="Mobile menu icon">
+                </section>
+
             </section>
             <section id="remarks">
                 <h4><span>3.3</span> Remarks regarding our design</h4>
@@ -350,7 +396,119 @@
             <p></p>
             <section id="arhitecture">
                 <h4><span>4.1</span> Architecture</h4>
-                <p></p>
+                <p>
+                    Our project it's composed by 2 things: the TeVi, the app itself,
+                    and the TeViAPI, the from scratch api of our application.
+                </p>
+                <img class="long-img" src="../img/Arhitecture/2apps.PNG" alt="Main Components">
+                <section id="TeVi">
+                    <h5><span>4.1.1</span> TeVi</h5>
+                    <p>
+                        In the TeVi folder we have our main app and a public version for users.
+                        We used this method for security purpouse, so that we are the only ones who can acces the back code,
+                        while a uses will have the public folder at their disposal for the app.
+                    </p>
+                    <img class="long-img" src="../img/Arhitecture/Main_Structure.PNG" alt="TeVi">
+                    <section id="public">
+                        <h6><span>4.1.1.1</span> Public</h6>
+                        <p>
+                            The public folder contains the design elements such as used images, styles and javascripts.
+                            It also includes the index.php file which builds all the application.
+                        </p>
+                        <img class="long-img" src="../img/Arhitecture/public.PNG" alt="public">
+                        <p>Inside the index.php their is just a method that builds the application:</p>
+                        <img class="long-img" src="../img/Arhitecture/index.PNG" alt="index">
+                        <p>
+                            In order for this to work we included the core components of the app folder by
+                            requiring the <a href="#init">init.php</a> file from it. From now on it's the app job to ensure the functionality of the website.
+                        </p>
+                    </section>
+                    <section id="app">
+                        <h6><span>4.1.1.2</span> App</h6>
+                        <p>
+                            The app folder contains our application/project. It uses the MVC structure for
+                            efficiency and performance. 
+                        </p>
+                        <img class="big-picture" src="../img/Arhitecture/app.PNG" alt="app">
+                        <section id="init">
+                            <h6><span>4.1.1.2.1</span> Init</h6>
+                            <p>
+                                The init.php file is used initiate all the components of the app so each page can access and use them: 
+                            </p>
+                            <img class="big-picture" src="../img/Arhitecture/init.PNG" alt="init">
+                        </section>
+                        <section id="core">
+                            <h6><span>4.1.1.2.2</span> Core</h6>
+                            <p>
+                               The core folder is the, well, core of the application. In here we have a database folder
+                               that contains the files which helps the app communicate with the database.It also has
+                               the most important files: 
+                            </p>
+                            <ul>
+                                <li>App, which is responsible for accessing each page</li>
+                                <li>Controller, which bassically tells the application what to show</li>
+                                <li>Model, which makes the functionality of the app, regarding the database services</li>
+                            </ul>
+                            <img class="long-img" src="../img/Arhitecture/Core.PNG" alt="Core">
+                            <p>
+                                Each time a new url is written, the App deconstructs that url,
+                                verify it is exists in one of the controllers, call that controller with the specific method and params.
+                            </p>
+                            <img class="big-picture" src="../img/Arhitecture/APP_code.PNG" alt="App">
+                            <p>Each controller uses the main Controller file. It has methods for displayin a view, use a model etc...</p>
+                            <img class="big-picture" src="../img/Arhitecture/Controller_code.PNG" alt="Controller">
+                        </section>
+                        <section id="views">
+                            <h6><span>4.1.1.2.3</span> Views</h6>
+                            <p>
+                                The views are what is shown on the website. 
+                                Each page that the user sees and which with he can interact is written here.
+                            </p>
+                            <img class="big-picture" src="../img/Arhitecture/views.PNG" alt="views">
+                            <ul>
+                                <li>about, contains the home page</li>
+                                <li>charts, contains the charts that are showned when the user selects some options</li>
+                                <li>login, is the login page, from which the user signs in</li>
+                                <li>Regis, is the register page where someone can create an account</li>
+                                <li>res, is the page where you are now, full of informtion about the site</li>
+                                <li>start, is the first page of the website, where a user will be redirected</li>
+                                <li>stats, contains the statistics page from which the user can select what he wants to generate</li>
+                                <li>statsControllers, this might confuse you, but this folder has files that help us build the views much easily
+                                    using php methods
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="controllers">
+                            <h6><span>4.1.1.2.3</span> Controllers</h6>
+                            <p>
+                                Controllers are responsible for what the website shows. They usually have just 1 method,
+                                that redirects the browser to a view:
+                            </p>
+                            <img  src="../img/Arhitecture/Start_controller.PNG" alt="starts">
+                            <p>
+                                Each of this controllers extend the main Controller class. After the App calls a controller, they use 
+                                the methods in the main Controllers class in order to display their conresponding view.
+                            </p>
+                        </section>
+                        <section id="models">
+                            <h6><span>4.1.1.2.3</span> Models</h6>
+                            <p>In progress...
+                            </p>
+                        </section>
+                        <section id="services">
+                            <h6><span>4.1.1.2.3</span> Services</h6>
+                            <p> In progress..
+                            </p>
+                        </section>
+                    </section>
+                </section>
+                <section id="TeViAPI">
+                    <h5><span>4.1.2</span> TeViAPI</h5>
+                    <p>
+                        In progress...
+                    </p>
+                    
+                </section>
             </section>
             <section id="stages">
                 <h4><span>4.2</span> Intermediate stages of project development</h4>
