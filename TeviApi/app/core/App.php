@@ -21,10 +21,10 @@ class App {
 
         switch($this->request_method) {
             case 'GET':
-                $this->controller = 'Display';
+                $this->controller = 'Attack';
             break;
             case 'POST':
-                $this->controller = 'Attack';
+                $this->controller = 'Display';
             break;
             default:
                 $this->controller = 'RequestError';

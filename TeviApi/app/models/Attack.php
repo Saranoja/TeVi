@@ -64,7 +64,7 @@ class Attack extends Model {
 json structure: 
 
 $json = '{
-    "selectColumns":
+    "select":
         [{
             "column":"country"
         },
@@ -74,7 +74,7 @@ $json = '{
         {
             "column":"attack_type"
         }],
-    "whereConditions":
+    "where":
         [{
             "column":"country",
             "operator":"=",
@@ -90,7 +90,7 @@ $json = '{
             "operator":"=",
             "value":"0"
         }],
-    "groupByColumns":
+    "groupBy":
         [{
             "column":"country"
         },

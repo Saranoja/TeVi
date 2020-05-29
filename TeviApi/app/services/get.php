@@ -17,7 +17,7 @@ class Get {
         return $this->response;
     }
 
-    public function get($params, $values) {
+    public function get($values) {
         $attack = new Attack;
         $this->response = $attack->filter($values);
         return $this->response;

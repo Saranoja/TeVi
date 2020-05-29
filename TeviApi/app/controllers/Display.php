@@ -6,8 +6,8 @@
 
 class Display extends Controller {
     function default($data) {
-        $this->response['status'] = $this->service('get', $data)->get($data)['status'];
-        $this->response['body'] = $this->service('get', $data)->get($data)['body'];
+        $this->response['status'] = $this->service('get', $data)->filter($data)['status'];
+        $this->response['body'] = $this->service('get', $data)->filter($data)['body'];
         return $this->response;
     }
 }
