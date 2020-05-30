@@ -65,12 +65,44 @@
                 <li>
                     <a href="#projectProgress"><span>4.</span> Project progress</a>
                     <ol>
-                        <li><a href="#arhitecture"><span>4.1</span> Overall architecture</a></li>
+                        <li>
+                            <a href="#arhitecture"><span>4.1</span> Overall architecture</a>
+                            <ol role="directory">
+                                <li>
+                                    <a href="#TeVi"><span>4.1.1</span> TeVi</a>
+                                    <ol role="directory">
+                                        <li><a href="#public"><span>4.1.1.1</span> Public</a></li>
+                                        <li>
+                                            <a href="#app"><span>4.1.1.2</span> App</a>
+                                            <ol role="directory">
+                                                <li><a href="#init"><span>4.1.1.2.1</span> Init</a></li>
+                                                <li><a href="#core"><span>4.1.1.2.2</span> Core</a></li>
+                                                <li><a href="#views"><span>4.1.1.2.3</span> Views</a></li>
+                                                <li><a href="#controllers"><span>4.1.1.2.4</span> Controllers</a></li>
+                                                <li><a href="#model"><span>4.1.1.2.5</span> Models</a></li>
+                                                <li><a href="#services"><span>4.1.1.2.6</span> Services</a></li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li><a href="#TeViAPI"><span>4.1.2</span> TeViAPI</a></li>
+                            </ol>
+                        </li>
                         <li><a href="#stages"><span>4.2</span> Intermediate stages of project development</a></li>
                         <li><a href="#howToUse"><span>4.3</span> How to use the chosen source code management system</a></li>
                     </ol> 
                 </li>
-                <li><a href="#guide"><span>5.</span> User guide</a></li>
+                <li>
+                    <a href="#guide"><span>5.</span> User guide</a>
+                    <ol role="directory">
+                        <li><a href="#guide_register"><span>5.1</span> Registration</a></li>
+                        <li><a href="#guide_login"><span>5.2</span> Login</a></li>
+                        <li><a href="#guide_start"><span>5.3</span> Start</a></li>
+                        <li><a href="#guide_homePage"><span>5.4</span> HomePage</a></li>
+                        <li><a href="#guide_statistics"><span>5.5</span> Statistics</a></li>
+                        <li><a href="#guide_resources"><span>5.6</span> Resources</a></li>
+                    </ol>
+                </li>
                 <li><a href="#acknowledgements"><span>6.</span> Acknowledgements</a></li>
                 <li><a href="#references"><span>7.</span> References</a></li>
             </ol>
@@ -431,14 +463,14 @@
                         </p>
                         <img class="big-picture" src="../img/Arhitecture/app.PNG" alt="app">
                         <section id="init">
-                            <h6><span>4.1.1.2.1</span> Init</h6>
+                            <h7><span>4.1.1.2.1</span> Init</h7>
                             <p>
                                 The init.php file is used initiate all the components of the app so each page can access and use them: 
                             </p>
                             <img class="big-picture" src="../img/Arhitecture/init.PNG" alt="init">
                         </section>
                         <section id="core">
-                            <h6><span>4.1.1.2.2</span> Core</h6>
+                            <h7><span>4.1.1.2.2</span> Core</h7>
                             <p>
                                The core folder is the, well, core of the application. In here we have a database folder
                                that contains the files which helps the app communicate with the database.It also has
@@ -459,7 +491,7 @@
                             <img class="big-picture" src="../img/Arhitecture/Controller_code.PNG" alt="Controller">
                         </section>
                         <section id="views">
-                            <h6><span>4.1.1.2.3</span> Views</h6>
+                            <h7><span>4.1.1.2.3</span> Views</h7>
                             <p>
                                 The views are what is shown on the website. 
                                 Each page that the user sees and which with he can interact is written here.
@@ -479,7 +511,7 @@
                             </ul>
                         </section>
                         <section id="controllers">
-                            <h6><span>4.1.1.2.3</span> Controllers</h6>
+                            <h7><span>4.1.1.2.4</span> Controllers</h7>
                             <p>
                                 Controllers are responsible for what the website shows. They usually have just 1 method,
                                 that redirects the browser to a view:
@@ -491,12 +523,12 @@
                             </p>
                         </section>
                         <section id="models">
-                            <h6><span>4.1.1.2.3</span> Models</h6>
+                            <h7><span>4.1.1.2.5</span> Models</h7>
                             <p>In progress...
                             </p>
                         </section>
                         <section id="services">
-                            <h6><span>4.1.1.2.3</span> Services</h6>
+                            <h7><span>4.1.1.2.6</span> Services</h7>
                             <p> In progress..
                             </p>
                         </section>
@@ -522,7 +554,68 @@
 
         <section id="guide">
             <h3><span>5.</span> User guide</h3>
-            <p></p>
+            <p>
+                This section is about learning how the site works. There are instructions with images for each page
+                of the application.
+            </p>
+            <section id="guide_register">
+                <h4><span>5.1</span> Registration</h4>
+                <p>
+                    In order to make certain actions on our website you need an account. The register page is where
+                    you can create one. We need a username, that is not already taken, and a password and your account
+                    will be created.
+                </p>
+                <img class="big-picture" src="../img/Arhitecture/Register_guide.PNG" alt="Register_page">
+               <p>
+                   If you already have and account you have a button to go directly to <a href="#guide_login"> login</a>,
+                   and if you want just to see the website without much functionality, you can enter as guest.
+               </p>
+            </section>
+            <section id="guide_login">
+                <h4><span>5.2</span> Login</h4>
+                <p>
+                    If you have an account you can directly login to the website. The login interface require your username 
+                    and password. After login you will be redirected to the <a href="#guide_start"> start</a> page.
+                </p>
+                <img class="big-picture" src="../img/Arhitecture/Login_guide.PNG" alt="Login_page">
+            </section>
+            <section id="guide_start">
+                <h4><span>5.3</span> Start</h4>
+                <p>
+                    The start page is where you land on after <a href="#guide_login"> login</a>.
+                    From here you can acces on of the <a href="#guide_resources">resources</a> or <a href="#guide_statistics">statistics</a> 
+                    pages or press the Get started to go to the homepage.    
+                </p>
+                <img class="big-picture" src="../img/Arhitecture/Start_guide.PNG" alt="Start_page">
+            </section>
+            <section id="guide_homePage">
+                <h4><span>5.4</span> HomePage</h4>
+                <p>
+                    On the HomePage you can find usefull informtions about the site, such as
+                    a short summary about Terrorism and why we decided to design the website,
+                    what is the team, who are we and links to our personal pages.
+                </p>
+                <p>This page is purely for informations, a starting point for interested users, it does not have a functionality! </p>
+            </section>
+            <section id="guide_statistics">
+                <h4><span>5.5</span> Statistics</h4>
+                <p>
+                    The statistics page is the main purpose for which we designed the website.
+                    This page is composed of multiple stages, with choices that lead to your desired visualisation of data.
+                </p>
+            </section>
+            <section id="guide_resources">
+                <h4><span>5.6</span> Resources</h4>
+                <p>
+                    The Resource page is the "manual" of the website. Here you can find resources about the website.
+                    Why did we build it and how, what were the requirements, what is the arhitecture, what where the stages
+                    of project development, user guide, acknowledgements, references.
+                </p>
+                <p>
+                    With so much information we tried to keep it simple and usefull by useing a simple hierarchy, with all the information
+                    displayed at the top of the page with clickable text that takes you to the desired subject.
+                </p>
+            </section>
         </section>
 
         <section id="acknowledgements">
@@ -535,10 +628,13 @@
                 We learned a lor from the sites tutorials about HTML,CSS and much more.
             </p>
             <p>
-                A special thanks for <a href="https://www.w3.org/" target="blank">W3C</a> which has great tool for verifying and
+                A special thanks to <a href="https://www.w3.org/" target="blank">W3C</a> which has great tool for verifying and
                 correcting your html and css code.
             </p>
-
+            <p>
+                We would also like to thank the <a role="doc-ref" href="https://w3c.github.io/" target="blank"> W3C github</a> for their <a href="https://w3c.github.io/scholarly-html/" target="blank">Scholarly HTML</a> model 
+                that helped us create the resource page.
+            </p>
         </section>
 
         <section id="references">
@@ -579,6 +675,12 @@
                 <dd property="schema:citation" typeof="schema:WebPage" resource="https://web.dev/measure/">
                     <cite property="schema:name">
                         <a href="https://web.dev/measure/" target="_blank">Measure @web.dev</a>
+                    </cite>
+                </dd>
+                <dt id="Scholarly HTML">Scholarly HTML</dt>
+                <dd property="schema:citation" typeof="schema:WebPage" resource="https://w3c.github.io/scholarly-html/">
+                    <cite property="schema:name">
+                        <a href="https://w3c.github.io/scholarly-html/" target="_blank">Scholarly HTML</a>
                     </cite>
                 </dd>
                 <!-- Model
