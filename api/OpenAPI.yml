@@ -1,0 +1,50 @@
+swagger: "2.0"
+info:
+  title: TeVi - Global Terrorism Visualiser
+  description: "Tevi API routes specifications and usage"
+  version: '1.0'
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+- name: "attacks"
+  description: "Information about the global terrorist attacks in the past 50 years"
+basePath: "/TeVi/api/"
+schemes:
+- "https"
+- "http"
+paths:
+  /attacks:
+    post:
+      tags:
+      - "attack"
+      summary: "Add a new attack to the database"
+      description: ""
+      operationId: "insertAttack"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Attack object that needs to be added to the database"
+        required: true
+        schema:
+          type: object
+          properties:
+            event_id:
+              type: integer
+            summary:
+              type: string
+            success:
+              type: integer
+          example:
+            event_id: 10
+            summary: "Unknown perpetrators detonated explosive"
+            success: 1
+      responses:
+        "405":
+          description: "Invalid input"
+        "201":
+          description: "Created"
