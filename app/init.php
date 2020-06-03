@@ -28,4 +28,10 @@ require_once 'views/StatsControllers/StatsFiltersDisplay.php';
 
 require_once 'views/Charts/Temp.php';
 include_once "views/Charts/Controllers/PieChartController.php";
+
+
+
+require_once 'views/StatsControllers/criteriaWrapDB.php';
+
+
 ?>

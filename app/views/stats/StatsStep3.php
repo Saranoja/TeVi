@@ -26,7 +26,7 @@
               $chartChoice = $_POST["chartChoice"];
               
               if($chartChoice == "Pie"){
-                DisplayCriteriaWrap(); 
+                DisplayCriteriaWrapDB();
                   }
 
               if($chartChoice == "Map"){
@@ -39,11 +39,11 @@
                   }
                     
               if($chartChoice == "Table"){
-                DisplayCriteriaWrap(); 
+                DisplayCriteriaWrapDB();
                   }
               
               if($chartChoice == "Bars"){
-                DisplayCriteriaWrap(); 
+                DisplayCriteriaWrapDB();
                   }                               
 
             }

@@ -49,7 +49,7 @@
     background-size: cover;
     border: none;
     background-color: transparent;
-    margin: 100px auto;
+    margin: 0 auto;
     margin-left: 30px;
 }
 
@@ -62,8 +62,8 @@
     background-size: cover;
     border: none;
     background-color: transparent;
-    margin: 100px auto;
-     margin-left: 30px;
+    margin: 0 auto;
+    margin-left: 30px;
 
 }
 
@@ -80,3 +80,53 @@
     color: var(--darkest-blue);
     font-size: x-large;
 }
+
+
+.filter-panel {
+        display: inline-block;
+        margin-left: 2%;
+        width: 250px;
+        margin-top: 2%;
+        float: left;
+   }
+
+   .filter-panel p{
+       padding: 20px 20px 20px;
+       background-color: #B8D2FF;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       text-transform: uppercase;
+       font-weight: 700;
+       color: #385A64;
+       font-size: 15px;
+   }
+
+
+   .filter-panel ul {
+       overflow: hidden; overflow-y: scroll;
+       background-color: #edf3ff;
+       height: 250px;
+       width: 100%;
+       scroll-padding: 10px;    
+    }
+
+    .filter-panel li {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: #385A64;
+       font-size: 14px;
+       padding: 20px 0px 0px 50px;
+       font-weight: 500;
+   }
+    input[type='checkbox'] {
+        width:14px;
+        height:14px;
+        background:white;
+        border-radius:5px;
+        border:2px solid #555;
+        vertical-align: bottom;
+    }
+
+    label {
+        padding-left: 10px;
+    }
