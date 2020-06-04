@@ -224,7 +224,7 @@ paths:
       description: ""
       operationId: "updateAttackFromId"
       consumes:
-      - "multipart/form-data"
+      - "application/json"
       produces:
       - "application/json"
       parameters:
