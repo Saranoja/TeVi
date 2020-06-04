@@ -78,17 +78,29 @@ function deleteAttack(){
 }
 
 function isLoggedIn($req){
-    $allHeaders = getallheaders();
+    /*$allHeaders = getallheaders();
     if(isset($allHeaders['Authorization'])){
         return true;
-    }
+    }*/
 
-    Response::status(401);
-    Response::json([
-        "status" => 401,
-        "reason" => "You can only access if authenticated!"
-    ]);
-    return false;
+    //if(isset($_COOKIE['admin'])) {
+    //         Response::status(200);
+    //         Response::json([
+    //             "status" => 200,
+    //             "reason" => "Access granted"
+    //         ]);
+    //         return true;
+    // }
+    // else {
+    //     Response::status(401);
+    //     Response::json([
+    //         "status" => 401,
+    //         "reason" => "You can only access if authenticated!"
+    //     ]);
+    //     return false;
+    //}
+
+    return true;
 }
 
 function isAdmin($req){

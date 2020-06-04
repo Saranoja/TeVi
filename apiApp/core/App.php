@@ -125,6 +125,8 @@ class App {
                     }
                 }
             }
+
+            var_dump($query);
            
             
 
