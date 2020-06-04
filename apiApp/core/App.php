@@ -100,8 +100,9 @@ class App {
 
         //check the route match
         if(preg_match("/$regExpString/", $url, $matches)){
-             $parts =explode('/', $routConfig['route']);
-
+            $parts =explode('/', $routConfig['route']);
+            $query = [];
+            //Params
             $index = 1;
             foreach($parts as $p){
                 if($p[0] == ':'){
@@ -110,30 +111,55 @@ class App {
                 }
             }
             
-            $data = file_get_contents("php://input");
+            //Query
+            if(strpos($url,'?')){
+                $queryString = explode('?', $url)[1];
 
+                if($queryString){
+                    $queryParts = explode('&',$queryString);
+                }
+
+                foreach($queryParts as $part){
+                    if(strpos($part,'=')){
+                        $query[explode('=',$part)[0]]= explode('=',$part)[1];
+                    }
+                }
+            }
+
+            //var_dump($query);
+           
+            
+
+            //Data
+
+            //$obj ->name;
+            //$arr['name'];
+            $data = file_get_contents("php://input");
             if(strlen($data)) {
                 $data = json_decode($data);
             }
             else{
                 $data = NULL;
             }
-            
 
-            //DEMO PENTRU MIDDLEWARES
-            // $currentMiddlewareIndex = 0;
-            // foreach($routConfig['middlewares'] as $m){
-            //     if(!call_user_func($m,[
-            //         //params
-            //         //payload
-            //     ]) {
-            //         exit();
-            //     }
-            // };
+            if(isset($routConfig['middlewares'])){
+                foreach($routConfig['middlewares'] as $middlewareName){
+                    $didPass = call_user_func($middlewareName,[
+                        "params" => $this->params,
+                        "query" => $query,
+                        "data" => $data
+                    ]);
+                    
+                    if(!$didPass){
+                        exit();
+                    }
+                }
+            }
             
 
             call_user_func($routConfig['handler'],[
                 "params" => $this->params,
+                "query" => $query,
                 "data" => $data
             ]);
 
@@ -163,7 +189,7 @@ class App {
                 $regExpString .= $p;
             }
         }
-        $regExpString .= '$';
+        $regExpString .= '(\?.*)?$';
 
         return $regExpString;
     }

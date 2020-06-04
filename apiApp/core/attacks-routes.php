@@ -13,13 +13,13 @@ class Response {
 $attacksRoutes = [
     [
         "method" => "GET", //returns all attacks in the db
-        "middlewares" => ["isLoggedIn"],
+        //"middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "getAllAttacks"
     ],
     [
         "method" => "GET", //returns all attacks with country = value
-        "middlewares" => ["isLoggedIn"],
+        "middlewares" => ["isLoggedIn","isAdmin"],
         "route" => "attacks/:country",
         "handler" => "getAttackFromCountry"
     ],
@@ -31,33 +31,36 @@ $attacksRoutes = [
     // ],
     [
         "method" => "POST", //interts a new attack in the db
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "insertAttack"
     ],
     [
         "method" => "PUT", //updates a row from the db
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "updateAttack"
     ],
     [
         "method" => "DELETE", //deletes a row from the db based on the event_id
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks/:id",
         "handler" => "deleteAttack"
     ]
 ];
 
-function getAllAttacks($req){
-    Response::status(200);
-    echo "Get all attacks";
+function getAllAttacks($req){ 
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $response = $controller->getAll();
+    Response::status($response['status']);
+    Response::json($response['body']);
 }
 
 function getAttackFromCountry($req){
     Response::status(200);
-    Response::json($req['params']);
-    
+    Response::json($req['params']);  
 }
 
 function insertAttack($req){
@@ -78,17 +81,43 @@ function deleteAttack(){
 }
 
 function isLoggedIn($req){
-    // if(true){
-    //     return true;
-    // } else{
-    //     Response::status(401);
-    //     Response::text("You need to be logged in!");
-    //     return false;
+    /*$allHeaders = getallheaders();
+    if(isset($allHeaders['Authorization'])){
+        return true;
+    }*/
+
+    //if(isset($_COOKIE['admin'])) {
+    //         Response::status(200);
+    //         Response::json([
+    //             "status" => 200,
+    //             "reason" => "Access granted"
+    //         ]);
+    //         return true;
     // }
-    //demo
+    // else {
+    //     Response::status(401);
+    //     Response::json([
+    //         "status" => 401,
+    //         "reason" => "You can only access if authenticated!"
+    //     ]);
+    //     return false;
+    //}
+
+    return true;
 }
-function isAdmin($req,$next){
-    //de completat
+
+function isAdmin($req){
+    if($req['params']['country'] == 'romania'){
+        return true;
+    }
+
+    Response::status(403);
+    Response::json([
+        "status" => 403,
+        "reason" => "You can only access if admin!"
+    ]);
+
+    return false;
 }
 
 

@@ -58,6 +58,28 @@ class Attack extends Model {
         $res['status'] = 200;
         return $res;
     }
+
+    public function getAll() {
+        $this->result = mysqli_query($this->connection, "SELECT * FROM DATA LIMIT 100");
+        $this->response = array();
+
+        try {
+            while ($row = mysqli_fetch_assoc($this->result))
+            {
+                $this->response[] = $row;
+            }
+        } catch (Exception $e) {
+            $res['body'] = "Unexpected database error";
+            $res['status'] = 500; //internal server error
+            return $res;
+        }
+
+        $json = json_encode($this->response);
+
+        $res['body'] = $json;
+        $res['status'] = 200;
+        return $res;
+    }
 }
 
 /*

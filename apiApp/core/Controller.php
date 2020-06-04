@@ -17,6 +17,11 @@ class Controller {
         return new $service($data);
     }
 
+    protected function emptyService($service) {
+        require_once '../apiApp/services/' . $service . '.php';
+        return new $service;
+    }
+
     /**
      * @return formatted string
      * htmlspecialchars converts special characters to HTML entities

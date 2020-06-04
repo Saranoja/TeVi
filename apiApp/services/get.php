@@ -17,9 +17,15 @@ class Get {
         return $this->response;
     }
 
-    public function get($values) {
+    // public function get() {
+    //     $attack = new Attack;
+    //     $this->response = $attack->getAll();
+    //     return $this->response;
+    // }
+
+    public function getAll() {
         $attack = new Attack;
-        $this->response = $attack->filter($values);
+        $this->response = $attack->getAll();
         return $this->response;
     }
 }

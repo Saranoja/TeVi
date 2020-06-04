@@ -24,7 +24,7 @@ class Login extends Controller {
                     $db_token = $row['token'];
 
                     if(hash("sha256", $upass) == $db_password){
-                        setcookie('admin',$db_token);
+                        setcookie('admin',$db_token, '/');
                         header("location:http://localhost/TeVi/public/Start");
                     }
                     else{
