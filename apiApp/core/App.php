@@ -126,7 +126,7 @@ class App {
                 }
             }
 
-            var_dump($query);
+            //var_dump($query);
            
             
 

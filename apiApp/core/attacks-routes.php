@@ -13,7 +13,7 @@ class Response {
 $attacksRoutes = [
     [
         "method" => "GET", //returns all attacks in the db
-        "middlewares" => ["isLoggedIn"],
+        //"middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "getAllAttacks"
     ],
@@ -49,15 +49,18 @@ $attacksRoutes = [
     ]
 ];
 
-function getAllAttacks($req){
-    Response::status(200);
-    echo "Get all attacks";
+function getAllAttacks($req){ 
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $response = $controller->getAll();
+    Response::status($response['status']);
+    Response::json($response['body']);
 }
 
 function getAttackFromCountry($req){
     Response::status(200);
-    Response::json($req['params']);
-    
+    Response::json($req['params']);  
 }
 
 function insertAttack($req){
