@@ -19,7 +19,7 @@ $attacksRoutes = [
     ],
     [
         "method" => "GET", //returns all attacks with country = value
-        "middlewares" => ["isLoggedIn"],
+        "middlewares" => ["isLoggedIn","isAdmin"],
         "route" => "attacks/:country",
         "handler" => "getAttackFromCountry"
     ],
@@ -31,19 +31,19 @@ $attacksRoutes = [
     // ],
     [
         "method" => "POST", //interts a new attack in the db
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "insertAttack"
     ],
     [
         "method" => "PUT", //updates a row from the db
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "updateAttack"
     ],
     [
         "method" => "DELETE", //deletes a row from the db based on the event_id
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn"],
         "route" => "attacks/:id",
         "handler" => "deleteAttack"
     ]
@@ -78,17 +78,31 @@ function deleteAttack(){
 }
 
 function isLoggedIn($req){
-    // if(true){
-    //     return true;
-    // } else{
-    //     Response::status(401);
-    //     Response::text("You need to be logged in!");
-    //     return false;
-    // }
-    //demo
+    $allHeaders = getallheaders();
+    if(isset($allHeaders['Authorization'])){
+        return true;
+    }
+
+    Response::status(401);
+    Response::json([
+        "status" => 401,
+        "reason" => "You can only access if authenticated!"
+    ]);
+    return false;
 }
-function isAdmin($req,$next){
-    //de completat
+
+function isAdmin($req){
+    if($req['params']['country'] == 'romania'){
+        return true;
+    }
+
+    Response::status(403);
+    Response::json([
+        "status" => 403,
+        "reason" => "You can only access if admin!"
+    ]);
+
+    return false;
 }
 
 
