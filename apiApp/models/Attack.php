@@ -80,6 +80,60 @@ class Attack extends Model {
         $res['status'] = 200;
         return $res;
     }
+
+
+    // public function deleteAttack()
+    // {
+    //     $this->result = mysqli_query($this->connection, "DELETE FROM DATA where event_id =?");
+    //     $this->response = array();
+
+    //     try {
+    //         while ($row = mysqli_fetch_assoc($this->result))
+    //         {
+    //             $this->response[] = $row;
+    //         }
+    //     } catch (Exception $e) {
+    //         $res['body'] = "Unexpected database error";
+    //         $res['status'] = 500; //internal server error
+    //         return $res;
+    //     }
+
+    //     $json = json_encode($this->response);
+
+    //     $res['body'] = $json;
+    //     $res['status'] = 200;
+    //     return $res;
+
+    // }
+
+
+    // public function updateAttack()
+    // {
+    //     $this->result = mysqli_query($this->connection, "UPDATE DATA SET ? WHERE ?");
+    //     $this->response = array();
+
+    //     try {
+    //         while ($row = mysqli_fetch_assoc($this->result))
+    //         {
+    //             $this->response[] = $row;
+    //         }
+    //     } catch (Exception $e) {
+    //         $res['body'] = "Unexpected database error";
+    //         $res['status'] = 500; //internal server error
+    //         return $res;
+    //     }
+
+    //     $json = json_encode($this->response);
+
+    //     $res['body'] = $json;
+    //     $res['status'] = 200;
+    //     return $res;
+
+    // }
+
+
+
+
 }
 
 /*

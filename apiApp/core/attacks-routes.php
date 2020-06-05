@@ -31,19 +31,19 @@ $attacksRoutes = [
     // ],
     [
         "method" => "POST", //interts a new attack in the db
-        "middlewares" => ["isLoggedIn"],
+        // "middlewares" => ["isLoggedIn"],
         "route" => "attacks",
         "handler" => "insertAttack"
     ],
     [
         "method" => "PUT", //updates a row from the db
-        "middlewares" => ["isLoggedIn"],
-        "route" => "attacks",
+        // "middlewares" => ["isLoggedIn"],
+        "route" => "attacks/:id",
         "handler" => "updateAttack"
     ],
     [
         "method" => "DELETE", //deletes a row from the db based on the event_id
-        "middlewares" => ["isLoggedIn"],
+        // "middlewares" => ["isLoggedIn"],
         "route" => "attacks/:id",
         "handler" => "deleteAttack"
     ]
@@ -72,12 +72,29 @@ function insertAttack($req){
     Response::json($modifiedPayload);
 }
 
-function updateAttack(){
-    //In progres...
+function updateAttack($req){
+    Response::status(200);
+    Response::json($req['params']);
+
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $response = $controller->updateAttack(/*$req['params']*/);
+    Response::status($response['status']);
+    Response::json($response['body']);
+
+
 }
 
-function deleteAttack(){
-    //In progres...
+function deleteAttack($req){
+    
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $response = $controller->deleteAttack(/*$req['params']*/);
+    Response::status($response['status']);
+    Response::json($response['body']);
+
 }
 
 function isLoggedIn($req){

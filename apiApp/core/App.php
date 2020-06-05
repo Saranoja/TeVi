@@ -18,7 +18,7 @@ class App {
     public function __construct() {
 
         //TRE SA VEDEM AICI CUM FACEM PATH-UL
-        require_once 'C:\XAMPP\htdocs\TeVi\apiApp\core\attacks-routes.php';
+        require_once 'D:\XAMPP\htdocs\TeVi\apiApp\core\attacks-routes.php';
         // commented this to keep CORS & avoid cross-site scripting
         //header("Access-Control-Allow-Origin:*");
         header("Access-Control-Allow-Headers:*");

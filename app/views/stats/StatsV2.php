@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title> TeVi - Statistics </title>
-        <?php getBaseHead(); ?>
-        <link rel="stylesheet" href="http://localhost/TeVi/public/style/StatsV2.css">
-        <script src="http://localhost/TeVi/public/js/mobileMenu.js"></script>
-        <script src="http://localhost/TeVi/public/js/CollapsedFilter.js"></script>
-    </head>
-    <body>
-        <?php getMenuInfo();?>  
-       
-        <div class="wrapper">
-          <div class="model-hierarchy">
-               <img src="http://localhost/TeVi/public/img/HierarchyModel/step1.svg">
-            </div>
-  
-           <div class="chart-container">
-              <div class="pie-chart">
-                <img src="http://localhost/TeVi/public/img/HierarchyModel/Piechart.svg">
-            </div>
-
-           <div class="map-chart">
-              <img src="http://localhost/TeVi/public/img/HierarchyModel/mapChart.png">
-             </div>
-         
-           <div class="table-chart">
-            <img src="http://localhost/TeVi/public/img/HierarchyModel/tableChart.svg">
-              </div>
-     
-        <div class="bars-chart">
-              <img src="http://localhost/TeVi/public/img/HierarchyModel/barsChart.svg">
-              </div>
-     
+  <head>
+    <title> TeVi - Statistics </title>
+    <?php getBaseHead(); ?>
+    <link rel="stylesheet" href="../style/StatsV2.css">
+    <script src="=../js/mobileMenu.js"></script>
+    <script src="../js/CollapsedFilter.js"></script>
+  </head>
+  <body>
+    
+    <?php getMenuInfo();?>
+    
+    <div class="wrapper">
+      <div class="model-hierarchy">
+        <img src="../img/HierarchyModel/step1.svg">
       </div>
-
-          
-      <form action="http://localhost/TeVi/public/Stats/Step2" method="post" class="check-box" name="check-box">
+      
+      <div class="chart-container">
+        <div class="pie-chart">
+          <img src="../img/HierarchyModel/Piechart.svg">
+        </div>
+        <div class="map-chart">
+          <img src="../img/HierarchyModel/mapChart.png">
+        </div>
+        
+        <div class="table-chart">
+          <img src="../img/HierarchyModel/tableChart.svg">
+        </div>
+        
+        <div class="bars-chart">
+          <img src="../img/HierarchyModel/barsChart.svg">
+        </div>
+        
+      </div>
+      
+      <form action="../Stats/Step2" method="post" class="check-box" name="check-box">
         <input id="a" type="radio" name="hopping" value="Pie" checked>
         <label for="a"><span></span>Pie Chart</label>
         <input id="b" type="radio" name="hopping" value="Map">
@@ -78,6 +77,6 @@
         </div>
         <button  class="next-button" name="Result" type="submit"></button>
       </form>
-    </div>          
+    </div>
   </body>
 </html>

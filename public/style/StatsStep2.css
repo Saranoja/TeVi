@@ -1,6 +1,4 @@
 
-
-
 *{
     margin:0;
     padding: 0;
@@ -43,7 +41,7 @@
 .next-button {
     width: 303px;
     height: 68px;
-    background-image: url("http://localhost/TeVi/public/img/HierarchyModel/step3nextButton.svg");
+    background-image: url("../img/HierarchyModel/step3nextButton.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -56,14 +54,14 @@
 .back-button {
     width: 303px;
     height: 68px;
-    background-image: url("http://localhost/TeVi/public/img/HierarchyModel/step2backButton.svg");
+    background-image: url("../img/HierarchyModel/step2backButton.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border: none;
     background-color: transparent;
     margin: 100px auto;
-     margin-left: 30px;
+    margin-left: 30px;
 
 }
 
@@ -83,8 +81,18 @@
     font-size: x-large;
 
 }
-/*
-.chartchoice {
-    display: none;
+
+.criteria_wrap {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 30px;
+    align-items: center;
 }
-*/
+
+.criteria_wrap div p {
+    letter-spacing: 1px;
+    color: var(--darkest-blue);
+    font-size: x-large;
+}
+

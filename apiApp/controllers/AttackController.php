@@ -15,6 +15,25 @@ class AttackController extends Controller {
         $this->response['body'] = $this->emptyService('get')->getAll()['body'];      
         return $this->response;
     }
+
+
+    function deleteAttack()
+    {
+        $this->response['status'] = $this->emptyService('delete')->deleteAttack()['status'];
+        $this->response['body'] = $this->emptyService('delete')->deleteAttack()['body'];      
+        return $this->response;
+    }
+
+
+    function updateAttack()
+    {
+        $this->response['status'] = $this->emptyService('put')->updateAttack()['status'];
+        $this->response['body'] = $this->emptyService('put')->updateAttack()['body'];      
+        return $this->response;
+    }
+
+
+
 }
 
 ?>

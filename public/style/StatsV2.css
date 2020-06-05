@@ -23,7 +23,7 @@
 .next-button {
     width: 303px;
     height: 68px;
-    background-image: url("http://localhost/TeVi/public/img/HierarchyModel/step2nextButton.svg");
+    background-image: url("../img/HierarchyModel/step2nextButton.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
