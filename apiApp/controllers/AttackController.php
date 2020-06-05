@@ -10,9 +10,16 @@ class AttackController extends Controller {
         $this->response['body'] = $this->service('get', $data)->filter($data)['body'];
         return $this->response;
     }
+
     function getAll() {
         $this->response['status'] = $this->emptyService('get')->getAll()['status'];
         $this->response['body'] = $this->emptyService('get')->getAll()['body'];      
+        return $this->response;
+    }
+
+    function getAttack($req){
+        $this->response['status'] = $this->emptyService('get')->getAttack($req)['status'];
+        $this->response['body'] = $this->emptyService('get')->getAttack($req)['body'];      
         return $this->response;
     }
 

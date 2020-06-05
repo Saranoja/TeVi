@@ -28,6 +28,12 @@ class Get {
         $this->response = $attack->getAll();
         return $this->response;
     }
+
+    public function getAttack($req) {
+        $attack = new Attack;
+        $this->response = $attack->getAttack($req);
+        return $this->response;
+    }
 }
 
 

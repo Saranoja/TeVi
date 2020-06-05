@@ -60,7 +60,7 @@ class Attack extends Model {
     }
 
     public function getAll() {
-        $this->result = mysqli_query($this->connection, "SELECT * FROM DATA LIMIT 100");
+        $this->result = mysqli_query($this->connection, "SELECT * FROM DATA LIMIT 5");
         $this->response = array();
 
         try {
@@ -74,9 +74,27 @@ class Attack extends Model {
             return $res;
         }
 
-        $json = json_encode($this->response);
+        $res['body'] = $this->response;
+        $res['status'] = 200;
+        return $res;
+    }
 
-        $res['body'] = $json;
+    public function getAttack($req){
+        $this->result = mysqli_query($this->connection, "SELECT * FROM `data` WHERE ".key($req['params'])."= " .$req['params']['event_id']. " ");
+        $this->response = array();
+
+        try {
+            while ($row = mysqli_fetch_assoc($this->result))
+            {
+                $this->response[] = $row;
+            }
+        } catch (Exception $e) {
+            $res['body'] = "Unexpected database error";
+            $res['status'] = 500; //internal server error
+            return $res;
+        }
+
+        $res['body'] = $this->response;
         $res['status'] = 200;
         return $res;
     }

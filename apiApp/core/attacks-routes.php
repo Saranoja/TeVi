@@ -6,7 +6,7 @@ class Response {
     }
     static function json($data){
         header('Content-Type: application/json');
-        echo json_encode($data);
+        echo json_encode($data, JSON_PRETTY_PRINT);
     }
 }
 
@@ -18,17 +18,11 @@ $attacksRoutes = [
         "handler" => "getAllAttacks"
     ],
     [
-        "method" => "GET", //returns all attacks with country = value
+        "method" => "GET", //returns the attack with id=event_id
         "middlewares" => ["isLoggedIn","isAdmin"],
-        "route" => "attacks/:country",
-        "handler" => "getAttackFromCountry"
+        "route" => "attacks/:event_id",
+        "handler" => "getAttack"
     ],
-    //Cum am banuit, are probleme aici daca e la fel, MOMENTAN!
-    // [
-    //     "method" => "GET", //returns all attacks with year = value
-    //     "route" => "/attacks/:year",
-    //     "handler" => "getAttackFromYear"
-    // ],
     [
         "method" => "POST", //interts a new attack in the db
         // "middlewares" => ["isLoggedIn"],
@@ -38,7 +32,7 @@ $attacksRoutes = [
     [
         "method" => "PUT", //updates a row from the db
         // "middlewares" => ["isLoggedIn"],
-        "route" => "attacks/:id",
+        "route" => "attacks/:event_id",
         "handler" => "updateAttack"
     ],
     [
@@ -58,16 +52,30 @@ function getAllAttacks($req){
     Response::json($response['body']);
 }
 
-function getAttackFromCountry($req){
-    Response::status(200);
-    Response::json($req['params']);  
+function getAttack($req){
+    
+    //echo $req['params']['event_id'];
+
+    // echo key($req['params']);
+    // echo key($req['params']);
+    // // echo $req['params']['event_id'];
+
+    // var_dump($req['params']);
+    
+    
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $response = $controller->getAttack($req);
+    Response::status($response['status']);
+    Response::json($response['body']);
 }
 
 function insertAttack($req){
    //demo
     $modifiedPayload = $req['data'];
     $modifiedPayload -> id = uniqid();
-
+    
     Response::status(200);
     Response::json($modifiedPayload);
 }
@@ -124,17 +132,19 @@ function isLoggedIn($req){
 }
 
 function isAdmin($req){
-    if($req['params']['country'] == 'romania'){
-        return true;
-    }
+    // if($req['params']['country'] == 'romania'){
+    //     return true;
+    // }
 
-    Response::status(403);
-    Response::json([
-        "status" => 403,
-        "reason" => "You can only access if admin!"
-    ]);
+    // Response::status(403);
+    // Response::json([
+    //     "status" => 403,
+    //     "reason" => "You can only access if admin!"
+    // ]);
 
-    return false;
+    // return false;
+
+    return true;
 }
 
 
