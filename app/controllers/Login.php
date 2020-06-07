@@ -6,7 +6,9 @@ class Login extends Controller {
     }
 
     function login_action(){
-        $con = mysqli_connect("localhost","root","","tevi");
+        $db = Database::getInstance();
+        $con = $db->getConnection();
+        
         if(isset($_POST['btn-login'])){
             $uname = $_POST['username'];
             $upass = $_POST['password'];
