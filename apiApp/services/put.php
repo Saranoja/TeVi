@@ -8,9 +8,11 @@ header("Content-Type: application/json; charset=UTF-8");
 class Put {
     private $response;
 
-    public function updateAttack() {
+    public function updateAttack($data) {
         $attack = new Attack;
-        $this->response = $attack->updateAttack();
+        $this->response = $attack->updateAttack($data);
         return $this->response;
     }
 }
+
+?>

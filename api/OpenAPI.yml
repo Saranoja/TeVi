@@ -248,6 +248,8 @@ paths:
       responses:
         "200":
           description: "OK"
+        "500":
+          description: "Internal server error"
   /attacks/{id}:
     get:
       tags:

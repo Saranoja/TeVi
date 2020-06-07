@@ -8,9 +8,11 @@ header("Content-Type: application/json; charset=UTF-8");
 class Delete {
     private $response;
 
-    public function deleteAttack() {
+    public function deleteAttack($param) {
         $attack = new Attack;
-        $this->response = $attack->deleteAttack();
+        $this->response = $attack->deleteAttack($param);
         return $this->response;
     }
 }
+
+?>

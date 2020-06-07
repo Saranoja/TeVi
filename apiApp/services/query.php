@@ -10,8 +10,7 @@
     public $query;
     public $columns;
 
-    public function __construct($data) {
-
+    public function __construct($data) {     
         $select_arr = array();
         $where_arr = array();
         $group_arr = array();
@@ -69,62 +68,4 @@
     }
 }
 
-/* $json = '{
-    "limit": "100",
-    "select":
-        [{
-            "column":"country"
-        },
-        {   
-            "column":"year"
-        },
-        {
-            "column":"attack_type"
-        }],
-    "where":
-        [{
-            "column":"country",
-            "operator":"=",
-            "value":"Pakistan"
-        },
-        {
-            "column":"year",
-            "operator":">",
-            "value":"2005"
-        },
-        {
-            "column":"success",
-            "operator":"=",
-            "value":"0"
-        }],
-    "groupBy":
-        [{
-            "column":"country"
-        },
-        {
-            "column":"year"
-        }]
-}';*/
-
-/*
-{
-    "limit": "100",
-    "select":
-        [{
-            "column":"sum(total_fatalities)"
-        },
-        {
-            "column":"country"
-        }],
-    "where":
-        [{
-        	"column":"year",
-            "operator":">",
-            "value":"2006"
-        }],
-    "groupBy":
-        [{
-            "column":"country"
-        }]
-}
-*/
+?>

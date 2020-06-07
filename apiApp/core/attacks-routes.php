@@ -1,16 +1,12 @@
 <?php
-//TRE SA MUTAM ASTA DE AICI
-class Response {
-    static function status($code){
-        http_response_code($code);
-    }
-    static function json($data){
-        header('Content-Type: application/json');
-        echo json_encode($data, JSON_PRETTY_PRINT);
-    }
-}
 
 $attacksRoutes = [
+    [
+        "method" => "POST", //performs a query on the db
+        "middlewares" => ["isLoggedIn"],
+        "route" => "query",
+        "handler" => "getQueryResult"
+    ],
     [
         "method" => "GET", //returns all attacks in the db
         "middlewares" => ["isLoggedIn"],
@@ -19,31 +15,32 @@ $attacksRoutes = [
     ],
     [
         "method" => "GET", //returns the attack with id=event_id
-        "middlewares" => ["isLoggedIn","isAdmin"],
+        "middlewares" => ["isLoggedIn", "isAdmin"],
         "route" => "attacks/:event_id",
         "handler" => "getAttack"
     ],
     [
         "method" => "POST", //interts a new attack in the db
-        // "middlewares" => ["isLoggedIn"],
-        "route" => "attacks/:event_id",
+        "middlewares" => ["isLoggedIn", "isAdmin"],
+        "route" => "attacks",
         "handler" => "insertAttack"
     ],
     [
         "method" => "PUT", //updates a row from the db
-        // "middlewares" => ["isLoggedIn"],
-        "route" => "attacks/:event_id",
+        "middlewares" => ["isLoggedIn", "isAdmin"],
+        "route" => "attacks",
         "handler" => "updateAttack"
     ],
     [
         "method" => "DELETE", //deletes a row from the db based on the event_id
-        // "middlewares" => ["isLoggedIn"],
+        "middlewares" => ["isLoggedIn", "isAdmin"],
         "route" => "attacks/:event_id",
         "handler" => "deleteAttack"
     ]
 ];
 
-function getAllAttacks($req){ 
+function getAllAttacks($req)
+{
     $controller = 'AttackController';
     require_once '../apiApp/controllers/' . $controller . '.php';
     $controller = new $controller;
@@ -52,17 +49,8 @@ function getAllAttacks($req){
     Response::json($response['body']);
 }
 
-function getAttack($req){
-    
-    //echo $req['params']['event_id'];
-
-    // echo key($req['params']);
-    // echo key($req['params']);
-    // // echo $req['params']['event_id'];
-
-    // var_dump($req['params']);
-    
-    
+function getAttack($req)
+{
     $controller = 'AttackController';
     require_once '../apiApp/controllers/' . $controller . '.php';
     $controller = new $controller;
@@ -71,97 +59,95 @@ function getAttack($req){
     Response::json($response['body']);
 }
 
-function insertAttack($req){
-   //demo
-    $modifiedPayload = $req['data'];
-    $modifiedPayload -> id = uniqid();
-    
-    Response::status(200);
-    Response::json($modifiedPayload);
+function getQueryResult($req)
+{
+    $controller = 'Display';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $data = $req['data'];
+    $response = $controller->default($data);
+    Response::status($response['status']);
+    Response::json($response['body']);
 }
 
-function updateAttack($req){
-    Response::status(200);
-    Response::json($req['params']);
+function insertAttack($req)
+{
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $data = $req['data'];
+    $response = $controller->insertAttack($data);
+    Response::status($response['status']);
+    Response::json($response['body']);
+}
+
+function updateAttack($req)
+{
+    $controller = 'AttackController';
+    require_once '../apiApp/controllers/' . $controller . '.php';
+    $controller = new $controller;
+    $data = $req['data'];
+    $response = $controller->updateAttack($data);
+    Response::status($response['status']);
+    Response::json($response['body']);
+}
+
+function deleteAttack($req)
+{
 
     $controller = 'AttackController';
     require_once '../apiApp/controllers/' . $controller . '.php';
     $controller = new $controller;
-    $response = $controller->updateAttack(/*$req['params']*/);
+    $response = $controller->deleteAttack($req['params']);
     Response::status($response['status']);
     Response::json($response['body']);
-
-
 }
 
-function deleteAttack($req){
-    
-    $controller = 'AttackController';
-    require_once '../apiApp/controllers/' . $controller . '.php';
-    $controller = new $controller;
-    $response = $controller->deleteAttack(/*$req['params']*/);
-    Response::status($response['status']);
-    Response::json($response['body']);
-
+function isLoggedIn($req)
+{
+    $allHeaders = getallheaders();
+    if (isset($allHeaders['Authorization'])) {
+        $db = Database::getInstance();
+        $connection = $db->getConnection();
+        $query = "select token from users where token= '" . $allHeaders['Authorization'] . "'";
+        $result = mysqli_query($connection, $query);
+        if ($row = mysqli_fetch_assoc($result)) {
+            return true;
+        } else {
+            Response::status(401);
+            Response::json("Unauthorized");
+            return false;
+        }
+    } else if (isset($_COOKIE['admin'])) {
+        $db = Database::getInstance();
+        $connection = $db->getConnection();
+        $query = "select token from users where token= '" . $_COOKIE['admin'] . "'";
+        $result = mysqli_query($connection, $query);
+        if ($row = mysqli_fetch_assoc($result)) {
+            return true;
+        } else {
+            Response::status(401);
+            Response::json("Unauthorized");
+            return false;
+            return false;
+        }
+    }
+    return false;
 }
 
-function isLoggedIn($req){
-    /*$allHeaders = getallheaders();
-    if(isset($allHeaders['Authorization'])){
+function isAdmin($req)
+{
+    $adminToken = 'd82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892';
+
+    $allHeaders = getallheaders();
+
+    if (isset($allHeaders['Authorization']) && strcmp($allHeaders['Authorization'], $adminToken) == 0) {
         return true;
-    }*/
-
-    // if(isset($_COOKIE['admin'])) {
-    //         Response::status(200);
-    //         Response::json([
-    //             "status" => 200,
-    //             "reason" => "Access granted, you are logged in"
-    //         ]);
-    //         return true;
-    // }
-    // else {
-    //     Response::status(401);
-    //     Response::json([
-    //         "status" => 401,
-    //         "reason" => "You can only access if authenticated!"
-    //     ]);
-    //     return false;
-    // }
-    
-     return true;
+    } else if (isset($_COOKIE['admin']) && strcmp($_COOKIE['admin'], $adminToken) == 0) {
+        return true;
+    } else {
+        Response::status(401);
+        Response::json("Unauthorized");
+        return false;
+    }
 }
-
-function isAdmin($req){
-    // $db = Database::getInstance();
-    // $connection = $db->getConnection();
-
-    // $token=$_COOKIE['admin'];
-    // $query = "select admin from users where token= '$token' ";
-    // $result = mysqli_query($connection,$query);
-    // if($row=mysqli_fetch_assoc($result)){
-    //     $isAdmin = $row['admin'];
-    // }else{
-    //         echo 'ceva nu e bine';
-    // }
-
-    // if($isAdmin==1){
-    //     Response::status(200);
-    //         Response::json([
-    //             "status" => 200,
-    //             "reason" => "Access granted, you are an admin!"
-    //         ]);
-    //         return true;
-    // }
-    // else {
-    //     Response::status(401);
-    //     Response::json([
-    //         "status" => 403,
-    //         "reason" => "Only admins can do this!"
-    //     ]);
-    //     return false;
-    // }
-    return true;
-}
-
-
-// $req['query'][values]

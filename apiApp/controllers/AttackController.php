@@ -1,44 +1,56 @@
 <?php
 /** 
  * Class Attack
- * @author Calin Irina 
+ * @author Calin Irina, Platon Victor
  * */
 
 class AttackController extends Controller {
     function default($data) {
-        $this->response['status'] = $this->service('get', $data)->filter($data)['status'];
-        $this->response['body'] = $this->service('get', $data)->filter($data)['body'];
+        $res = $this->service('get', $data)->filter($data);
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];
         return $this->response;
     }
 
     function getAll() {
-        $this->response['status'] = $this->emptyService('get')->getAll()['status'];
-        $this->response['body'] = $this->emptyService('get')->getAll()['body'];      
+        $res = $this->emptyService('get')->getAll();
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];      
         return $this->response;
     }
 
     function getAttack($req){
-        $this->response['status'] = $this->emptyService('get')->getAttack($req)['status'];
-        $this->response['body'] = $this->emptyService('get')->getAttack($req)['body'];      
+        $res = $this->emptyService('get')->getAttack($req);
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];      
         return $this->response;
     }
 
 
-    function deleteAttack()
+    function deleteAttack($param)
     {
-        $this->response['status'] = $this->emptyService('delete')->deleteAttack()['status'];
-        $this->response['body'] = $this->emptyService('delete')->deleteAttack()['body'];      
+        $res = $this->emptyService('delete')->deleteAttack($param);
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];      
         return $this->response;
     }
 
 
-    function updateAttack()
+    function updateAttack($data)
     {
-        $this->response['status'] = $this->emptyService('put')->updateAttack()['status'];
-        $this->response['body'] = $this->emptyService('put')->updateAttack()['body'];      
+        $res = $this->emptyService('put')->updateAttack($data);
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];      
         return $this->response;
     }
 
+    function insertAttack($data)
+    {
+        $res = $this->service('post', $data)->insert($data);
+        $this->response['status'] = $res['status'];
+        $this->response['body'] = $res['body'];      
+        return $this->response;
+    }
 
 
 }
