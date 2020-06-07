@@ -1,11 +1,12 @@
 <!-- Resources -->
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/frozen.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
 <?php 
 
-function getChart($param) {
+function getPieChart($param) {
 $db = Database::getInstance();
 $mysqli = $db->getConnection();
 
@@ -20,6 +21,7 @@ $json = $pieChart->doAll();
 <script>
 am4core.ready(function() {
 
+am4core.useTheme(am4themes_frozen);
 am4core.useTheme(am4themes_animated);
 
 var chart = am4core.create("chartdiv", am4charts.PieChart3D);

@@ -26,7 +26,7 @@ class PieChartController {
         $index = 0;
         while ($row = mysqli_fetch_assoc($this->result))
         {
-            if(!isset($structure[$row['value']]))
+            if(!isset($this->structure[$row['value']]))
             {
                 $structure[$index] = array();
             }

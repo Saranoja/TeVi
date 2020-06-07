@@ -20,7 +20,7 @@ $attacksRoutes = [
         "handler" => "getAttack"
     ],
     [
-        "method" => "POST", //interts a new attack in the db
+        "method" => "POST", //inserts a new attack in the db
         "middlewares" => ["isLoggedIn", "isAdmin"],
         "route" => "attacks",
         "handler" => "insertAttack"

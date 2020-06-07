@@ -8,12 +8,14 @@
 <body>
         
         <form class="box" action="http://localhost/TeVi/public/Login/login_action" method="post">
-            <h1>Login</h1>
+            <h1>Log in</h1>
             <input type="text" name="username" id="username" placeholder="Username" autocomplete="off">
 
             <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
 
             <input type="Submit" value="Login" name="btn-login">
+
+            <h4 id="errorText"><?= Login::$message?></h4>
         </form>
 </body>
 </html>
