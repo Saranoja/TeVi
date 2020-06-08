@@ -45,7 +45,7 @@
         
         for($index=0;$index<count($where_arr);$index++)
             {
-                $str = $where_columns[$index] . " " . $where_operators[$index] . " '" . $where_values[$index] . "'";
+                $str = $where_columns[$index] . " " . $where_operators[$index] . " " . $where_values[$index];
                 array_push($where, $str);
             }
 
@@ -65,6 +65,8 @@
             $optional2 = " GROUP BY " . $group_expr;
         
         $this->query = $mandatory . $optional  . $optional2 . " ORDER BY 2 DESC LIMIT " . $limit;
+
+        //echo $this->query;
     }
 }
 

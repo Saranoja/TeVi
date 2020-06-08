@@ -67,10 +67,10 @@ paths:
             where: 
               - column: "year"
                 operator: ">"
-                value: "2006"
+                value: "'2006'"
               - column: "year"
                 operator: "<"
-                value: "2009"
+                value: "'2009'"
             groupBy:
               - column: "country"
       responses:

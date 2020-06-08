@@ -43,10 +43,13 @@ console.log("count(".concat(localStorage.getItem("select").replace("-","_")).con
 
 globalJson["select"].push({ "column": localStorage.getItem("select").replace("-","_")});
 globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-","_")).concat(")")});
+
+console.log(JSON.parse(localStorage.getItem("where")));
+
 globalJson["where"].push({
     "column": "year",
-    "operator": ">",
-    "value": "2012"
+    "operator": "in",
+    "value": "('2012','2013','2014')"
 });
 globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-","_")});
 

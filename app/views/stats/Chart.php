@@ -28,33 +28,36 @@
         $donut = "Doughnut";
         $bubbles = "Bubbles";
 
-        $column = array("success","suicide","attack-type","year","month","day","country","provence","city","group-name","group-subname","terrorists_number","claim-mode","target-type","target-subtype","target_nationality","weapon-type","weapon-subtype","total-fatalities","us-citizens-who-died");
+        $column = array("success", "suicide", "attack-type", "year", "month", "day", "country", "provence", "city", "group-name", "group-subname", "terrorists_number", "claim-mode", "target-type", "target-subtype", "target_nationality", "weapon-type", "weapon-subtype", "total-fatalities", "us-citizens-who-died");
 
         if (isset($_POST['generate-chart'])) {
+            $resultFilter = array();
             foreach ($column as $value) {
-            if(isset($_POST[$value])){
-                echo '<p>'.$value.'</p>';
-                foreach( $_POST[$value] as $checkboxVal)
-                     {
-                    
-                        $resultFilter= array($value=>$checkboxVal);
-                        echo $checkboxVal;
-                     }
-            }
-        }
+                //array_push($column,$value);
+                if (isset($_POST[$value])) {
+                    echo '<p>' . $value . '</p>';
+                    $resultFilter[$value] = array(); 
+                    foreach ($_POST[$value] as $checkboxVal) {
+                        array_push($resultFilter[$value], $checkboxVal);
+                    }                                    
+                }
+            } //IMPLENTATOR
 
             $groupBy = $_POST["groupByChoice"];
             $chartChoice = $_POST["chartChoice"];
 
-            echo $groupBy;
-            echo $chartChoice;
+            //echo $groupBy;
+            //echo $chartChoice;
+            //var_dump($resultFilter);
+            $json = json_encode($resultFilter);
 
+            echo $json;
         }
 
         ?>
 
-          <script>
-              localStorage.setItem('where', '<?php echo $resultFilter;?>'); 
+        <script>
+            localStorage.setItem('where', '<?php echo $json; ?>');
         </script>
 
         <?php
