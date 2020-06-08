@@ -28,22 +28,36 @@
         $donut = "Doughnut";
         $bubbles = "Bubbles";
 
+        $column = array("success","suicide","attack-type","year","month","day","country","provence","city","group-name","group-subname","terrorists_number","claim-mode","target-type","target-subtype","target_nationality","weapon-type","weapon-subtype","total-fatalities","us-citizens-who-died");
 
         if (isset($_POST['generate-chart'])) {
-            // foreach( $_POST["checkboxFilterRestriction"] as $checkboxVal)
-            //     {
-            //         // $choice->addFilterChoice($checkboxVal);   
-            //         echo '<p>'.$checkboxVal.'</p>';
-            //     }
-
+            foreach ($column as $value) {
+            if(isset($_POST[$value])){
+                echo '<p>'.$value.'</p>';
+                foreach( $_POST[$value] as $checkboxVal)
+                     {
+                    
+                        $resultFilter= array($value=>$checkboxVal);
+                        echo $checkboxVal;
+                     }
+            }
+        }
 
             $groupBy = $_POST["groupByChoice"];
             $chartChoice = $_POST["chartChoice"];
 
-            // echo $groupBy;
-            // echo $chartChoice;
+            echo $groupBy;
+            echo $chartChoice;
 
         }
+
+        ?>
+
+          <script>
+              localStorage.setItem('where', '<?php echo $resultFilter;?>'); 
+        </script>
+
+        <?php
 
         if (strcmp($chartChoice, $pie_chart) == 0) {
             //createChart();

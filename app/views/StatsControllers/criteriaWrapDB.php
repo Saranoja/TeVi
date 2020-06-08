@@ -67,7 +67,7 @@ function DisplayCriteriaWrapDB()
         <p> Success </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_success); ?>
+                <?php DisplayChecksForDB($values_success,"success[]"); ?>
             </ul>
         </div>
     </div>
@@ -78,7 +78,7 @@ function DisplayCriteriaWrapDB()
         <p> Suicide </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_suicide); ?>
+                <?php DisplayChecksForDB($values_suicide,"suicide[]"); ?>
             </ul>
         </div>
     </div>
@@ -87,7 +87,7 @@ function DisplayCriteriaWrapDB()
         <p> Attack Type </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_attack_type); ?>
+                <?php DisplayChecksForDB($values_attack_type,"attack-type[]"); ?>
             </ul>
         </div>
     </div>
@@ -97,7 +97,7 @@ function DisplayCriteriaWrapDB()
         <p> Year </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_year); ?>
+                <?php DisplayChecksForDB($values_year,"year[]"); ?>
             </ul>
         </div>
     </div>
@@ -106,7 +106,7 @@ function DisplayCriteriaWrapDB()
         <p> Month </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_month); ?>
+                <?php DisplayChecksForDB($values_month,"month[]"); ?>
             </ul>
         </div>
     </div>
@@ -115,7 +115,7 @@ function DisplayCriteriaWrapDB()
         <p> Day </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_day); ?>
+                <?php DisplayChecksForDB($values_day,"day[]"); ?>
             </ul>
         </div>
     </div>
@@ -126,7 +126,7 @@ function DisplayCriteriaWrapDB()
         <p> Country </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_country); ?>
+                <?php DisplayChecksForDB($values_country,"country[]"); ?>
             </ul>
         </div>
     </div>
@@ -136,9 +136,9 @@ function DisplayCriteriaWrapDB()
         <p> Provence </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_provence); ?>
-                <?php DisplayChecksForDB($values_provence2); ?>
-                <?php DisplayChecksForDB($values_provence3); ?>
+                <?php DisplayChecksForDB($values_provence,"provence[]"); ?>
+                <?php DisplayChecksForDB($values_provence2,"provence[]"); ?>
+                <?php DisplayChecksForDB($values_provence3,"provence[]"); ?>
             </ul>
         </div>
     </div>
@@ -147,34 +147,34 @@ function DisplayCriteriaWrapDB()
         <p> City </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_city); ?>
-                <?php DisplayChecksForDB($values_city2); ?>
-                <?php DisplayChecksForDB($values_city3); ?>
-                <?php DisplayChecksForDB($values_city4); ?>
-                <?php DisplayChecksForDB($values_city5); ?>
-                <?php DisplayChecksForDB($values_city6); ?>
-                <?php DisplayChecksForDB($values_city7); ?>
-                <?php DisplayChecksForDB($values_city8); ?>
-                <?php DisplayChecksForDB($values_city9); ?>
-                <?php DisplayChecksForDB($values_city10); ?>
-                <?php DisplayChecksForDB($values_city11); ?>
-                <?php DisplayChecksForDB($values_city12); ?>
-                <?php DisplayChecksForDB($values_city13); ?>
-                <?php DisplayChecksForDB($values_city14); ?>
-                <?php DisplayChecksForDB($values_city15); ?>
-                <?php DisplayChecksForDB($values_city16); ?>
-                <?php DisplayChecksForDB($values_city17); ?>
-                <?php DisplayChecksForDB($values_city18); ?>
-                <?php DisplayChecksForDB($values_city19); ?>
-                <?php DisplayChecksForDB($values_city20); ?>
-                <?php DisplayChecksForDB($values_city21); ?>
-                <?php DisplayChecksForDB($values_city22); ?>
-                <?php DisplayChecksForDB($values_city23); ?>
-                <?php DisplayChecksForDB($values_city24); ?>
-                <?php DisplayChecksForDB($values_city25); ?>
-                <?php DisplayChecksForDB($values_city26); ?>
-                <?php DisplayChecksForDB($values_city27); ?>
-                <?php DisplayChecksForDB($values_city28); ?>
+                <?php DisplayChecksForDB($values_city,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city2,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city3,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city4,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city5,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city6,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city7,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city8,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city9,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city10,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city11,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city12,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city13,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city14,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city15,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city16,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city17,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city18,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city19,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city20,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city21,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city22,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city23,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city24,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city25,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city26,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city27,"city[]"); ?>
+                <?php DisplayChecksForDB($values_city28,"city[]"); ?>
             </ul>
         </div>
     </div>
@@ -184,13 +184,13 @@ function DisplayCriteriaWrapDB()
         <p> Group Name </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_group_name); ?>
-                <?php DisplayChecksForDB($values_group_name2); ?>
-                <?php DisplayChecksForDB($values_group_name3); ?>
-                <?php DisplayChecksForDB($values_group_name4); ?>
-                <?php DisplayChecksForDB($values_group_name5); ?>
-                <?php DisplayChecksForDB($values_group_name6); ?>
-                <?php DisplayChecksForDB($values_group_name7); ?>
+                <?php DisplayChecksForDB($values_group_name,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name2,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name3,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name4,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name5,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name6,"group-name[]"); ?>
+                <?php DisplayChecksForDB($values_group_name7,"group-name[]"); ?>
             </ul>
         </div>
     </div>
@@ -199,8 +199,8 @@ function DisplayCriteriaWrapDB()
         <p> Group subname </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_group_subname); ?>
-                <?php DisplayChecksForDB($values_group_subname2); ?>
+                <?php DisplayChecksForDB($values_group_subname,"group-subname[]"); ?>
+                <?php DisplayChecksForDB($values_group_subname2,"group-subname[]"); ?>
             </ul>
         </div>
     </div>
@@ -211,7 +211,7 @@ function DisplayCriteriaWrapDB()
         <p> Terrorists number </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_group_terrorists_number); ?>
+                <?php DisplayChecksForDB($values_group_terrorists_number,"terrorists-number[]"); ?>
             </ul>
         </div>
     </div>
@@ -221,7 +221,7 @@ function DisplayCriteriaWrapDB()
         <p> Claim Mode </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_claim_mode); ?>
+                <?php DisplayChecksForDB($values_claim_mode,"claim-mode[]"); ?>
             </ul>
         </div>
     </div>
@@ -230,7 +230,7 @@ function DisplayCriteriaWrapDB()
         <p> Target type </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_target_type); ?>
+                <?php DisplayChecksForDB($values_target_type,"target-type[]"); ?>
             </ul>
         </div>
     </div>
@@ -239,7 +239,7 @@ function DisplayCriteriaWrapDB()
         <p> Target subtype </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_target_subtype); ?>
+                <?php DisplayChecksForDB($values_target_subtype,"target-subtype[]"); ?>
             </ul>
         </div>
     </div>
@@ -249,7 +249,7 @@ function DisplayCriteriaWrapDB()
         <p> Target Nationality </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_target_nationality); ?>
+                <?php DisplayChecksForDB($values_target_nationality,"target-nationality[]"); ?>
             </ul>
         </div>
     </div>
@@ -258,7 +258,7 @@ function DisplayCriteriaWrapDB()
         <p> Weapon Type </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_weapon_type); ?>
+                <?php DisplayChecksForDB($values_weapon_type,"weapon-type[]"); ?>
             </ul>
         </div>
     </div>
@@ -268,7 +268,7 @@ function DisplayCriteriaWrapDB()
         <p> Weapon subtype </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_weapon_subtype); ?>
+                <?php DisplayChecksForDB($values_weapon_subtype,"weapon-subtype[]"); ?>
             </ul>
         </div>
     </div>
@@ -278,7 +278,7 @@ function DisplayCriteriaWrapDB()
         <p> Total fatalities </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_total_fatalities); ?>
+                <?php DisplayChecksForDB($values_total_fatalities,"total-fatalities[]"); ?>
             </ul>
         </div>
     </div>
@@ -288,7 +288,7 @@ function DisplayCriteriaWrapDB()
         <p> U.S.Citizens who died </p>
         <div class="list-filter">
             <ul>
-                <?php DisplayChecksForDB($values_us_citizens_who_died); ?>
+                <?php DisplayChecksForDB($values_us_citizens_who_died,"us-citizens-who-died[]"); ?>
             </ul>
         </div>
     </div>

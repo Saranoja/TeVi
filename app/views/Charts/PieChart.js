@@ -52,6 +52,4 @@ globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-
 
 console.log(globalJson);
 
-localStorage.clear();
-
 createChart(globalJson);

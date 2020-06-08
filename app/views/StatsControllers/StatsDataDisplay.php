@@ -14,7 +14,7 @@ function DisplayChecksFor($selected_criterion) {
 function DisplayRadioButtonsFor($selected_criterion) {
     foreach($selected_criterion as $column):
             if($column == 'Success'){ ?>
-        <input type="radio" name="radioFilterGroupBy" value=<?=$column?> id=<?=$column?> checked>
+        <input type="radio" name="radioFilterGroupBy"  value=<?=$column?> id=<?=$column?> checked>
         <label for=<?=$column?>> <?=$column?> </label>
         <br>
         <?php 
@@ -32,10 +32,10 @@ function DisplayRadioButtonsFor($selected_criterion) {
 
 
 <?php
-function DisplayChecksForDB($selected_criterion) {
+function DisplayChecksForDB($selected_criterion,$selected_category) {
     foreach($selected_criterion as $column): ?>
         <li><div>
-        <input type="checkbox" name="checkboxFilterRestriction[]" value=<?=$column?> id=<?=$column?> >
+        <input type="checkbox" id=<?=$column?> name=<?=$selected_category?> value=<?=$column?>>
         <label for=<?=$column?>> <?=$column?> </label>
         </div></li>
     <?php endforeach;
