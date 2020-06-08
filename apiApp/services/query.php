@@ -64,7 +64,7 @@
         if($group_expr!=null)
             $optional2 = " GROUP BY " . $group_expr;
         
-        $this->query = $mandatory . $optional  . $optional2 . " LIMIT " . $limit;
+        $this->query = $mandatory . $optional  . $optional2 . " ORDER BY 2 DESC LIMIT " . $limit;
     }
 }
 

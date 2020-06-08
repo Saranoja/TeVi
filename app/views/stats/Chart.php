@@ -46,9 +46,9 @@
         }
 
         if (strcmp($chartChoice, $pie_chart) == 0) {
-            createChart();
-
-        ?>      
+            //createChart();
+        ?>
+            <script src="http://localhost/TeVi/app/views/Charts/PieChart.js"></script>
             <main>
                 <h3> Results for your request: </h3>
                 <div id="chartdiv"></div>

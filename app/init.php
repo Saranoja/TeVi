@@ -27,7 +27,7 @@ require_once 'views/StatsControllers/StatsDataDisplay.php';
 require_once 'views/StatsControllers/StatsFiltersDisplay.php';
 
 include_once "views/Charts/Controllers/PieChartController.php";
-include_once "views/Charts/PieChart.php";
+//include_once "views/Charts/PieChart.php";
 
 require_once 'views/StatsControllers/criteriaWrapDB.php';
 
