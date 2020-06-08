@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="http://localhost/TeVi/public/style/Chart.css">
     <link rel="stylesheet" href="http://localhost/TeVi/public/style/ChartsStyle.css">
     <script src="http://localhost/TeVi/public/js/mobileMenu.js"></script>
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/frozen.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 </head>
 
 <body id="whole_body">
@@ -40,11 +45,10 @@
 
         }
 
-
-
         if (strcmp($chartChoice, $pie_chart) == 0) {
-            getPieChart($groupBy);
-        ?>
+            createChart();
+
+        ?>      
             <main>
                 <h3> Results for your request: </h3>
                 <div id="chartdiv"></div>
@@ -57,26 +61,8 @@
                 <h3> Results for your request: </h3>
                 <div id="chartdiv"></div>
             </main>
-        <?php } else if (strcmp($chartChoice, $horizontal_bars_chart) == 0) {
-            include "../Charts/HorizontalBarsChart.js"; ?>
-            <main>
-                <h3> Results for your request: </h3>
-                <div id="chartdiv"></div>
-            </main>
         <?php } else if (strcmp($chartChoice, $map) == 0) {
             include "../Charts/WorldMapChart.js"; ?>
-            <main>
-                <h3> Results for your request: </h3>
-                <div id="chartdiv"></div>
-            </main>
-        <?php } else if (strcmp($chartChoice, $donut) == 0) {
-            include "../Charts/DonutChart.js"; ?>
-            <main>
-                <h3> Results for your request: </h3>
-                <div id="chartdiv"></div>
-            </main>
-        <?php } else if (strcmp($chartChoice, $bubbles) == 0) {
-            include "../Charts/BubblesChart.js";  ?>
             <main>
                 <h3> Results for your request: </h3>
                 <div id="chartdiv"></div>

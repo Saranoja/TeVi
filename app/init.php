@@ -26,10 +26,8 @@ require_once 'views/StatsControllers/StatsControllerPieChartGroup.php';
 require_once 'views/StatsControllers/StatsDataDisplay.php';
 require_once 'views/StatsControllers/StatsFiltersDisplay.php';
 
-require_once 'views/Charts/Temp.php';
 include_once "views/Charts/Controllers/PieChartController.php";
-
-
+include_once "views/Charts/PieChart.php";
 
 require_once 'views/StatsControllers/criteriaWrapDB.php';
 
