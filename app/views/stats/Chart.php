@@ -68,8 +68,6 @@
         ?>
             <main>
                 <h3> Results for your request: </h3>
-                <script src="http://localhost/TeVi/app/views/Charts/BarsChartYear.js"></script>
-                <div id="chartdiv"></div>
                 <script src="http://localhost/TeVi/app/views/Charts/BarsChartCountry.js"></script>
                 <div id="chartdiv"></div>
             </main>

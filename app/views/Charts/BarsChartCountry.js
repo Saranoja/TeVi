@@ -1,118 +1,184 @@
-am4core.ready(function() {
+async function fetchData(data = {}) {
 
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
+    console.log("START FETCHING DATA");
 
+    const response = await fetch("http://localhost/TeVi/api/query", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'd82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892',
+        },
+        body: JSON.stringify(data)
+    });
 
-var chart = am4core.create('chartdiv', am4charts.XYChart)
-chart.colors.step = 2;
-
-chart.legend = new am4charts.Legend()
-chart.legend.position = 'top'
-chart.legend.paddingBottom = 20
-chart.legend.labels.template.maxWidth = 95
-
-var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
-xAxis.dataFields.category = 'category'
-xAxis.renderer.cellStartLocation = 0.1
-xAxis.renderer.cellEndLocation = 0.9
-xAxis.renderer.grid.template.location = 0;
-
-var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
-yAxis.min = 0;
-
-function createSeries(value, name) {
-    var series = chart.series.push(new am4charts.ColumnSeries())
-    series.dataFields.valueY = value
-    series.dataFields.categoryX = 'category'
-    series.name = name
-
-    series.events.on("hidden", arrangeColumns);
-    series.events.on("shown", arrangeColumns);
-
-    var bullet = series.bullets.push(new am4charts.LabelBullet())
-    bullet.interactionsEnabled = false
-    bullet.dy = 30;
-    bullet.label.text = '{valueY}'
-    bullet.label.fill = am4core.color('#ffffff')
-
-    return series;
+    return response.json();
 }
 
-chart.data = [
-    {
-        "country": 'Romania',
-        "unknown": 40,
-        "Unarmed Assault": 55,
-        "Hostage Taking (Kidnapping)": 60
-    },
-    {
-        "category": 'Belgium',
-        "sum(bombing/explosion)": 30,
-        "sum(arson)": 78,
-        "sum(Assassination)": 69
-    },
-    {
-        "category": 'Russia',
-        "sum(bombing/explosion)": 27,
-        "sum(arson)": 40,
-        "sum(Assassination)": 45
-    },
-    {
-        "category": 'Pakistan',
-        "sum(bombing/explosion)": 50,
-        "sum(arson)": 33,
-        "sum(Assassination)": 22
-    }
-]
+function createChart(data = {}) {
+    am4core.useTheme(am4themes_animated);
+    var chart = am4core.create('chartdiv', am4charts.XYChart)
+    chart.colors.step = 2;
 
-chart.data.forEach(element => {
-    if(element["country"]==jsonulMeu[index]["country"])
-        element["ceAmSelectat"] = jsonulMeu[index]["count(ceAmSelectat)"];
+    chart.legend = new am4charts.Legend()
+    chart.legend.position = 'top'
+    chart.legend.paddingBottom = 20
+    chart.legend.labels.template.maxWidth = 95
+
+    am4core.ready(fetchData(data).then(response => {
+        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+        xAxis.dataFields.category = 'country'
+        xAxis.renderer.cellStartLocation = 0.1
+        xAxis.renderer.cellEndLocation = 0.9
+        xAxis.renderer.grid.template.location = 0;
+
+        var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        yAxis.min = 0;
+
+        console.log(response);
+
+        let accJson = [{
+            country: "Iraq"
+        },
+        {
+            country: "Pakistan"
+        },
+        {
+            country: "Afghanistan"
+        },
+        {
+            country: "India"
+        },
+        /* {
+            country: "Colombia"
+        },
+        {
+            country: "Philippines"
+        },
+        {
+            country: "Peru"
+        }*/];
+
+        var index;
+        for (index = 0; index < 4; index++)
+            response.forEach(element => {
+                //console.log(element["country"]);
+
+                //console.log(accJson[index].country);
+                if (element["country"] == accJson[index].country) {
+                    accJson[index][element[localStorage.getItem("select").replace("-", "_")]] = element["count(" + localStorage.getItem("select").replace("-", "_") +")"];
+                    //console.log("match");
+                }
+            })
+
+        chart.data = accJson;
+
+        console.log(accJson);
+
+        for (index = 1; index < Object.keys(accJson[0]).length; index++)
+            createSeries(Object.keys(accJson[0])[index], Object.keys(accJson[0])[index]);
+
+        function createSeries(value, name) {
+            var series = chart.series.push(new am4charts.ColumnSeries())
+            series.dataFields.valueY = value
+            series.dataFields.categoryX = 'country'
+            series.name = name
+
+            series.events.on("hidden", arrangeColumns);
+            series.events.on("shown", arrangeColumns);
+
+            var bullet = series.bullets.push(new am4charts.LabelBullet())
+            bullet.interactionsEnabled = false
+            bullet.dy = 30;
+            bullet.label.text = '{valueY}'
+            bullet.label.fill = am4core.color('#ffffff')
+
+            return series;
+        }
+
+        function arrangeColumns() {
+
+            var series = chart.series.getIndex(0);
+
+            var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+            if (series.dataItems.length > 1) {
+                var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+                var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+                var delta = ((x1 - x0) / chart.series.length) * w;
+                if (am4core.isNumber(delta)) {
+                    var middle = chart.series.length / 2;
+
+                    var newIndex = 0;
+                    chart.series.each(function (series) {
+                        if (!series.isHidden && !series.isHiding) {
+                            series.dummyData = newIndex;
+                            newIndex++;
+                        }
+                        else {
+                            series.dummyData = chart.series.indexOf(series);
+                        }
+                    })
+                    var visibleCount = newIndex;
+                    var newMiddle = visibleCount / 2;
+
+                    chart.series.each(function (series) {
+                        var trueIndex = chart.series.indexOf(series);
+                        var newIndex = series.dummyData;
+
+                        var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+                        series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                        series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                    })
+                }
+            }
+        }
+
+    }));
+}
+
+let globalJson = {
+    "limit": "1000",
+    "select": [],
+    "where": [],
+    "groupBy": []
+};
+
+globalJson["select"].push({ "column": "country" });
+globalJson["select"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")") });
+
+globalJson["where"].push({
+    "column": "country",
+    "operator": "in",
+    "value": "('Iraq', 'Pakistan','Afghanistan','India')"
 });
 
+var obj = JSON.parse(localStorage.getItem("where"));
+var keys = Object.keys(obj);
 
-createSeries('sum(bombing/explosion)', 'bombing/explosion');
-createSeries('sum(arson)', 'arson');
-createSeries('sum(Assassination)', 'Assassination');
 
-function arrangeColumns() {
+keys.forEach(element => {
 
-    var series = chart.series.getIndex(0);
+    let columns = "";
 
-    var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
-    if (series.dataItems.length > 1) {
-        var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
-        var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
-        var delta = ((x1 - x0) / chart.series.length) * w;
-        if (am4core.isNumber(delta)) {
-            var middle = chart.series.length / 2;
+    obj[element].forEach(value => {
+        columns = columns.replace("-", "_") + value + "','";
+    });
+    columns = columns.slice(0, -3);
+    let jsonValue = "('".concat(columns, "')");
+    globalJson["where"].push({
+        "column": element.toString().replace("-", "_"),
+        "operator": "in",
+        "value": jsonValue
+    });
+});
 
-            var newIndex = 0;
-            chart.series.each(function(series) {
-                if (!series.isHidden && !series.isHiding) {
-                    series.dummyData = newIndex;
-                    newIndex++;
-                }
-                else {
-                    series.dummyData = chart.series.indexOf(series);
-                }
-            })
-            var visibleCount = newIndex;
-            var newMiddle = visibleCount / 2;
+globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+globalJson["groupBy"].push({ "column": "country" });
 
-            chart.series.each(function(series) {
-                var trueIndex = chart.series.indexOf(series);
-                var newIndex = series.dummyData;
+console.log("global");
+console.log(globalJson);
 
-                var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+createChart(globalJson);
 
-                series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
-                series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
-            })
-        }
-    }
-}
 
-}); // end am4core.ready()

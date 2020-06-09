@@ -26,6 +26,7 @@
             $groupBy = $_POST["radioFilterGroupBy"];
         ?>
             <script>
+              localStorage.clear();
               localStorage.setItem('select', '<?php echo $groupBy;?>'); 
             </script>
 
@@ -57,6 +58,7 @@
           }
 
           if ($chartChoice == "Table") {
+            $groupBy = $_POST["radioFilterGroupBy"];
           ?>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
               <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button>
@@ -74,7 +76,13 @@
           }
 
           if ($chartChoice == "Bars") {
+            $groupBy = $_POST["radioFilterGroupBy"];
           ?>
+            <script>
+              localStorage.clear();
+              localStorage.setItem('select', '<?php echo $groupBy;?>'); 
+            </script>
+
             <form action="../Result/index" method="post" class="check-box" name="check-box">
               <div class="criteria_wrap">
                 <?php DisplayCriteriaWrapDB(); ?>
