@@ -29,7 +29,7 @@
 .wrapper{
     display: flex;
     width: 100%;
-    align-items: center;
+    /*align-items: center;*/
 
 }
 
@@ -86,7 +86,7 @@
 
 .criteria_wrap {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-auto-rows: minmax(100px, auto);
     gap: 30px;
     align-items: center;
@@ -98,3 +98,56 @@
     font-size: x-large;
 }
 
+
+.filter-panel {
+        display: inline-block;
+        margin-left: 200px;
+        width: 250px;
+        margin-top: 2%;
+   }
+
+   .filter-panel p{
+       padding: 20px 20px 20px;
+       background-color: #B8D2FF;
+       border-top-left-radius: 10px;
+       border-top-right-radius: 10px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       text-transform: uppercase;
+       font-weight: 700;
+       color: #385A64;
+       font-size: 15px;
+   }
+
+
+   .filter-panel ul {
+       overflow: hidden; overflow-y: scroll;
+       background-color: #edf3ff;
+       height: 250px;
+       width: 100%;
+       scroll-padding: 10px;    
+    }
+
+    .filter-panel li {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: #385A64;
+       font-size: 14px;
+       padding: 20px 0px 0px 50px;
+       font-weight: 500;
+   }
+    input[type='checkbox'] {
+        width:14px;
+        height:14px;
+        background:white;
+        border-radius:5px;
+        border:2px solid #555;
+        vertical-align: bottom;
+    }
+
+    label {
+        padding-left: 10px;
+    }
+
+h2{
+    font-weight: 500;
+    margin-top: 40px;
+}

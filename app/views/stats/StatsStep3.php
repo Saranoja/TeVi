@@ -71,11 +71,11 @@
           ?>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
               <div class="criteria_wrap">
+                
                 <?php DisplayCriteriaWrapDB(); ?>
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
               <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>>
-              <!-- <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button> -->
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">
@@ -86,11 +86,21 @@
           }
 
           if ($chartChoice == "Bars") {
+            $countryResult = array();
+            if(isset($_POST["country"]))
+            {
+              foreach ($_POST["country"] as $value) {
+                array_push($countryResult,$value);
+              }
+            }
+
             $groupBy = $_POST["radioFilterGroupBy"];
+            $jsonCountry = json_encode($countryResult);
           ?>
             <script>
               localStorage.clear();
-              localStorage.setItem('select', '<?php echo $groupBy;?>'); 
+              localStorage.setItem('select', '<?php echo $groupBy;?>');
+              localStorage.setItem('where', '<?php echo $jsonCountry; ?>'); 
             </script>
 
             <form action="../Result/index" method="post" class="check-box" name="check-box">

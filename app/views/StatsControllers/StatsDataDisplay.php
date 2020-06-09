@@ -41,3 +41,14 @@ function DisplayChecksForDB($selected_criterion,$selected_category) {
     <?php endforeach;
 }
 ?>
+
+<?php
+function DisplayChecksForCountryDB($selected_criterion,$selected_category) {
+    foreach($selected_criterion as $column): ?>
+        <li><div>
+        <input class="check" type="checkbox" id=<?=$column?> name=<?=$selected_category?> value=<?=$column?>>
+        <label for=<?=$column?>> <?=$column?> </label>
+        </div></li>
+    <?php endforeach;
+}
+?>
