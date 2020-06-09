@@ -39,7 +39,7 @@ function createChart(data = {}) {
 }
 
 let globalJson = {
-    "limit": "10",
+    "limit": "30",
     "select": [],
     "where": [],
     "groupBy": []
