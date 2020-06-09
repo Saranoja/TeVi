@@ -555,36 +555,63 @@
         <section id="guide">
             <h3><span>5.</span> User guide</h3>
             <p>
+                We create a toll for a flexible visualization of data on global terrorism. We want each user to understand
+                how to use this toll and what requirements they need for some actions on the web page.
                 This section is about learning how the site works. There are instructions with images for each page
-                of the application.
+                of the application. This will help a user of the website understand how it works and what it does.
+
             </p>
             <section id="guide_register">
                 <h4><span>5.1</span> Registration</h4>
                 <p>
-                    In order to make certain actions on our website you need an account. The register page is where
-                    you can create one. We need a username, that is not already taken, and a password and your account
-                    will be created.
+                    The registration form is the first page you will see.
+                    Any user can choose not to create an account an enter as guest, but this limits their actions.
+                    Anyone can make an account just by entering a username and a password,but you will need a unique
+                    username that does not already exists in the database. Any new created account will be a normal
+                    user account. A normal user can see detail about the database but it can not change,
+                    delete or add new ones.
+                </p>
+                <p>
+                    Your account can be upgraded to an admin account by contacting one of the project developers and ask,
+                    mentioning why, for what will you use it and how long do you need id. This is strictly for the safety
+                    of our datas in the database, we don't want anyone to be able to change our datas.
+                </p>
+                <p>
+                    If you already have an account you can skip right to the <a href="#guide_login"> login</a> page and enter
+                    your credentials.
+                </p>
+                <p>
+                    Beside all of this any invalid action will have a specific message. If you try to register with a username
+                    that already exist, blank username and/or password a message will notify you on the same page.
                 </p>
                 <img class="big-picture" src="../img/Arhitecture/Register_guide.PNG" alt="Register_page">
-               <p>
-                   If you already have and account you have a button to go directly to <a href="#guide_login"> login</a>,
-                   and if you want just to see the website without much functionality, you can enter as guest.
-               </p>
             </section>
             <section id="guide_login">
                 <h4><span>5.2</span> Login</h4>
                 <p>
-                    If you have an account you can directly login to the website. The login interface require your username 
-                    and password. After login you will be redirected to the <a href="#guide_start"> start</a> page.
+                    With an account you can login on the web site. Enter your credentials and you can start useing the website,
+                    read about the idea, project, developers and learn a few things about the design. 
+                    After login the <a href="#guide_start"> start</a> page will welcome you. 
+                </p>
+                <p>
+                    Like in the register page case any invalid action like invalid username/password, blank username or/and password,
+                    will trigger a message notify and you must try to login again. You can not receive your username or password directly
+                    from the web page you have to contact one of us in case you forgot yor credentials. You can always make a new account 
+                    if you consider it be easier, as well.
                 </p>
                 <img class="big-picture" src="../img/Arhitecture/Login_guide.PNG" alt="Login_page">
             </section>
             <section id="guide_start">
                 <h4><span>5.3</span> Start</h4>
                 <p>
-                    The start page is where you land on after <a href="#guide_login"> login</a>.
-                    From here you can acces on of the <a href="#guide_resources">resources</a> or <a href="#guide_statistics">statistics</a> 
-                    pages or press the Get started to go to the homepage.    
+                    The start page is where you land on, after <a href="#guide_login"> login</a>.
+                    You can either go to a specific page: <a href="#guide_statistics">statistics</a>, <a href="#guide_resources">resources</a>
+                    or you can "Get started" and navigate the home page.   
+                </p>
+                <p>
+                    We designed this page in order to give sens to our website. Instead of going directly to a specific page,
+                    you as a user can choose what you want to explore. If you are here just for our api, statistics or designd, you can
+                    navigate there first.
                 </p>
                 <img class="big-picture" src="../img/Arhitecture/Start_guide.PNG" alt="Start_page">
             </section>
@@ -595,25 +622,58 @@
                     a short summary about Terrorism and why we decided to design the website,
                     what is the team, who are we and links to our personal pages.
                 </p>
-                <p>This page is purely for informations, a starting point for interested users, it does not have a functionality! </p>
+                <p>
+                    From here, much like from any web page from now on, you can go to any other web page by using the navigation
+                    bar on the top of the page. This navigation bar is designed to always stay on the top of the website, so no matter 
+                    how much you scroll down it will stay with you.
+                </p>
+                <p>
+                    On the footer of the homepage are links to our personal pages, you can click any social media picture to go
+                    to the specific website for a speciffic developer. Some of us have more social pages you can acces, search as
+                    much as you like.
+                </p>
             </section>
             <section id="guide_statistics">
                 <h4><span>5.5</span> Statistics</h4>
                 <p>
-                    The statistics page is the main purpose for which we designed the website.
-                    This page is composed of multiple stages, with choices that lead to your desired visualisation of data.
+                    Our goal was to create a flexible web data visualizer. This page is where the magic happens.
+                    It's design is as easier as we could think: 
+                </p>
+                <p>
+                    First of all you have to select the type of visualisation of the data. You can select from a variety of 4 charts:
+                    pie, map, table and bars. Each chart comes with it's advantages and disadvantages as you will see on the next step.
+                    After you decided on the wanted chart you check it, and press the next button.
+                </p>
+                <p>
+                    On the next step you choose what you want to see from the database: country, weapons used, etc. Some charts only
+                    allow you to select one option, like the pie and map ones, when the table and bars allow for multipe choices.
+                    When done decideing you can press the next button in order to go to the 3rd step, or press the back button to go back at the
+                    first step in case you changed your mind.
+                </p>
+                <p>
+                    The 3rd step is what adds flavour to youe data. It is basically the filter page. You can choose from 20 diffrent options
+                    like weapon_type, year, country, etc. and specify the precise data that interests you. You can leave the blank or select just a few 
+                    the choise is your alone. After this you can press the finish button in order to see your data as you wanted, or go back at the previous step.
+                </p>
+                <p>
+                    The chart page is where you data will be shown as you requested. 
+                    You can then download it as a csv,png or svg, go to other page or start the process again. 
+                </p>
+                <p>
+                    At any point in the process you can go to a diffrent web page: home, resources. The navigation bar is always there.
                 </p>
             </section>
             <section id="guide_resources">
                 <h4><span>5.6</span> Resources</h4>
                 <p>
-                    The Resource page is the "manual" of the website. Here you can find resources about the website.
-                    Why did we build it and how, what were the requirements, what is the arhitecture, what where the stages
-                    of project development, user guide, acknowledgements, references.
+                    The Resource page is the "manual" of the website. For useres and programers alike, we created this page in order to help you.
+                    No matter your intentions with our website: see data, use data, learn about de arhitecture, about he team, about our features
+                    this pages is here to help.
                 </p>
                 <p>
-                    With so much information we tried to keep it simple and usefull by useing a simple hierarchy, with all the information
-                    displayed at the top of the page with clickable text that takes you to the desired subject.
+                    With so much information we tried to keep it simple and usefull by useing a hierarchy, with all the information
+                    displayed at the top of the page with clickable text that takes you to the desired subject. You can go to the  top of the page 
+                    anytime useing the navigation bar, so don't worry to explore.
                 </p>
             </section>
         </section>

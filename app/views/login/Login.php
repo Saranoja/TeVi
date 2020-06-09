@@ -15,6 +15,9 @@
 
             <input type="Submit" value="Login" name="btn-login">
 
+            <a href="http://localhost/TeVi/public/Register">Sign up!</a>
+            <a href="http://localhost/TeVi/public/Start">Enter as guest!</a>
+
             <h4 id="errorText"><?= Login::$message?></h4>
         </form>
 </body>

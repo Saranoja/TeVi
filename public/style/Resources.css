@@ -66,10 +66,10 @@ img{
     height: 100px;
     justify-content: center;
 }
-img:hover {
+/* img:hover {
     width: 500px;
     height: 400px;
-}
+} */
 .big-picture{
     max-width: 60%;
     height: 30%;
@@ -77,10 +77,10 @@ img:hover {
 .long-img{
     max-width: 100%;
 }
-.long-img:hover{
+/* .long-img:hover{
     width: 70%;
     height: 150px;
-}
+} */
 
 
 ol{
