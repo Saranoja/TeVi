@@ -10,9 +10,15 @@
     
     
     <?php
-    if (isset($_POST['Result']))
+    if (isset($_POST['Result']) || isset($_POST['back-button']))
     {
+    if(isset($_POST["hopping"])){
     $radioVal = $_POST["hopping"];
+    }
+    else
+    {
+    $radioVal = $_POST["chartChoice"];
+    }
     if($radioVal == "Pie")
     {
     ?>
@@ -26,11 +32,10 @@
           <?php DisplayCriteriaWrapPieChartGroupBy(); ?>
           
           <input type="hidden" class="chartchoice"  name="chartChoice" value=<?=$radioVal?>>
-          
           <button  onclick="location.href='../Stats/index'" class="back-button" type="button"></button>
           <button  class="next-button" name="GroupFilterSubmit" type="submit"></button>
         </form>
-      </div>
+    </div>
     </div>
     
     <?php
