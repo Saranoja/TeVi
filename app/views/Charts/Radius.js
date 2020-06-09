@@ -34,8 +34,8 @@ function createChart(data = {}) {
       chart.data = response;
       // Add and configure Series
       var pieSeries = chart.series.push(new am4charts.PieSeries());
-      pieSeries.dataFields.value = "litres";
-      pieSeries.dataFields.category = "country";
+      pieSeries.dataFields.value = "sum(total_fatalities)";
+      pieSeries.dataFields.category = groupByColumn;
       pieSeries.slices.template.stroke = new am4core.InterfaceColorSet().getFor("background");
       pieSeries.slices.template.strokeWidth = 1;
       pieSeries.slices.template.strokeOpacity = 1;
@@ -61,8 +61,8 @@ function createChart(data = {}) {
 
       // Add second series
       var pieSeries2 = chart.series.push(new am4charts.PieSeries());
-      pieSeries2.dataFields.value = "bottles";
-      pieSeries2.dataFields.category = "country";
+      pieSeries2.dataFields.value = "count(event_id)";
+      pieSeries2.dataFields.category = groupByColumn;
       pieSeries2.slices.template.stroke = new am4core.InterfaceColorSet().getFor("background");
       pieSeries2.slices.template.strokeWidth = 1;
       pieSeries2.slices.template.strokeOpacity = 1;
@@ -72,13 +72,14 @@ function createChart(data = {}) {
       pieSeries2.labels.template.disabled = true;
       pieSeries2.ticks.template.disabled = true;
 
+      chart.exporting.menu = new am4core.ExportMenu();
 
       var label = chart.seriesContainer.createChild(am4core.Label);
       label.textAlign = "middle";
       label.horizontalCenter = "middle";
       label.verticalCenter = "middle";
       label.adapter.add("text", function (text, target) {
-        return "[font-size:18px]total[/]:\n[bold font-size:30px]" + pieSeries.dataItem.values.value.sum + "[/]";
+        return "[font-size:18px]total attacks[/]:\n[bold font-size:30px]" + pieSeries.dataItem.values.value.sum + "[/]";
       })
     }
     else {
@@ -87,15 +88,28 @@ function createChart(data = {}) {
   }));
 }
 
+let groupByColumn = JSON.parse(localStorage.getItem("table-groupBy"))[0].replace("-","_");
+
 let globalJson = {
   "limit": "10",
-  "select": [],
+  "select": [
+    {
+      "column": groupByColumn
+  },
+  {
+    "column":"sum(total_fatalities)"
+  },
+  {
+    "column":"count(event_id)"
+  }
+  ],
   "where": [],
-  "groupBy": []
+  "groupBy": [
+    {
+      "column": groupByColumn
+    }
+  ]
 };
-
-globalJson["select"].push({ "column": localStorage.getItem("select").replace("-", "_") });
-globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")") });
 
 var obj = JSON.parse(localStorage.getItem("where"));
 var keys = Object.keys(obj);
@@ -106,8 +120,8 @@ keys.forEach(element => {
   let columns = "";
 
   obj[element].forEach(value => {
-      // columns.concat(value,"','");
-      columns = columns.replace("-", "_") + value + "','";
+    // columns.concat(value,"','");
+    columns = columns.replace("-", "_") + value + "','";
   });
 
 
@@ -116,54 +130,13 @@ keys.forEach(element => {
   let jsonValue = "('".concat(columns, "')");
 
   globalJson["where"].push({
-      "column": element.toString().replace("-", "_"),
-      "operator": "in",
-      "value": jsonValue
+    "column": element.toString().replace("-", "_"),
+    "operator": "in",
+    "value": jsonValue
   });
 
 });
 
 console.log(globalJson);
-
-
-globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
-
-globalJson = [{
-  "country": "Lithuania",
-  "litres": 501.9,
-  "bottles": 1500
-}, {
-  "country": "Czech Republic",
-  "litres": 301.9,
-  "bottles": 990
-}, {
-  "country": "Ireland",
-  "litres": 201.1,
-  "bottles": 785
-}, {
-  "country": "Germany",
-  "litres": 165.8,
-  "bottles": 255
-}, {
-  "country": "Australia",
-  "litres": 139.9,
-  "bottles": 452
-}, {
-  "country": "Austria",
-  "litres": 128.3,
-  "bottles": 332
-}, {
-  "country": "UK",
-  "litres": 99,
-  "bottles": 150
-}, {
-  "country": "Belgium",
-  "litres": 60,
-  "bottles": 178
-}, {
-  "country": "The Netherlands",
-  "litres": 50,
-  "bottles": 50
-}];
 
 createChart(globalJson);

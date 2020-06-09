@@ -65,7 +65,6 @@
         <img src="../img/HierarchyModel/step2.svg">
       </div>
       <div>
-        <h2>You can select a maximum of 2 fields</h2>
         <form action="../Stats/Step3" method="post" class="check-box" name="check-box">
           <div class="criteria_wrap">
             <?php 

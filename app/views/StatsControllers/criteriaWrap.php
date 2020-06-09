@@ -14,31 +14,31 @@ function DisplayCriteriaWrap() {
 
     <div class="event">
         <p> Event </p>
-        <?php DisplayChecksFor($event_columns); ?>
+        <?php DisplayRadioButtonsRadius($event_columns); ?>
     </div>
     <div class="time">
         <p> Time </p>
-        <?php DisplayChecksFor($time_columns); ?>
+        <?php DisplayRadioButtonsRadius($time_columns); ?>
     </div>
     <div class="location">
         <p> Location </p>
-        <?php DisplayChecksFor($location_columns); ?>
+        <?php DisplayRadioButtonsRadius($location_columns); ?>
     </div>
     <div class="attacker">
         <p> Attacker </p>
-        <?php DisplayChecksFor($attacker_columns); ?>
+        <?php DisplayRadioButtonsRadius($attacker_columns); ?>
     </div>
     <div class="target">
         <p> Target </p>
-        <?php DisplayChecksFor($target_columns); ?>
+        <?php DisplayRadioButtonsRadius($target_columns); ?>
     </div>
     <div class="weapon">
         <p> Weapon details </p>
-        <?php DisplayChecksFor($weapons_columns); ?>
+        <?php DisplayRadioButtonsRadius($weapons_columns); ?>
     </div>
     <div class="deaths">
         <p> Deaths </p>
-        <?php DisplayChecksFor($deaths_columns); ?>
+        <?php DisplayRadioButtonsRadius($deaths_columns); ?>
     </div>
 <?php
 } ?>

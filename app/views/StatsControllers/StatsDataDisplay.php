@@ -8,6 +8,26 @@ function DisplayChecksFor($selected_criterion) {
 }
 ?>
 
+<?php
+function DisplayRadioButtonsRadius($selected_criterion) {
+    foreach($selected_criterion as $column):
+            if($column == 'Success'){ ?>
+        <input type="radio" name="checkboxFilterRestriction[]"  value=<?=$column?> id=<?=$column?> checked>
+        <label for=<?=$column?>> <?=$column?> </label>
+        <br>
+        <?php 
+                }
+        else {
+            ?>
+        <input type="radio" name="checkboxFilterRestriction[]" value=<?=$column?>  id=<?=$column?>>
+        <label for=<?=$column?>> <?=$column?> </label>
+        <br>
+       <?php 
+        }
+     endforeach;
+}
+?>
+
 
 
 <?php
