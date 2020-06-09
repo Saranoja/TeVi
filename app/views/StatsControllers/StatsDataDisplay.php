@@ -1,7 +1,7 @@
 <?php
 function DisplayChecksFor($selected_criterion) {
     foreach($selected_criterion as $column): ?>
-        <input type="checkbox" name="checkboxFilterRestriction[]" value=<?=$column?> id=<?=$column?> >
+        <input type="checkbox" class="check" name="checkboxFilterRestriction[]" value=<?=$column?> id=<?=$column?> >
         <label for=<?=$column?>> <?=$column?> </label>
         <br>
     <?php endforeach;
