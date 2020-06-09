@@ -65,11 +65,13 @@
         <img src="../img/HierarchyModel/step2.svg">
       </div>
       <div>
+        <h2>You can select a maximum of 2 fields</h2>
         <form action="../Stats/Step3" method="post" class="check-box" name="check-box">
           <div class="criteria_wrap">
             <?php 
             DisplayCriteriaWrap(); ?>
           </div>
+          <script src="../js/checkboxLimitRadius.js" type="text/javascript">checkBoxLimit()</script>
           <input type="hidden" class="chartchoice"  name="chartChoice" value=<?=$radioVal?>>
           
           <button  onclick="location.href='../Stats/index'" class="back-button" type="button"></button>
@@ -92,7 +94,7 @@
         <form action="../Stats/Step3" method="post" class="check-box" name="check-box">
           <?php 
             DisplayCriteriaWrapCountryDB();
-            DisplayCriteriaWrapPieChartGroupBy(); ?>
+            DisplayCriteriaWrapBarsChartGroupBy(); ?>
           <script src="../js/checkboxLimit.js" type="text/javascript">checkBoxLimit()</script>
           <input type="hidden" class="chartchoice"  name="chartChoice" value=<?=$radioVal?>>
           <button  onclick="location.href='../Stats/index'" class="back-button" type="button"></button>
