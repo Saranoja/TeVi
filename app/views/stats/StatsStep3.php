@@ -66,15 +66,20 @@
           }
 
           if ($chartChoice == "Table") {
-            $groupBy = $_POST["radioFilterGroupBy"];
+            $groupBy = $_POST["checkboxFilterRestriction"];
+            $jsonTableGroupBy = json_encode($groupBy);
           ?>
+          <script>
+              localStorage.clear();
+              localStorage.setItem('table-groupBy', '<?php echo $jsonTableGroupBy; ?>');
+            </script>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
               <div class="criteria_wrap">
 
                 <?php DisplayCriteriaWrapDB(); ?>
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-              <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>>
+              <!-- <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>> -->
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">
@@ -107,7 +112,6 @@
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
               <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>>
-              <!-- <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button> -->
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">

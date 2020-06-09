@@ -20,7 +20,11 @@ function DisplayCriteriaWrapBarsChartGroupBy() {
         <p> Time </p>
         <?php DisplayRadioButtonsFor($time_columnsPie); ?>
     </div>
-   <div class="attacker">
+    <div class="location">
+        <p> Location </p>
+        <?php DisplayRadioButtonsFor($location_columnsPie); ?>
+    </div>
+    <div class="attacker">
         <p> Attacker </p>
         <?php DisplayRadioButtonsFor($attacker_columnsPie); ?>
     </div>
