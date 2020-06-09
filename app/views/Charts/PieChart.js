@@ -23,11 +23,17 @@ function createChart(data = {}) {
     chart.legend = new am4charts.Legend();
 
     am4core.ready(fetchData(data).then(response => {
-        //console.log("THEN");
-        chart.data = response;
-        var series = chart.series.push(new am4charts.PieSeries3D());
-        series.dataFields.value = "count(".concat(localStorage.getItem("select").replace("-","_")).concat(")");
-        series.dataFields.category = localStorage.getItem("select").replace("-","_");
+
+        if (JSON.stringify(response).length<=0) {
+
+            chart.data = response;
+            var series = chart.series.push(new am4charts.PieSeries3D());
+            series.dataFields.value = "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")");
+            series.dataFields.category = localStorage.getItem("select").replace("-", "_");
+        }
+        else {
+            document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
+        }
     }));
 }
 
@@ -38,42 +44,37 @@ let globalJson = {
     "groupBy": []
 };
 
-// console.log("count(".concat(localStorage.getItem("select").replace("-","_")).concat(")"));
 
-globalJson["select"].push({ "column": localStorage.getItem("select").replace("-","_")});
-globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-","_")).concat(")")});
+globalJson["select"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")") });
 
 var obj = JSON.parse(localStorage.getItem("where"));
 var keys = Object.keys(obj);
 
-console.log(keys.toString());
-
 
 keys.forEach(element => {
 
-   let columns = "";
+    let columns = "";
 
-obj[element].forEach(value =>{
-    console.log(value);
-   // columns.concat(value,"','");
-   columns = columns.replace("-","_") + value + "','";
-   console.log(columns);
-});
+    obj[element].forEach(value => {
+        // columns.concat(value,"','");
+        columns = columns.replace("-", "_") + value + "','";
+    });
 
 
-columns = columns.slice(0,-3);
+    columns = columns.slice(0, -3);
 
-let jsonValue = "('".concat(columns,"')"); 
+    let jsonValue = "('".concat(columns, "')");
 
-globalJson["where"].push({
-    "column": element.toString().replace("-","_"),
-    "operator": "in",
-    "value": jsonValue
-});
+    globalJson["where"].push({
+        "column": element.toString().replace("-", "_"),
+        "operator": "in",
+        "value": jsonValue
+    });
 
 });
 
 
-globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-","_")});
+globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
 
 createChart(globalJson);

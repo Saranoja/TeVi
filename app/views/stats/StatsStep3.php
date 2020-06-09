@@ -59,7 +59,7 @@
           if ($chartChoice == "Table") {
           ?>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
-               <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button>
+              <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button>
               <button class="finish-button" name="generate-chart" type="submit"></button>
               <div class="criteria_wrap">
                 <?php DisplayCriteriaWrapDB(); ?>
@@ -81,7 +81,8 @@
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
               <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>>
-            
+              <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button>
+              <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
 
         <?php

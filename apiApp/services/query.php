@@ -70,7 +70,4 @@
     }
 }
 
-
-where year in () and country in ()
-
 ?>

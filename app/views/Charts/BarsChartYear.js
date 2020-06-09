@@ -1,17 +1,3 @@
-<style>
-#chartdiv {
-  width: 100%;
-  height: 800px;
-}
-</style>
-
-<!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-<!-- Chart code -->
-<script>
 am4core.ready(function() {
 
 // Themes begin
@@ -340,4 +326,3 @@ addRange("West", "California", "Wyoming", chart.colors.getIndex(3));
 chart.cursor = new am4charts.XYCursor();
 
 }); // end am4core.ready()
-</script>

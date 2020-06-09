@@ -40,7 +40,7 @@
         <input id="b" type="radio" name="hopping" value="Map">
         <label for="b"><span></span>Map Chart</label>
         <input id="c" type="radio" name="hopping" value="Table">
-        <label for="c"><span></span>Table Chart</label>
+        <label for="c"><span></span>Radius Chart</label>
         <input id="d" type="radio" name="hopping" value="Bars">
         <label for="d"><span></span>Bars Chart</label>
         <div class="worm">

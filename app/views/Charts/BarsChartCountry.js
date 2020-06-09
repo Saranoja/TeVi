@@ -1,17 +1,3 @@
-<style>
-#chartdiv {
-  width: 100%;
-  height: 500px;
-}
-</style>
-
-//<!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-//<!-- Chart code -->
-<script>
 am4core.ready(function() {
 
 // Themes begin
@@ -56,35 +42,40 @@ function createSeries(value, name) {
 
 chart.data = [
     {
-        "category": 'Place #1',
-        "first": 40,
-        "second": 55,
-        "third": 60
+        "country": 'Romania',
+        "unknown": 40,
+        "Unarmed Assault": 55,
+        "Hostage Taking (Kidnapping)": 60
     },
     {
-        "category": 'Place #55',
-        "first": 30,
-        "second": 78,
-        "third": 69
+        "category": 'Belgium',
+        "sum(bombing/explosion)": 30,
+        "sum(arson)": 78,
+        "sum(Assassination)": 69
     },
     {
-        "category": 'Place #3',
-        "first": 27,
-        "second": 40,
-        "third": 45
+        "category": 'Russia',
+        "sum(bombing/explosion)": 27,
+        "sum(arson)": 40,
+        "sum(Assassination)": 45
     },
     {
-        "category": 'Place #4',
-        "first": 50,
-        "second": 33,
-        "third": 22
+        "category": 'Pakistan',
+        "sum(bombing/explosion)": 50,
+        "sum(arson)": 33,
+        "sum(Assassination)": 22
     }
 ]
 
+chart.data.forEach(element => {
+    if(element["country"]==jsonulMeu[index]["country"])
+        element["ceAmSelectat"] = jsonulMeu[index]["count(ceAmSelectat)"];
+});
 
-createSeries('first', 'The Thirst');
-createSeries('second', 'The Second');
-createSeries('third', 'The Third');
+
+createSeries('sum(bombing/explosion)', 'bombing/explosion');
+createSeries('sum(arson)', 'arson');
+createSeries('sum(Assassination)', 'Assassination');
 
 function arrangeColumns() {
 
@@ -125,4 +116,3 @@ function arrangeColumns() {
 }
 
 }); // end am4core.ready()
-</script>
