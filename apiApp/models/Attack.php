@@ -4,10 +4,6 @@ class Attack extends Model
 {
     private $connection;
     protected $service;
-    protected $valid_parameters = "event_id summary success suicide attack_type location year month day
-        approximate_date duration country country_code region provence city latitude longitude corp group_name
-        group_subname motive gun_certain terrorists_number claim claim_mode target_type target_subtype
-        target target_nationality weapon_type weapon_subtype weapon_details total_fatalities us_citizens_who_died";
     public $response;
     public $result;
 
@@ -15,14 +11,6 @@ class Attack extends Model
     {
         $db = Database::getInstance();
         $this->connection = $db->getConnection();
-    }
-
-    public function create($data)
-    {
-    }
-
-    public function read($params, $values)
-    {
     }
 
     /**
@@ -141,7 +129,7 @@ class Attack extends Model
             return $res;
         } else {
             $res['body'] = "Error occured during insert query: " . $this->connection->error;
-            $res['status'] = 500;
+            $res['status'] = 405;
             return $res;
         }
     }
@@ -180,7 +168,7 @@ class Attack extends Model
             return $res;
         } else {
             $res['body'] = "Error occured during update query: " . $this->connection->error;
-            $res['status'] = 500;
+            $res['status'] = 405;
             return $res;
         }
     }

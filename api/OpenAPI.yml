@@ -12,70 +12,6 @@ schemes:
 - "https"
 - "http"
 paths:
-  /query:
-    post:
-      tags:
-      - "query"
-      summary: "Displays the result set after performing a query on the database"
-      description: ""
-      operationId: "read"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Attack object that needs to be added to the database"
-        required: true
-        schema:
-          type: object
-          properties:
-            limit:
-              type: string
-            select:
-              type: array
-              items:
-                type: object
-                properties:
-                  column:
-                    type: string
-            where:
-              type: array
-              items:
-                type: object
-                properties:
-                  column:
-                    type: string
-                  operator:
-                    type: string
-                  value:
-                    type: string
-            groupBy:
-              type: array
-              items:
-                type: object
-                properties:
-                  column:
-                    type: string
-          example:
-            limit: "50"
-            select:
-              - column: "country"
-              - column: "year"
-              - column: "attack"
-            where: 
-              - column: "year"
-                operator: ">"
-                value: "'2006'"
-              - column: "year"
-                operator: "<"
-                value: "'2009'"
-            groupBy:
-              - column: "country"
-      responses:
-        "200":
-          description: "OK"
   /attacks:
     get:
       tags:
@@ -88,6 +24,8 @@ paths:
       responses:
         "200":
           description: "OK"
+        "500":
+          description: "Internal Server Error"
     post:
       tags:
       - "attack"
@@ -248,8 +186,8 @@ paths:
       responses:
         "200":
           description: "OK"
-        "500":
-          description: "Internal server error"
+        "405":
+          description: "Invalid input"
   /attacks/{id}:
     get:
       tags:
@@ -270,6 +208,10 @@ paths:
       responses:
         "200":
           description: "OK"
+        "404":
+          description: "No data found"
+        "500":
+          description: "Internal server error"
     delete:
       tags:
       - "attack"
@@ -286,7 +228,76 @@ paths:
         type: integer
         format: int64
       responses:
-        "204":
-          description: "Deleted"
-    
+        "200":
+          description: "OK"
+        "500":
+          description: "Internal server error"
+  /query:
+    post:
+      tags:
+      - "query"
+      summary: "Displays the result set after performing a query on the database"
+      description: ""
+      operationId: "read"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Attack object that needs to be added to the database"
+        required: true
+        schema:
+          type: object
+          properties:
+            limit:
+              type: string
+            select:
+              type: array
+              items:
+                type: object
+                properties:
+                  column:
+                    type: string
+            where:
+              type: array
+              items:
+                type: object
+                properties:
+                  column:
+                    type: string
+                  operator:
+                    type: string
+                  value:
+                    type: string
+            groupBy:
+              type: array
+              items:
+                type: object
+                properties:
+                  column:
+                    type: string
+          example:
+            limit: "50"
+            select:
+              - column: "country"
+              - column: "year"
+              - column: "attack_type"
+            where: 
+              - column: "country"
+                operator: "in"
+                value: "('Pakistan','Iraq','Italy')"
+              - column: "year"
+                operator: "<"
+                value: "'2009'"
+            groupBy:
+              - column: "country"
+      responses:
+        "200":
+          description: "OK"
+        "400":
+          description: "Bad request"
+        "500":
+          description: "Internal Server Error"        
     

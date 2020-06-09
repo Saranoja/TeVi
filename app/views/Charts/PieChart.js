@@ -30,6 +30,7 @@ function createChart(data = {}) {
             var series = chart.series.push(new am4charts.PieSeries3D());
             series.dataFields.value = "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")");
             series.dataFields.category = localStorage.getItem("select").replace("-", "_");
+            chart.exporting.menu = new am4core.ExportMenu();
         }
         else {
             document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";

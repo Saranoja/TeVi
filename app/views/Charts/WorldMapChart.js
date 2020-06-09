@@ -101,7 +101,7 @@ function createChart(data = {}) {
       });
     }
 
-
+    chart.exporting.menu = new am4core.ExportMenu();
 
   }));
 }

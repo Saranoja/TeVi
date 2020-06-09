@@ -77,6 +77,7 @@ function createChart(data = {}) {
             for (index = 0; index < Object.keys(accJson[0]).length; index++)
                 if (Object.keys(accJson[0])[index] != "country")
                     createSeries(Object.keys(accJson[0])[index], Object.keys(accJson[0])[index]);
+            chart.exporting.menu = new am4core.ExportMenu();
         }
 
         else {
