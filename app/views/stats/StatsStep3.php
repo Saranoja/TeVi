@@ -27,7 +27,7 @@
         ?>
             <script>
               localStorage.clear();
-              localStorage.setItem('select', '<?php echo $groupBy;?>'); 
+              localStorage.setItem('select', '<?php echo $groupBy; ?>');
             </script>
 
             <form action="../Result/index" method="post" class="check-box" name="check-box">
@@ -41,27 +41,26 @@
             </form>
 
             <form action="../Stats/Step2" method="post">
-            <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-            <button class="back-button" name="back-button" type="submit"></button>
+              <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
+              <button class="back-button" name="back-button" type="submit"></button>
             </form>
 
           <?php  }
           if ($chartChoice == "Map") {
-            $groupBy = $_POST["radioFilterGroupBy"];
+            $groupBy = 0;
           ?>
-            <div class="no-restrioctions">
-              <h4>You can't choose restriction for this type of visualisation</h4>
-              <br>
-            </div>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
+            <div class="criteria_wrap">
+              <?php DisplayCriteriaWrapDB(); ?>
+            </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
               <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>>
               <!-- <button onclick="location.href='../Stats/Step2'" class="back-button" type="button"></button> -->
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">
-            <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-            <button class="back-button" name="back-button" type="submit"></button>
+              <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
+              <button class="back-button" name="back-button" type="submit"></button>
             </form>
           <?php
           }
@@ -71,7 +70,7 @@
           ?>
             <form action="../Result/index" method="post" class="check-box" name="check-box">
               <div class="criteria_wrap">
-                
+
                 <?php DisplayCriteriaWrapDB(); ?>
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
@@ -79,18 +78,17 @@
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">
-            <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-            <button class="back-button" name="back-button" type="submit"></button>
+              <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
+              <button class="back-button" name="back-button" type="submit"></button>
             </form>
           <?php
           }
 
           if ($chartChoice == "Bars") {
             $countryResult = array();
-            if(isset($_POST["country"]))
-            {
+            if (isset($_POST["country"])) {
               foreach ($_POST["country"] as $value) {
-                array_push($countryResult,$value);
+                array_push($countryResult, $value);
               }
             }
 
@@ -99,8 +97,8 @@
           ?>
             <script>
               localStorage.clear();
-              localStorage.setItem('select', '<?php echo $groupBy;?>');
-              localStorage.setItem('where', '<?php echo $jsonCountry; ?>'); 
+              localStorage.setItem('select', '<?php echo $groupBy; ?>');
+              localStorage.setItem('countries', '<?php echo $jsonCountry; ?>');
             </script>
 
             <form action="../Result/index" method="post" class="check-box" name="check-box">
@@ -113,8 +111,8 @@
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">
-            <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-            <button class="back-button" name="back-button" type="submit"></button>
+              <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
+              <button class="back-button" name="back-button" type="submit"></button>
             </form>
         <?php
           }

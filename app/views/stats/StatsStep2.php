@@ -48,16 +48,15 @@
         <img src="../img/HierarchyModel/step2.svg">
       </div>
       <div>
-        <form action="../Stats/Step3" method="post" class="check-box" name="check-box">
-          <?php DisplayCriteriaWrapMapChartGroupBy(); ?>
-          
+        <form action="../Stats/Step3" method="post" class="check-box" name="check-box">     
+          <h3> You can only view a report for the total fatalities for this visualization type </h3>
           <input type="hidden" class="chartchoice"  name="chartChoice" value=<?=$radioVal?>>
-          
           <button  onclick="location.href='../Stats/index'" class="back-button" type="button"></button>
           <button  class="next-button" name="GroupFilterSubmit" type="submit"></button>
         </form>
       </div>
     </div>
+
     <?php  }
     elseif ($radioVal == "Table") {
     ?>

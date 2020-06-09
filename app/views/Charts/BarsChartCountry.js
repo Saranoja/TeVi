@@ -25,57 +25,63 @@ function createChart(data = {}) {
     chart.legend.labels.template.maxWidth = 95
 
     am4core.ready(fetchData(data).then(response => {
-        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
-        xAxis.dataFields.category = 'country'
-        xAxis.renderer.cellStartLocation = 0.1
-        xAxis.renderer.cellEndLocation = 0.9
-        xAxis.renderer.grid.template.location = 0;
 
-        var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        yAxis.min = 0;
+        if (Object.keys(response).length > 0) {
 
-        console.log(response);
+            var xAxis = chart.xAxes.push(new am4charts.CategoryAxis())
+            xAxis.dataFields.category = 'country'
+            xAxis.renderer.cellStartLocation = 0.1
+            xAxis.renderer.cellEndLocation = 0.9
+            xAxis.renderer.grid.template.location = 0;
 
-        let accJson = [{
-            country: "Iraq"
-        },
-        {
-            country: "Pakistan"
-        },
-        {
-            country: "Afghanistan"
-        },
-        {
-            country: "India"
-        },
-        /* {
-            country: "Colombia"
-        },
-        {
-            country: "Philippines"
-        },
-        {
-            country: "Peru"
-        }*/];
+            var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            yAxis.min = 0;
 
-        var index;
-        for (index = 0; index < 4; index++)
-            response.forEach(element => {
-                //console.log(element["country"]);
+            console.log(response);
 
-                //console.log(accJson[index].country);
-                if (element["country"] == accJson[index].country) {
-                    accJson[index][element[localStorage.getItem("select").replace("-", "_")]] = element["count(" + localStorage.getItem("select").replace("-", "_") +")"];
-                    //console.log("match");
-                }
-            })
+            let countries = JSON.parse(localStorage.getItem("countries"));
 
-        chart.data = accJson;
+            console.log(countries);
 
-        console.log(accJson);
 
-        for (index = 1; index < Object.keys(accJson[0]).length; index++)
-            createSeries(Object.keys(accJson[0])[index], Object.keys(accJson[0])[index]);
+            let accJson = [{
+                country: countries[0]
+            },
+            {
+                country: countries[1]
+            },
+            {
+                country: countries[2]
+            },
+            {
+                country: countries[3]
+            }];
+
+            var index;
+            for (index = 0; index < 4; index++)
+
+                response.forEach(element => {
+                    //console.log(element["country"]);
+
+                    //console.log(accJson[index].country);
+                    if (element["country"] == accJson[index].country) {
+                        accJson[index][element[localStorage.getItem("select").replace("-", "_")]] = element["count(" + localStorage.getItem("select").replace("-", "_") + ")"];
+                        //console.log("match");
+                    }
+                })
+
+            chart.data = accJson;
+
+            console.log(accJson);
+
+            for (index = 0; index < Object.keys(accJson[0]).length; index++)
+                if (Object.keys(accJson[0])[index] != "country")
+                    createSeries(Object.keys(accJson[0])[index], Object.keys(accJson[0])[index]);
+        }
+
+        else {
+            document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
+        }
 
         function createSeries(value, name) {
             var series = chart.series.push(new am4charts.ColumnSeries())
@@ -147,10 +153,12 @@ globalJson["select"].push({ "column": "country" });
 globalJson["select"].push({ "column": localStorage.getItem("select").replace("-", "_") });
 globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")") });
 
+let countries = JSON.parse(localStorage.getItem("countries"));
+
 globalJson["where"].push({
     "column": "country",
     "operator": "in",
-    "value": "('Iraq', 'Pakistan','Afghanistan','India')"
+    "value": "('" + countries[0] + "', '" + countries[1] + "','" + countries[2] + "','" + countries[3] + "')"
 });
 
 var obj = JSON.parse(localStorage.getItem("where"));

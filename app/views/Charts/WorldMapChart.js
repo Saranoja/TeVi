@@ -17,6 +17,9 @@ async function fetchData(data = {}) {
 function createChart(data = {}) {
   am4core.ready(fetchData(data).then(response => {
 
+    if (Object.keys(response).length <= 0) {
+      document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
+    }
 
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -79,17 +82,17 @@ function createChart(data = {}) {
     }
 
     var colorSet = new am4core.ColorSet();
-     
-    // console.log(response);
+
+    console.log(response);
 
     // console.log(JSON.stringify(response).length);
-    // console.log(response[0]["sum(total_fatalities)"]);
+    //console.log(response[0]["sum(total_fatalities)"]);
     // console.log(response[0]["avg(latitude)"]);
     // console.log(response[0]["avg(longitude)"]);
 
     imageSeries.data = [];
-    for (i = 0; i <= limit; i++) {
 
+    for (i = 0; i < response.length; i++) {
       imageSeries.data.push({
         "title": "Total fatalities:".concat(response[i]["sum(total_fatalities)"]),
         "latitude": parseFloat(response[i]["avg(latitude)"]),
@@ -98,13 +101,13 @@ function createChart(data = {}) {
       });
     }
 
-    
+
 
   }));
 }
 
 
-let limit=200
+let limit = 250
 
 let globalJson = {
   "limit": limit,
@@ -122,12 +125,40 @@ let globalJson = {
       "column": "avg(longitude)"
     }],
   "where":
-    [ 
+    [
     ],
   "groupBy":
     [{
       "column": "country"
     }]
 };
+
+var obj = JSON.parse(localStorage.getItem("where"));
+var keys = Object.keys(obj);
+
+
+keys.forEach(element => {
+
+  let columns = "";
+
+  obj[element].forEach(value => {
+    // columns.concat(value,"','");
+    columns = columns.replace("-", "_") + value + "','";
+  });
+
+
+  columns = columns.slice(0, -3);
+
+  let jsonValue = "('".concat(columns, "')");
+
+  globalJson["where"].push({
+    "column": element.toString().replace("-", "_"),
+    "operator": "in",
+    "value": jsonValue
+  });
+
+});
+
+console.log(globalJson);
 
 createChart(globalJson);

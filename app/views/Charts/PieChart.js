@@ -25,15 +25,15 @@ function createChart(data = {}) {
     am4core.ready(fetchData(data).then(response => {
         console.log(JSON.stringify(response));
 
-        //if (JSON.stringify(response).length<=0) {
+        if (Object.keys(response).length > 0) {
             chart.data = response;
             var series = chart.series.push(new am4charts.PieSeries3D());
             series.dataFields.value = "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")");
             series.dataFields.category = localStorage.getItem("select").replace("-", "_");
-        // }
-        // else {
-        //     document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
-        // }
+        }
+        else {
+            document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
+        }
     }));
 }
 

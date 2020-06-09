@@ -39,9 +39,10 @@
                         array_push($resultFilter[$value], $checkboxVal);
                     }
                 }
-            } //IMPLENTATOR
+            }
 
-            $groupBy = $_POST["groupByChoice"];
+            if ($_POST["groupByChoice"])
+                $groupBy = $_POST["groupByChoice"];
             $chartChoice = $_POST["chartChoice"];
 
             $json = json_encode($resultFilter);
@@ -67,19 +68,19 @@
         } else if (strcmp($chartChoice, $bars_chart) == 0) {
         ?>
             <main>
-                <h3> Results for your request: </h3>
+                <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/BarsChartCountry.js"></script>
                 <div id="chartdiv"></div>
             </main>
-        <?php } else if (strcmp($chartChoice, $map) == 0) {?>
+        <?php } else if (strcmp($chartChoice, $map) == 0) { ?>
             <main>
-                <h3> Results for your request: </h3>
+                <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/WorldMapChart.js"></script>
                 <div id="chartdiv"></div>
             </main>
-        <?php } else {?>
+        <?php } else { ?>
             <main>
-                <h3> Results for your request: </h3>
+                <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/Radius.js"></script>
                 <div id="chartdiv"></div>
             </main>
