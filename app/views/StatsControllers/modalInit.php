@@ -7,9 +7,9 @@ function initModal() { ?>
             <div onclick="closePopout()" class="close">+</div>
             <form action="">
                 <ul class="mobile-menu-text">
-                    <li><a href="http://localhost/TeVi/public/Home">home</a></li>
-                    <li><a href="http://localhost/TeVi/public/Stats">statistics</a></li>
-                    <li><a href="http://localhost/TeVi/public/Resources">resources</a></li>
+                    <li><a href="http://localhost/TeVi/public/Home/index">home</a></li>
+                    <li><a href="http://localhost/TeVi/public/Stats/index">statistics</a></li>
+                    <li><a href="http://localhost/TeVi/public/Resources/index">resources</a></li>
                 </ul>
             </form>
         </div>
