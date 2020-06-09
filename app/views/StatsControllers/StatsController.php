@@ -1,6 +1,6 @@
 <?php
 function GetColumnsEvent(){
-    return ['Event ID','Summary','Success','Suicide','Attack Type','Tactics'];
+    return ['Event-ID','Summary','Success','Suicide','Attack-Type','Tactics'];
 }
 $event_columns=GetColumnsEvent();
 
@@ -10,27 +10,27 @@ function GetColumnsTime(){
 $time_columns=GetColumnsTime();
 
 function GetColumnsLocation(){
-    return ['Country','Country Code','Region','Provence','City','Latitude','Longitude','Corp'];
+    return ['Country','Country-Code','Region','Provence','City','Latitude','Longitude','Corp'];
 }
 $location_columns=GetColumnsLocation();
 
 function GetColumnsTargetDetails(){
-    return ['Target type','Target subtype','Target','Target Nationality'];
+    return ['Target-type','Target-subtype','Target','Target-Nationality'];
 }
 $target_columns=GetColumnsTargetDetails();
 
 function GetColumnsAttackerDetails(){
-    return ['Group name', 'Group subname','Motive','Gun certain','Terrorists number','Claim','Claim Mode'];
+    return ['Group-name', 'Group-subname','Motive','Gun-certain','Terrorists-number','Claim','Claim-Mode'];
 }
 $attacker_columns=GetColumnsAttackerDetails();
 
 function GetWeaponDetails(){
-    return ['Weapon type','Weapon subtype', 'Weapon details'];
+    return ['Weapon-type','Weapon-subtype', 'Weapon-details'];
 }
 $weapons_columns=GetWeaponDetails();
 
 function GetDeathsDetails(){
-    return ['Total fatalities','U.S. Citizens who died'];
+    return ['Total-fatalities','U.S.-Citizens-who-died'];
 }
 $deaths_columns=GetDeathsDetails();
 

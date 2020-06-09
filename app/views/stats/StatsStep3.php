@@ -79,7 +79,7 @@
                 <?php DisplayCriteriaWrapDB(); ?>
               </div>
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
-              <!-- <input type="hidden" name="groupByChoice" value=<?= $groupBy ?>> -->
+              <input type="hidden" name="groupByChoice" value="0">
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
             <form action="../Stats/Step2" method="post">

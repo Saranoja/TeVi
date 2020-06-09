@@ -57,7 +57,7 @@
         <?php
 
         if (strcmp($chartChoice, $pie_chart) == 0) {
-            //createChart();
+            
         ?>
             <main>
                 <h3 id="response"> Results for your request: </h3>
