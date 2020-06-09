@@ -15,7 +15,6 @@ async function fetchData(data = {}) {
 }
 
 function createChart(data = {}) {
-    am4core.useTheme(am4themes_frozen);
     am4core.useTheme(am4themes_animated);
 
     var chart = am4core.create("chartdiv", am4charts.PieChart3D);
@@ -39,20 +38,42 @@ let globalJson = {
     "groupBy": []
 };
 
-console.log("count(".concat(localStorage.getItem("select").replace("-","_")).concat(")"));
+// console.log("count(".concat(localStorage.getItem("select").replace("-","_")).concat(")"));
 
 globalJson["select"].push({ "column": localStorage.getItem("select").replace("-","_")});
 globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-","_")).concat(")")});
 
-console.log(JSON.parse(localStorage.getItem("where")));
+var obj = JSON.parse(localStorage.getItem("where"));
+var keys = Object.keys(obj);
+
+console.log(keys.toString());
+
+
+keys.forEach(element => {
+
+   let columns = "";
+
+obj[element].forEach(value =>{
+    console.log(value);
+   // columns.concat(value,"','");
+   columns = columns.replace("-","_") + value + "','";
+   console.log(columns);
+});
+
+
+columns = columns.slice(0,-3);
+
+let jsonValue = "('".concat(columns,"')"); 
 
 globalJson["where"].push({
-    "column": "year",
+    "column": element.toString().replace("-","_"),
     "operator": "in",
-    "value": "('2012','2013','2014')"
+    "value": jsonValue
 });
-globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-","_")});
 
-console.log(globalJson);
+});
+
+
+globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-","_")});
 
 createChart(globalJson);
