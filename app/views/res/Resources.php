@@ -375,16 +375,13 @@
                 <p>
                     Our website has the usual navigation buttons, whichs allow the user to move bettwen pages:
                 </p>
-                <img src="../img/Home.PNG" alt="Mobile menu icon">
                 <p>
                     The charts give you the option to download them. After your search is done you can press the button
                     in the top right corner to download the chart in a format:
                 </p>
-                <img src="../img/Arhitecture/download.PNG" alt="download">
                 <p>
-                    You can also play with the legend of the chart and modify it:
+                    You can also play with the legend of the chart and modify it.
                 </p>
-                <img src="../img/Arhitecture/chart_buttons.PNG" alt="legend">
             </section>
 
         </section>
