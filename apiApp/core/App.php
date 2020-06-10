@@ -39,7 +39,7 @@ class App
 
     function parseRequest($routConfig)
     {
-        //regex match
+        
         $url = $_SERVER['REQUEST_URI'];
         $this->request_method = $_SERVER['REQUEST_METHOD'];
 
@@ -48,6 +48,7 @@ class App
             return false;
         }
 
+        //regex match
         $regExpString = $this->routeExpToRegExp($routConfig['route']);
 
         //check the route match
@@ -78,6 +79,7 @@ class App
                 }
             }
 
+            //save body
             $data = file_get_contents("php://input");
             if (strlen($data)) {
                 $data = json_decode($data, true);
@@ -85,6 +87,7 @@ class App
                 $data = NULL;
             }
 
+            //verify middlewares
             if (isset($routConfig['middlewares'])) {
                 foreach ($routConfig['middlewares'] as $middlewareName) {
                     $didPass = call_user_func($middlewareName, [
