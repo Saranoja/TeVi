@@ -142,7 +142,7 @@ function DisplayCriteriaWrapDB()
             </ul>
         </div>
     </div>
-<!--     <div class="filter-panel">
+    <div class="filter-panel">
 
         <p> City </p>
         <div class="list-filter">
@@ -177,7 +177,7 @@ function DisplayCriteriaWrapDB()
                 <?php DisplayChecksForDB($values_city28,"city[]"); ?>
             </ul>
         </div>
-    </div> -->
+    </div>
 
     <div class="filter-panel">
 
