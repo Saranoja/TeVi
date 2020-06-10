@@ -58,6 +58,7 @@
                                 <li><a href="#SEO"><span>3.3.2</span> SEO</a></li>
                                 <li><a href="#accessibility"><span>3.3.3</span> Accessibility</a></li>
                                 <li><a href="#performance"><span>3.3.4</span> Performance</a></li>
+                                <li><a href="#design_motivation"><span>3.3.5</span> Design motivaton</a></li>
                             </ol>
                         </li>
                     </ol>
@@ -104,6 +105,7 @@
                         <li><a href="#workflow"><span>4.2</span> Workflow</a></li>
                         <li><a href="#DB"><span>4.3</span> Database</a></li>
                         <li><a href="#cookies"><span>4.4</span> Cookies</a></li>
+                        <li><a href="#the_team"><span>4.5</span> Workload</a></li>
                     </ol> 
                 </li>
                 <li>
@@ -299,6 +301,10 @@
                             <li>Typography improvement</li>
                             <li>New presentational layouts</li>
                         </ul>
+                        <p>
+                            We of course used css to style our web pages. We tried to use the best practices we could. Everything from buttons,
+                            colours, images, fonts, etc. are styled with CSS.
+                        </p>
                     </section>
                     <section id="ajax">
                         <h6><spam>3.1.4.3</spam> Ajax</h6>
@@ -318,8 +324,18 @@
                             <li><span>6.</span> The response is read by JavaScript</li>
                             <li><span>7.</span> Proper action (like page update) is performed by JavaScript</li>
                         </ol>
-                        <img class="big-picture" src="../img/Ajax_Schema.png" alt="Ajax"> 
-
+                        <p>
+                            We used ajax for our charts:
+                        </p>
+                        <ol>
+                                <li><span>1.</span> The user clicks the finish button on the stats page</li>
+                                <li><span>2.</span> A json request is created in javascript(for each chart individualy)</li>
+                                <li><span>3.</span> The json is send to the api</li>
+                                <li><span>4.</span> The server processes the request</li>
+                                <li><span>5.</span> The server sends a response back to the web page</li>
+                                <li><span>6.</span> The response is read by JavaScript</li>
+                                <li><span>7.</span> The chart is created with the data the user requested</li>
+                            </ol>
                     </section>
                 </section>
                 <section id="others"> 
@@ -363,6 +379,12 @@
                         selec the page on which he/she wants to go.
                     </p>
                     <img class="big-picture" src="../img/Mobile_Menu.PNG" alt="Mobile menu icon">
+                    <p>
+                        In the same cathegory we have the help button for stats. This button will show a more detalied
+                        explanation for each filed you select:
+                    </p>
+                    <img  src="../img/Arhitecture/help_button.PNG" alt="Mobile menu icon">
+                    <img class="long-img" src="../img/Arhitecture/help_button_example.PNG" alt="Mobile menu icon">
                 </section>
                 <section id="scroll_view">
                     <h5><span>3.2.2</span> Scrolling elements into view</h5>
@@ -371,7 +393,7 @@
                         one of the elements in the list at the top of the screen the page current playback
                         position will move to the start of the given element.
                     </p>
-                    <img class="big-picture" src="../img/Scroll_list.PNG" alt="Mobile menu icon">
+                    <img class="big-picture" src="../img/Scroll_list.PNG" alt="scroll">
                 </section>
                 <section id="buttons">
                     <h5><span>3.2.3</span> Buttons</h5>
@@ -383,7 +405,20 @@
                         Also it has buttons at the bottom of the Home page, at the footer of the page,
                         which will lead to an external page for each member of the project:
                     </p>
-                    <img class="long-img" src="../img/Social.PNG" alt="Mobile menu icon">
+                    <img class="long-img" src="../img/Social.PNG" alt="social">
+                    <p>
+                        The charts give you the option to download them. After your search is done you can press the button 
+                        in the top left corner to download the chart in a format:
+                    </p>
+                    <img src="../img/Arhitecture/download.PNG" alt="download">
+                    <p>
+                        You can also check the original page from which we got the chart:
+                    </p>
+                    <img src="../img/Arhitecture/link.PNG" alt="link">
+                    <p>
+                        You can also play with the "legend" of the chart and modify it:
+                    </p>
+                    <img src="../img/Arhitecture/chart_buttons.PNG" alt="legend">
                 </section>
 
             </section>
@@ -465,7 +500,20 @@
                         <li>Power usage</li>
                     </ul>
                 </section>
+                <section id="design_motivation">
+                    <h5><span>3.3.5</span> Design motivation</h5>    
+                    <p>
+                        TeVi was designed to be easy to access, such that a regular user can directly operate with the application,
+                        where as a newcomer can choose to be guided in order to understand the application usage.
+                        The user intreface was designed in an intuitive way, together with a neutral color palet, with increased
+                        readability and high accesibility.
+                    </p> 
+                    <p>
+                        In order to receive a result the user has to go through 3 steps so that the process is adapted to its needs.
+                    </p>
+                </section>
             </section>
+            
         </section>
 
         <section id="projectProgress">
@@ -1205,6 +1253,21 @@
                     the database and see if the user has rights. For admins is just a token for anyone who is an admin.
                 </p>
             </section>
+            <section id="the_team">
+                <h4><span>4.5</span> Workflow</h4>
+                <section>
+                    <h5><span>4.5.1</span>The Frontend module</h5>
+                    <ul>
+                        <li>The main structure of the webpages was done by Calin Irina & Victor Platon</li>
+                        <li>The general theme of the application was designed by Peltea Bogdan</li>
+                        <li>The 3 steps in the statistics section were projected by Peltea Bogdan & Calin Irina</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </section>
+            </section>
         </section>
 
         <section id="guide">
@@ -1310,6 +1373,8 @@
                 <p>    
                     At each step you can go back to a previous one, go to another page or go further ahead, all by using the buttons
                     at your disposal.
+                    For each type of chart, when you select what you want to see you have a button that when pressed will show information
+                    about what you will see explicitly.
                     All types of views work differently, we've dedicated a section for each one!
                 </p>
                 <section id="pie_chart">
