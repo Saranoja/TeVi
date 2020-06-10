@@ -36,9 +36,5 @@ function DisplayCriteriaWrap() {
         <p> Weapon details </p>
         <?php DisplayRadioButtonsRadius($weapons_columns); ?>
     </div>
-    <div class="deaths">
-        <p> Deaths </p>
-        <?php DisplayRadioButtonsRadius($deaths_columns); ?>
-    </div>
 <?php
 } ?>

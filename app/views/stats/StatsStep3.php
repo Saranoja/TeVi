@@ -40,10 +40,10 @@
               <button class="finish-button" name="generate-chart" type="submit"></button>
             </form>
 
-            <form action="../Stats/Step2" method="post">
+              <form action="../Stats/Step2" method="post">
               <input type="hidden" name="chartChoice" value=<?= $chartChoice ?>>
               <button class="back-button" name="back-button" type="submit"></button>
-            </form>
+              </form>
 
           <?php  }
           if ($chartChoice == "Map") {
