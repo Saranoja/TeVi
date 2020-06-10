@@ -15,6 +15,8 @@ async function fetchData(data = {}) {
 }
 
 function createChart(data = {}) {
+    document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("select"));
+
     am4core.useTheme(am4themes_animated);
 
     var chart = am4core.create("chartdiv", am4charts.PieChart3D);
@@ -79,5 +81,7 @@ console.log(globalJson);
 
 
 globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+
+document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);

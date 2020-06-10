@@ -24,6 +24,9 @@ function createChart(data = {}) {
     chart.legend.paddingBottom = 20
     chart.legend.labels.template.maxWidth = 95
 
+    document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("select"));
+    document.getElementById("chosenCountries").textContent = "Countries: ".concat(localStorage.getItem("countries"));
+
     am4core.ready(fetchData(data).then(response => {
 
         if (Object.keys(response).length > 0) {
@@ -187,6 +190,8 @@ globalJson["groupBy"].push({ "column": "country" });
 
 console.log("global");
 console.log(globalJson);
+
+document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);
 

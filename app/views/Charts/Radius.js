@@ -15,6 +15,8 @@ async function fetchData(data = {}) {
 }
 
 function createChart(data = {}) {
+  document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("table-groupBy"));
+
   am4core.useTheme(am4themes_animated);
 
   var chart = am4core.create("chartdiv", am4charts.PieChart3D);
@@ -88,20 +90,20 @@ function createChart(data = {}) {
   }));
 }
 
-let groupByColumn = JSON.parse(localStorage.getItem("table-groupBy"))[0].replace("-","_");
+let groupByColumn = JSON.parse(localStorage.getItem("table-groupBy"))[0].replace("-", "_");
 
 let globalJson = {
   "limit": "10",
   "select": [
     {
       "column": groupByColumn
-  },
-  {
-    "column":"sum(total_fatalities)"
-  },
-  {
-    "column":"count(event_id)"
-  }
+    },
+    {
+      "column": "sum(total_fatalities)"
+    },
+    {
+      "column": "count(event_id)"
+    }
   ],
   "where": [],
   "groupBy": [
@@ -137,6 +139,6 @@ keys.forEach(element => {
 
 });
 
-console.log(globalJson);
+document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);

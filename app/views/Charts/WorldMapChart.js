@@ -15,6 +15,8 @@ async function fetchData(data = {}) {
 }
 
 function createChart(data = {}) {
+  document.getElementById("query").textContent = "Dataset: total fatalities";
+
   am4core.ready(fetchData(data).then(response => {
 
     if (Object.keys(response).length <= 0) {
@@ -159,6 +161,6 @@ keys.forEach(element => {
 
 });
 
-console.log(globalJson);
+document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);
