@@ -1,0 +1,445 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "TeVi - Global Terrorism Visualiser",
+    "description": "Tevi API routes specifications and usage",
+    "version": "1.0",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "Tevi",
+  "basePath": "/api",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/attacks": {
+      "get": {
+        "tags": [
+          "attack"
+        ],
+        "summary": "Displays all attacks in the database",
+        "description": "",
+        "operationId": "getAttack",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "attack"
+        ],
+        "summary": "Adds a new attack to the database",
+        "description": "",
+        "operationId": "insertAttack",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Attack object that needs to be added to the database",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "event_id": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "success": {
+                  "type": "string"
+                },
+                "suicide": {
+                  "type": "string"
+                },
+                "attack_type": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "string"
+                },
+                "month": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                },
+                "approximate_date": {
+                  "type": "string"
+                },
+                "duration": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "country_code": {
+                  "type": "string"
+                },
+                "region": {
+                  "type": "string"
+                },
+                "provence": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "string"
+                },
+                "longitude": {
+                  "type": "string"
+                },
+                "corp": {
+                  "type": "string"
+                },
+                "group_name": {
+                  "type": "string"
+                },
+                "group_subname": {
+                  "type": "string"
+                },
+                "motive": {
+                  "type": "string"
+                },
+                "gun_certain": {
+                  "type": "string"
+                },
+                "terrorists_number": {
+                  "type": "string"
+                },
+                "claim": {
+                  "type": "string"
+                },
+                "claim_mode": {
+                  "type": "string"
+                },
+                "target_type": {
+                  "type": "string"
+                },
+                "target_subtype": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "target_nationality": {
+                  "type": "string"
+                },
+                "weapon_type": {
+                  "type": "string"
+                },
+                "weapon_subtype": {
+                  "type": "string"
+                },
+                "weapon_details": {
+                  "type": "string"
+                },
+                "total_fatalities": {
+                  "type": "string"
+                },
+                "us_citizens_who_died": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "event_id": "",
+                "summary": "Unknown perpetrators detonated explosive to protest",
+                "success": "0",
+                "suicide": "0",
+                "attack_type": "Bombing/Explosion",
+                "location": "Brooklyn",
+                "year": "2020",
+                "month": "6",
+                "day": "1",
+                "approximate_date": "June 2-5, 2020",
+                "duration": "0",
+                "country": "United States",
+                "country_code": "217",
+                "region": "1",
+                "provence": "New York",
+                "city": "New York City",
+                "latitude": "40.697132",
+                "longitude": "-73.931351",
+                "corp": "Government's Representative",
+                "group_name": "Jihad",
+                "group_subname": "",
+                "motive": "Organize heist in order to protest against the murder of George Floyd",
+                "gun_certain": "0",
+                "terrorists_number": "20",
+                "claim": "1",
+                "claim_mode": "Unknown",
+                "target_type": "Government (General)",
+                "target_subtype": "Government Building/Facility/Office",
+                "target": "President of the Democratic Party",
+                "target_nationality": "United States",
+                "weapon_type": "Explosives",
+                "weapon_subtype": "Unknown Explosive Type",
+                "weapon_details": "Explosive",
+                "total_fatalities": "0",
+                "us_citizens_who_died": "0"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "attack"
+        ],
+        "summary": "Updates a given field for an attack with a certain ID",
+        "description": "",
+        "operationId": "updateAttackFromId",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Update attack",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "column": {
+                  "type": "string"
+                },
+                "newValue": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "id": "19700106000",
+                "column": "Country",
+                "newValue": "Pakistan"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/attacks/{id}": {
+      "get": {
+        "tags": [
+          "attack"
+        ],
+        "summary": "Displays all attacks from a certain country",
+        "description": "",
+        "operationId": "getAttackFromId",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id corresponding to the attack",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "No data found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "attack"
+        ],
+        "summary": "Deletes an attack with a certain ID",
+        "description": "",
+        "operationId": "deleteAttackFromId",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID for attack to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query": {
+      "post": {
+        "tags": [
+          "query"
+        ],
+        "summary": "Displays the result set after performing a query on the database",
+        "description": "",
+        "operationId": "read",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Attack object that needs to be added to the database",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "limit": {
+                  "type": "string"
+                },
+                "select": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "column": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "where": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "column": {
+                        "type": "string"
+                      },
+                      "operator": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "groupBy": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "column": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "limit": "50",
+                "select": [
+                  {
+                    "column": "country"
+                  },
+                  {
+                    "column": "year"
+                  },
+                  {
+                    "column": "attack_type"
+                  }
+                ],
+                "where": [
+                  {
+                    "column": "country",
+                    "operator": "in",
+                    "value": "('Pakistan','Iraq','Italy')"
+                  },
+                  {
+                    "column": "year",
+                    "operator": "<",
+                    "value": "'2009'"
+                  }
+                ],
+                "groupBy": [
+                  {
+                    "column": "country"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
