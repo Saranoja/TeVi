@@ -300,7 +300,7 @@
     <text id="Choose_how_to_view_the_data" data-name="Choose how 
 to view the 
 data" transform="translate(651 293)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="-62.918" y="0">Choose how </tspan><tspan x="-57.97" y="28">to view the </tspan><tspan x="-21.887" y="56">data</tspan></text>
-    <text id="Group_by" data-name="Group by" transform="translate(775 630)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" opacity="0.25"><tspan x="-45.943" y="0">Group by</tspan></text>
+    <text id="Select_data" data-name="Select data" transform="translate(775 630)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" opacity="0.25"><tspan x="-54.141" y="0">Select data</tspan></text>
     <text id="Choose_the_restrictions" data-name="Choose the
 restrictions" transform="translate(641 866)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" opacity="0.25"><tspan x="-54.997" y="0">Choose the</tspan><tspan x="-55.228" y="28">restrictions</tspan></text>
     <text id="TEVI_IS_A_FLEXIBLE_WEB_DATA_VISUALIZER_REGARDING_WORLDWIDE_TERRORISM" data-name="TEVI IS A FLEXIBLE WEB DATA

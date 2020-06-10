@@ -33,6 +33,7 @@ include_once "views/Charts/Controllers/PieChartController.php";
 require_once 'views/StatsControllers/criteriaWrapDB.php';
 require_once 'views/StatsControllers/criteriaWrapCountryDB.php';
 require_once 'views/StatsControllers/criteriaWrapBarsChart.php';
+require_once 'views/loadingScreen/loadingScreen.php';
 
 
 ?>
