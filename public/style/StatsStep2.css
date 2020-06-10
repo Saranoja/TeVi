@@ -33,11 +33,6 @@
     width: 100%;
 }
 
-.check-box {
-    margin-top: 60px;
-    margin-left: 20px;
-}
-
 .next-button {
     width: 303px;
     height: 68px;
@@ -49,7 +44,7 @@
     background-color: transparent;
     margin: 100px auto;
     margin-left: 30px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .back-button {
@@ -63,6 +58,7 @@
     background-color: transparent;
     margin: 100px auto;
     margin-left: 30px;
+    margin-top: 20px;
 }
 
 .groupBy-wrapper {
@@ -107,17 +103,16 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
     font-weight: 700;
-    color: var(--darkest-blue);
-    font-size: 22px;
+    color: #385A64;
+    font-size: 15px;
 }
 
 .filter-panel ul {
     overflow: hidden;
     overflow-y: scroll;
-    /*background-color: #edf3ff;*/
-    background: linear-gradient(to top, white, rgb(237, 243, 255));
+    background-color: #edf3ff;
     height: 250px;
     width: 100%;
     scroll-padding: 10px;

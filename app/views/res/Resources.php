@@ -88,26 +88,18 @@
                                 <li><a href="#TeViAPI"><span>4.1.2</span> TeViAPI</a></li>
                             </ol>
                         </li>
-                        <li><a href="#workflow"><span>4.2</span> Workflow</a></li>
-                        <li><a href="#DB"><span>4.3</span> Database</a></li>
+                        <li><a href="#stages"><span>4.2</span> Intermediate stages of project development</a></li>
+                        <li><a href="#howToUse"><span>4.3</span> How to use the chosen source code management system</a></li>
                     </ol> 
                 </li>
                 <li>
                     <a href="#guide"><span>5.</span> User guide</a>
                     <ol role="directory">
-                        <li><a href="#guide_login"><span>5.1</span> Login</a></li>
-                        <li><a href="#guide_register"><span>5.2</span> Register</a></li>
+                        <li><a href="#guide_register"><span>5.1</span> Registration</a></li>
+                        <li><a href="#guide_login"><span>5.2</span> Login</a></li>
                         <li><a href="#guide_start"><span>5.3</span> Start</a></li>
                         <li><a href="#guide_homePage"><span>5.4</span> HomePage</a></li>
-                        <li>
-                            <a href="#guide_statistics"><span>5.5</span> Statistics</a>
-                            <ol role="directory">
-                                <li><a href="#pie_chart"><span>5.5.1</span>Pie Chart</a></li>
-                                <li><a href="#map_chart"><span>5.5.2</span>Map</a></li>
-                                <li><a href="#radius_chart"><span>5.5.3</span>unknown</a></li>
-                                <li><a href="#bar_chart"><span>5.5.4</span>Bar Chart</a></li>
-                            </ol>
-                        </li>
+                        <li><a href="#guide_statistics"><span>5.5</span> Statistics</a></li>
                         <li><a href="#guide_resources"><span>5.6</span> Resources</a></li>
                     </ol>
                 </li>
@@ -545,31 +537,18 @@
                 <section id="TeViAPI">
                     <h5><span>4.1.2</span> TeViAPI</h5>
                     <p>
-                        This is the folder of our own designed RESTFUL API. We used the mcv arhitecture for the api as well.
+                        In progress...
                     </p>
                     
                 </section>
             </section>
-
-            <section id="workflow">
-                <h4><span>4.2</span> Workflow</h4>
-                <p>
-                    We used GitHub as our code management system. We created a repository where we stored our appliction.
-                    GitHub is very easy to use and understand, we could coolaboare on the repository and help each other when needed.
-                </p>
-                <p>
-                    GitHub Desktop was our main toll. Each of us used it and worked with it. All our pushes are directly to the main branch,
-                    as all of use worked on diffrent thing most of the time. When we worked together we just meet with an only tool and
-                    one of us had the control, while we all tried to solve the problems we wanted.
-                </p>
+            <section id="stages">
+                <h4><span>4.2</span> Intermediate stages of project development</h4>
+                <p><p>
             </section>
-            <section id="DB">
-                <h4><span>4.3</span> Database</h4>
-                <p>
-                    We used XAMPP for the localhost and database. phpMyAdmin is where we stored our data.
-                    The database is very straight forward. It is called tevi and has 2 tables: data(where we store our data)
-                    and users(for all our users accounts).
-                </p>
+            <section id="howToUse">
+                <h4><span>4.3</span> How to use the chosen source code management system</h4>
+                <p></p>
             </section>
         </section>
 
@@ -582,29 +561,10 @@
                 of the application. This will help a user of the website understand how it works and what it does.
 
             </p>
-            <section id="guide_login">
-                <h4><span>5.1</span> Login</h4>
-                <p>
-                    The login page is the one you will see on the web site. This page has 2 button, 1 for <a href="#guide_register"> register</a> (in case you don't have an account),
-                    and one for entering as a guest, in case you don't want an account.
-                </p>
-                <p>
-                    With an account you can login on the web site. Enter your credentials and you can start useing the website,
-                    read about the idea, project, developers and learn a few things about the design. 
-                    After login the <a href="#guide_start"> start</a> page will welcome you. 
-                </p>
-                <p>
-                    Any invalid action like invalid username/password, blank username or/and password,
-                    will trigger a message notify and you must try to login again. You can not receive your username or password directly
-                    from the web page you have to contact one of us in case you forgot yor credentials. You can always make a new account 
-                    if you consider it be easier, as well.
-                </p>
-                <img class="big-picture" src="../img/Arhitecture/Login_guide.PNG" alt="Login_page">
-            </section>
             <section id="guide_register">
-            
-                <h4><span>5.2</span> Registration</h4>
+                <h4><span>5.1</span> Registration</h4>
                 <p>
+                    The registration form is the first page you will see.
                     Any user can choose not to create an account an enter as guest, but this limits their actions.
                     Anyone can make an account just by entering a username and a password,but you will need a unique
                     username that does not already exists in the database. Any new created account will be a normal
@@ -617,14 +577,29 @@
                     of our datas in the database, we don't want anyone to be able to change our datas.
                 </p>
                 <p>
-                    If you already have an account you can go back to the <a href="#guide_login"> login</a> page and enter
-                    your credentials. This button was added so user won't get stuck here if miss-clicked the button in the login.
+                    If you already have an account you can skip right to the <a href="#guide_login"> login</a> page and enter
+                    your credentials.
                 </p>
                 <p>
                     Beside all of this any invalid action will have a specific message. If you try to register with a username
                     that already exist, blank username and/or password a message will notify you on the same page.
                 </p>
                 <img class="big-picture" src="../img/Arhitecture/Register_guide.PNG" alt="Register_page">
+            </section>
+            <section id="guide_login">
+                <h4><span>5.2</span> Login</h4>
+                <p>
+                    With an account you can login on the web site. Enter your credentials and you can start useing the website,
+                    read about the idea, project, developers and learn a few things about the design. 
+                    After login the <a href="#guide_start"> start</a> page will welcome you. 
+                </p>
+                <p>
+                    Like in the register page case any invalid action like invalid username/password, blank username or/and password,
+                    will trigger a message notify and you must try to login again. You can not receive your username or password directly
+                    from the web page you have to contact one of us in case you forgot yor credentials. You can always make a new account 
+                    if you consider it be easier, as well.
+                </p>
+                <img class="big-picture" src="../img/Arhitecture/Login_guide.PNG" alt="Login_page">
             </section>
             <section id="guide_start">
                 <h4><span>5.3</span> Start</h4>
@@ -638,6 +613,7 @@
                     you as a user can choose what you want to explore. If you are here just for our api, statistics or designd, you can
                     navigate there first.
                 </p>
+                <img class="big-picture" src="../img/Arhitecture/Start_guide.PNG" alt="Start_page">
             </section>
             <section id="guide_homePage">
                 <h4><span>5.4</span> HomePage</h4>
@@ -661,82 +637,31 @@
                 <h4><span>5.5</span> Statistics</h4>
                 <p>
                     Our goal was to create a flexible web data visualizer. This page is where the magic happens.
-                    It's design is as easier as we could think. You have to go through a series of 3 steps, where you 
-                    have to choose:
+                    It's design is as easier as we could think: 
                 </p>
-                <ol>
-                    <li><span>1.</span> How to see the result</li>
-                    <li><span>2.</span> What to see in the specified view</li>
-                    <li><span>3.</span> What restrictions/filters you want to add</li>
-                </ol>
                 <p>
-                    After these steps you will see the result.
+                    First of all you have to select the type of visualisation of the data. You can select from a variety of 4 charts:
+                    pie, map, table and bars. Each chart comes with it's advantages and disadvantages as you will see on the next step.
+                    After you decided on the wanted chart you check it, and press the next button.
+                </p>
+                <p>
+                    On the next step you choose what you want to see from the database: country, weapons used, etc. Some charts only
+                    allow you to select one option, like the pie and map ones, when the table and bars allow for multipe choices.
+                    When done decideing you can press the next button in order to go to the 3rd step, or press the back button to go back at the
+                    first step in case you changed your mind.
+                </p>
+                <p>
+                    The 3rd step is what adds flavour to youe data. It is basically the filter page. You can choose from 20 diffrent options
+                    like weapon_type, year, country, etc. and specify the precise data that interests you. You can leave the blank or select just a few 
+                    the choise is your alone. After this you can press the finish button in order to see your data as you wanted, or go back at the previous step.
+                </p>
+                <p>
+                    The chart page is where you data will be shown as you requested. 
                     You can then download it as a csv,png or svg, go to other page or start the process again. 
                 </p>
-                <p>    
-                    At each step you can go back to a previous one, go to another page or go further ahead, all by using the buttons
-                    at your disposal.
-                    All types of views work differently, we've dedicated a section for each one!
+                <p>
+                    At any point in the process you can go to a diffrent web page: home, resources. The navigation bar is always there.
                 </p>
-                <section id="pie_chart">
-                    <h5><span>5.5.1</span> Pie Chart</h5>
-                    <p>
-                        After choosing the pie chart you can select one, and just one, field you would like to see. This is mainly
-                        for clarity purpouses, a pie chart can't show many datas without looking confuseing. 
-                    </p>
-                    <p>
-                        The filter page is next, here you can select from many option, what do you want to see in more detail. Select 
-                        from any column, any property you want.
-                    </p>
-                    <p>
-                        When done with selecting you can finish and see your result. If your request makes sense, and actually has at least 1
-                        database value it will be shown in the form of a pie chart.
-                    </p>
-                </section>
-                <section id="map_chart">
-                    <h5><span>5.5.2</span> Map Chart</h5>
-                    <p>
-                        After choosing the map char you won't have an option as what you want to see. This view will always show you
-                        the country and the total fatalities it had. 
-                    </p>
-                    <p>
-                        The filter page is where you can customize this result. Choose from year, country and many more. 
-                    </p>
-                    <p>
-                        When done with selecting you can finish and see your result. If your request makes sense, and actually has at least 1
-                        database value it will be shown in the form of a map.
-                    </p>
-                </section>
-                <section id="radius_chart">
-                    <h5><span>5.5.3</span> Radius Chart</h5>
-                    <p>
-                        After choosing the radius chart you can select a maximum of 2 elements that you want to see. You will be 
-                        notified if you try to select more.
-                    </p>
-                    <p>
-                        The filter page is where you can select more precisesly what you want to see. You can choose from a variety of options. 
-                    </p>
-                    <p>
-                        When done with selecting you can finish and see your result. If your request makes sense, and actually has at least 1
-                        database value it will be shown in the form of a radius chart.
-                    </p>
-                </section>
-                <section id="bar_chart">
-                    <h5><span>5.5.4</span> Bar Chart</h5>
-                    <p>
-                        The Bar chart offers you another choice. Beside choosing what you want to see, you have to choose up
-                        to 4 country you want to compare. Because it's a nar chart we decided tht here you can compare 
-                        data from diffrent countries.
-                    </p>
-                    <p>
-                        The next step it's again the filter one, where you add flavour for the results. You can select more precisesly
-                        what you want to see and compare.
-                     </p>
-                     <p>
-                        When done with selecting you can finish and see your result. If your request makes sense, and actually has at least 1
-                        database value it will be shown in the form of a bar chart.
-                    </p>
-                </section>
             </section>
             <section id="guide_resources">
                 <h4><span>5.6</span> Resources</h4>
