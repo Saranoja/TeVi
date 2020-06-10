@@ -1,6 +1,5 @@
-
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
 }
 
@@ -19,24 +18,20 @@
     --h2-font-size: 2em;
 }
 
-
-.model-hierarchy{
+.model-hierarchy {
     width: 50%;
     margin-top: 30px;
 }
 
-
-.wrapper{
+.wrapper {
     display: flex;
     width: 100%;
     /*align-items: center;*/
-
 }
 
-.model-hierarchy img{
+.model-hierarchy img {
     width: 100%;
 }
-
 
 .next-button {
     width: 303px;
@@ -64,29 +59,26 @@
     margin: 100px auto;
     margin-left: 30px;
     margin-top: 20px;
-
 }
 
-
-.groupBy-wrapper{
+.groupBy-wrapper {
     display: grid;
-    grid-template-columns: repeat(3,6fr);
+    grid-template-columns: repeat(3, 6fr);
     grid-auto-rows: minmax(100px, auto);
     gap: 60px;
     margin-left: 30px;
 }
 
-.groupBy-wrapper p{
+.groupBy-wrapper p {
     font-weight: bold;
     letter-spacing: 1px;
     color: var(--darkest-blue);
     font-size: x-large;
-
 }
 
 .criteria_wrap {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(100px, auto);
     gap: 30px;
     align-items: center;
@@ -98,56 +90,117 @@
     font-size: x-large;
 }
 
-
 .filter-panel {
-        display: inline-block;
-        margin-left: 200px;
-        width: 250px;
-        margin-top: 2%;
-   }
+    display: inline-block;
+    margin-left: 200px;
+    width: 250px;
+    margin-top: 2%;
+}
 
-   .filter-panel p{
-       padding: 20px 20px 20px;
-       background-color: #B8D2FF;
-       border-top-left-radius: 10px;
-       border-top-right-radius: 10px;
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       text-transform: uppercase;
-       font-weight: 700;
-       color: #385A64;
-       font-size: 15px;
-   }
+.filter-panel p {
+    padding: 20px 20px 20px;
+    background-color: #B8D2FF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #385A64;
+    font-size: 15px;
+}
 
+.filter-panel ul {
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #edf3ff;
+    height: 250px;
+    width: 100%;
+    scroll-padding: 10px;
+}
 
-   .filter-panel ul {
-       overflow: hidden; overflow-y: scroll;
-       background-color: #edf3ff;
-       height: 250px;
-       width: 100%;
-       scroll-padding: 10px;    
-    }
+.filter-panel li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #385A64;
+    font-size: 14px;
+    padding: 20px 0px 0px 50px;
+    font-weight: 500;
+}
 
-    .filter-panel li {
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       color: #385A64;
-       font-size: 14px;
-       padding: 20px 0px 0px 50px;
-       font-weight: 500;
-   }
-    input[type='checkbox'] {
-        width:14px;
-        height:14px;
-        background:white;
-        border-radius:5px;
-        border:2px solid #555;
-        vertical-align: bottom;
-    }
+input[type='checkbox'] {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 5px;
+    border: 2px solid #555;
+    vertical-align: bottom;
+}
 
-    label {
-        padding-left: 10px;
-    }
+label {
+    padding-left: 10px;
+}
 
-h2{
+h2 {
     font-weight: 500;
     margin-top: 40px;
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.infoButton {
+    background-color: #1008a0;
+    width: 30px;
+    height: 30px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
 }

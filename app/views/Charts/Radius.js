@@ -28,7 +28,7 @@ function createChart(data = {}) {
   chart.legend = new am4charts.Legend();
 
   am4core.ready(fetchData(data).then(response => {
-    console.log(JSON.stringify(response));
+    //console.log(JSON.stringify(response));
 
     if (Object.keys(response).length > 0) {
       chart.data = response;
