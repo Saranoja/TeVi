@@ -78,5 +78,8 @@
         <button  class="next-button" name="Result" type="submit"></button>
       </form>
     </div>
+  <div class="bg-model">
+        <img src="../img/HierarchyModel/bgTablet.svg">
+      </div>
   </body>
 </html>
