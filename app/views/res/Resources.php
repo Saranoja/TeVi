@@ -79,17 +79,31 @@
                                                 <li><a href="#core"><span>4.1.1.2.2</span> Core</a></li>
                                                 <li><a href="#views"><span>4.1.1.2.3</span> Views</a></li>
                                                 <li><a href="#controllers"><span>4.1.1.2.4</span> Controllers</a></li>
-                                                <li><a href="#model"><span>4.1.1.2.5</span> Models</a></li>
-                                                <li><a href="#services"><span>4.1.1.2.6</span> Services</a></li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <a href="#the_charts"><span>4.1.1.3</span> The charts </a>
+                                            <ol role="directory">
+                                                <li><a href="#EXAMPLE"><span>4.1.1.3.1</span> Example</a></li>
                                             </ol>
                                         </li>
                                     </ol>
                                 </li>
-                                <li><a href="#TeViAPI"><span>4.1.2</span> TeViAPI</a></li>
+                                <li>
+                                    <a href="#TeViAPI"><span>4.1.2</span> TeViAPI</a>
+                                    <ol role="directory">
+                                        <li><a href="#routeing"><span>4.1.2.1</span> Routeing</a></li>
+                                        <li><a href="#routeing_steps"><span>4.1.2.2</span> Route Steps</a></li>
+                                        <li><a href="#routeing_handler"><span>4.1.2.3</span> Routeing handler</a></li>
+                                        <li><a href="#routeing_example"><span>4.1.2.4</span> Routeing example</a></li>
+                                        
+                                    </ol>
+                                </li>
                             </ol>
                         </li>
                         <li><a href="#workflow"><span>4.2</span> Workflow</a></li>
                         <li><a href="#DB"><span>4.3</span> Database</a></li>
+                        <li><a href="#cookies"><span>4.4</span> Cookies</a></li>
                     </ol> 
                 </li>
                 <li>
@@ -102,10 +116,10 @@
                         <li>
                             <a href="#guide_statistics"><span>5.5</span> Statistics</a>
                             <ol role="directory">
-                                <li><a href="#pie_chart"><span>5.5.1</span>Pie Chart</a></li>
-                                <li><a href="#map_chart"><span>5.5.2</span>Map</a></li>
-                                <li><a href="#radius_chart"><span>5.5.3</span>unknown</a></li>
-                                <li><a href="#bar_chart"><span>5.5.4</span>Bar Chart</a></li>
+                                <li><a href="#pie_chart"><span>5.5.1</span> Pie Chart</a></li>
+                                <li><a href="#map_chart"><span>5.5.2</span> Map</a></li>
+                                <li><a href="#radius_chart"><span>5.5.3</span> Radius Chart</a></li>
+                                <li><a href="#bar_chart"><span>5.5.4</span> Bar Chart</a></li>
                             </ol>
                         </li>
                         <li><a href="#guide_resources"><span>5.6</span> Resources</a></li>
@@ -119,19 +133,42 @@
             <dl>
                 <dt>Authors</dt>
                     <dd>
-                    Irina Calin &amp; Victor-Ionut Platon &amp; Bogdan-Mihail Peltea
+                    <span typeof="schema:Person" >
+                    <meta property="schema:givenName" content="Irina">
+                    <meta property="schema:familyName" content="Calin"> 
+                        <span property="schema:name">Irina Calin</span>
+                    </span> &amp; 
+                    <span typeof="schema:Person" >
+                    <meta property="schema:givenName" content="Victor-Ionut">
+                    <meta property="schema:familyName" content="Platon"> 
+                        <span property="schema:name">Victor-Ionut Platon</span>
+                    </span> &amp;
+                    <span typeof="schema:Person" >
+                    <meta property="schema:givenName" content="Bogdan-Mihail">
+                    <meta property="schema:familyName" content="Peltea"> 
+                        <span property="schema:name">Bogdan-Mihail Peltea</span>
+                    </span>
                     </dd>
                 <dt>Coordinator</dt>
                     <dd>
-                    <a href="https://profs.info.uaic.ro/~andrei.panu/">  Lect. Dr. Panu Andrei </a> @University Alexandru Ioan Cuza of Iasi, Faculty of Computer Science
+                    <span typeof="schema:Person" resource="https://profs.info.uaic.ro/~andrei.panu/">
+                    <meta property="schema:givenName" content="Andrei">
+                    <meta property="schema:familyName" content="Panu">
+                    <a href="https://profs.info.uaic.ro/~andrei.panu/">
+                        <span property="schema:name">Lect. Dr. Panu Andrei</span>
+                    </a>
+                    </span>
+                    <span typeof="schema:Organization">
+                        <span property="schema:legalName">@University Alexandru Ioan Cuza of Iasi, Faculty of Computer Science</span>
+                    </span>
                     </dd>
                 <dt>Bugs & Feedback</dt>
                     <dd>
                     <a href="https://github.com/Saranoja/TeVi?fbclid=IwAR0Xni66BoOZgYvNVofIuAt6RQtMZtzuFQlmIlvlifYfim4CsXiyIM-SvWw">Git Project</a>
                     </dd>
-                <dt>License</dt>
+                <dt>Libraries</dt>
                     <dd>
-                    licente utilizate
+                    <a href="https://www.amcharts.com/">amcharts</a>
                     </dd>
             </dl>
         </div>
@@ -457,7 +494,16 @@
                         </p>
                         <img class="long-img" src="../img/Arhitecture/public.PNG" alt="public">
                         <p>Inside the index.php their is just a method that builds the application:</p>
-                        <img class="long-img" src="../img/Arhitecture/index.PNG" alt="index">
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    require_once '../app/init.php';
+
+                                    $app = new App;
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
                         <p>
                             In order for this to work we included the core components of the app folder by
                             requiring the <a href="#init">init.php</a> file from it. From now on it's the app job to ensure the functionality of the website.
@@ -473,9 +519,8 @@
                         <section id="init">
                             <h7><span>4.1.1.2.1</span> Init</h7>
                             <p>
-                                The init.php file is used initiate all the components of the app so each page can access and use them: 
+                                The init.php file is used initiate all the components of the app so each page can access and use them. 
                             </p>
-                            <img class="big-picture" src="../img/Arhitecture/init.PNG" alt="init">
                         </section>
                         <section id="core">
                             <h7><span>4.1.1.2.2</span> Core</h7>
@@ -494,9 +539,70 @@
                                 Each time a new url is written, the App deconstructs that url,
                                 verify it is exists in one of the controllers, call that controller with the specific method and params.
                             </p>
-                            <img class="big-picture" src="../img/Arhitecture/APP_code.PNG" alt="App">
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    class App{
+
+                                        protected $controller = 'Login';
+                                        protected $method = 'index';
+                                        protected $params = [];
+
+                                        public function __construct()
+                                        {
+                                            $url = $this->parseUrl();
+                                            if(isset($url[0]) && file_exists('../app/controllers/'. $url[0] . '.php')){
+                                                $this->controller =$url[0];
+                                                unset($url[0]);
+                                            }
+                                            require_once '../app/controllers/'. $this->controller . '.php';
+                                            $this->controller = new $this->controller;
+
+                                            if(isset($url[1]) && method_exists($this->controller, $url[1]))
+                                            {
+                                                $this->method = $url[1];
+                                                unset($url[1]);
+                                            }
+
+                                            $this->params = [];
+                                            if($url){
+                                                $this->params = array_values($url);
+                                            }
+                                            call_user_func_array([$this->controller,$this->method],$this->params);
+                                        } 
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
                             <p>Each controller uses the main Controller file. It has methods for displayin a view, use a model etc...</p>
-                            <img class="big-picture" src="../img/Arhitecture/Controller_code.PNG" alt="Controller">
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    lass Controller {
+                                    protected $response;
+                                    protected $body;
+
+                                    /** 
+                                    * @return new model
+                                    * @param $model name
+                                    */
+                                    protected function model($model) {
+                                        require_once '../app/models/' . $model . '.php';
+                                        return new $model;
+                                    }
+
+                                    protected function view($view, $data = []) {
+                                        require_once '../app/views/' . $view . '.php';
+                                    }
+
+                                    function __construct() {
+                                        $this->response['status'] = 405;
+                                        $this->response['body'] = null;
+                                    }
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
                         </section>
                         <section id="views">
                             <h7><span>4.1.1.2.3</span> Views</h7>
@@ -530,24 +636,543 @@
                                 the methods in the main Controllers class in order to display their conresponding view.
                             </p>
                         </section>
-                        <section id="models">
-                            <h7><span>4.1.1.2.5</span> Models</h7>
-                            <p>In progress...
+                    </section>
+                    <section id="the_charts">
+                        <h6><span>4.1.1.3</span> The Charts</h6>
+                        <p>
+                            To ensure the functionality of the charts we used an externl library in order to generate them.
+                            After a user selects a type of chart he then select what he wants to see. We store this value in the local storage.
+                            Then the filters, we also save them in the local storage.
+                            After the users finishes the request we use the values stored in the local storage to create a query. 
+                            We then use ajax to call the api with the created query, save the response it gives us and use it to create the chart.
+                        </p>
+                        <section id="EXAMPLE">
+                            <h7><span>4.1.1.3.1</span> Example</h7>
+                            <p>All the charts work in the same manner so it's enought to examplin 1 in order to make things clear.
+                                In this example we choose the pie chart.
                             </p>
-                        </section>
-                        <section id="services">
-                            <h7><span>4.1.1.2.6</span> Services</h7>
-                            <p> In progress..
+                            <p>
+                                The step pages from the statistics is where we store the data the user chooses in the localstorage:
                             </p>
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    // save the selected from step 2
+                                    localStorage.clear();
+                                    localStorage.setItem('select', '&lt;?php echo $groupBy; ?&gt;'); 
+
+                                    //save the filters from step3
+                                    localStorage.setItem('where', '&lt;?php echo $json; ?&gt;');
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
+                            <p>
+                                Each chart has it's own javascript that handles the request:
+                            </p>
+                            <img  src="../img/Arhitecture/Charts.PNG" alt="CHARTS">
+                            <p>
+                                The pie chart works as follow:
+                            </p>
+                            <p>
+                                We take the data in the local storage and use it to create the query:
+                            </p>
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                        let globalJson = {
+                                            "limit": "30",
+                                            "select": [],
+                                            "where": [],
+                                            "groupBy": []
+                                        };
+
+
+                                        globalJson["select"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+                                        globalJson["select"].push({ "column": "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")") });
+
+                                        var obj = JSON.parse(localStorage.getItem("where"));
+                                        var keys = Object.keys(obj);
+
+
+                                        keys.forEach(element => {
+
+                                            let columns = "";
+
+                                            obj[element].forEach(value => {
+                                                // columns.concat(value,"','");
+                                                columns = columns.replace("-", "_") + value + "','";
+                                            });
+
+
+                                            columns = columns.slice(0, -3);
+
+                                            let jsonValue = "('".concat(columns, "')");
+
+                                            globalJson["where"].push({
+                                                "column": element.toString().replace("-", "_"),
+                                                "operator": "in",
+                                                "value": jsonValue
+                                            });
+
+                                        });
+
+                                        console.log(globalJson);
+
+
+                                        globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
+
+                                        createChart(globalJson);
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
+                            <p>
+                                After this we send the request to the api and save the response in a variable(note that the query and the response must be json encoded!).
+                            </p>
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    async function fetchData(data = {}) {
+
+                                    console.log("START FETCHING DATA");
+
+                                    const response = await fetch("http://localhost/TeVi/api/query", {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'Authorization': 'd82494f05d6917ba02f7aaa29689ccb444bb73f20380876cb05d1f37537b7892',
+                                        },
+                                        body: JSON.stringify(data)
+                                    });
+
+                                    return response.json();
+                                    }
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
+                            <p>
+                                We then just call the predefined methods of the library for the specific chart in order for it to create:
+                            </p>
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    function createChart(data = {}) {
+                                    am4core.useTheme(am4themes_animated);
+
+                                    var chart = am4core.create("chartdiv", am4charts.PieChart3D);
+                                    chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+                                    chart.legend = new am4charts.Legend();
+
+                                    am4core.ready(fetchData(data).then(response => {
+                                        console.log(JSON.stringify(response));
+
+                                        if (Object.keys(response).length > 0) {
+                                            chart.data = response;
+                                            var series = chart.series.push(new am4charts.PieSeries3D());
+                                            series.dataFields.value = "count(".concat(localStorage.getItem("select").replace("-", "_")).concat(")");
+                                            series.dataFields.category = localStorage.getItem("select").replace("-", "_");
+                                            chart.exporting.menu = new am4core.ExportMenu();
+                                        }
+                                        else {
+                                            document.getElementById("response").textContent = "Sorry, there is no result available for your request. :(";
+                                        }
+                                    }));
+                                    }
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
+                            <p>
+                                The .js for each file is called on the last page of the statistics:
+                            </p>
+                            <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                                <pre>
+                                    <code>
+                                    <main>
+                                    &lt;h3 id="response"&gt; Results for your request: &lt;/h3&gt;
+                                    &lt;script src="http://localhost/TeVi/app/views/Charts/PieChart.js"&gt;&lt;/script&gt;
+                                    &lt;div id="chartdiv"&gt;&lt;/div&gt;
+                                    &lt;/main&gt;
+                                    </code>
+                                </pre>
+                                <figcaption></figcaption>
+                            </figure>
                         </section>
                     </section>
                 </section>
                 <section id="TeViAPI">
                     <h5><span>4.1.2</span> TeViAPI</h5>
                     <p>
-                        This is the folder of our own designed RESTFUL API. We used the mcv arhitecture for the api as well.
+                        For this project we had to create and use our own REST/GraphQL API. We used the same arhitecture as the main application:
+                        1 folder with 2 subfolders; 1 for the api itself, all the logic and how it works, and one from where the user can use it, but 
+                        can not see the actual back code.
                     </p>
-                    
+                    <img  src="../img/Arhitecture/API_guide.PNG" alt="API FOLDERS">
+                    <p>
+                        In the folder with the user application we have just a script from which we create a new instance of the application. 
+                        Beside that we configure the paths so the user can only acces this folder, no matter the url.
+                    </p>
+                    <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                        <pre>
+                            <code>
+                                require_once '../apiApp/init.php';
+                                $app = new App;  
+                             </code>
+                        </pre>
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        The main folder of the api is build using the mcv arhitecture: we have the core, controllers, models and services. We also 
+                        got a init folder that we user for the entire application and a acces folder to modify the routes. 
+                    </p>
+                    <img  src="../img/Arhitecture/API_structure.PNG" alt="API structure">
+                    <section id="routeing">
+                        <h6><span>4.1.2.1</span> Routeing</h6>
+                        <p>
+                        The core folder has the main App script which we used in the user api. Here we created our own mini-framework for the routeing: 
+                        </p>
+                        <img  src="../img/Arhitecture/API_routeing.PNG" alt="API routeing">
+                        <p>
+                            The app and attack-routes are build to work together. The attack-routes has all the routes the user can user for the api:
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                    $attacksRoutes = [
+                                        [
+                                            "method" => "POST", //performs a query on the db
+                                            "middlewares" => ["isLoggedIn"],
+                                            "route" => "query",
+                                            "handler" => "getQueryResult"
+                                        ],
+                                        [
+                                            "method" => "GET", //returns all attacks in the db
+                                            "middlewares" => ["isLoggedIn"],
+                                            "route" => "attacks",
+                                            "handler" => "getAllAttacks"
+                                        ],
+                                        [
+                                            "method" => "GET", //returns the attack with id=event_id
+                                            "middlewares" => ["isLoggedIn", "isAdmin"],
+                                            "route" => "attacks/:event_id",
+                                            "handler" => "getAttack"
+                                        ],
+                                        [
+                                            "method" => "POST", //inserts a new attack in the db
+                                            "middlewares" => ["isLoggedIn", "isAdmin"],
+                                            "route" => "attacks",
+                                            "handler" => "insertAttack"
+                                        ],
+                                        [
+                                            "method" => "PUT", //updates a row from the db
+                                            "middlewares" => ["isLoggedIn", "isAdmin"],
+                                            "route" => "attacks",
+                                            "handler" => "updateAttack"
+                                        ],
+                                        [
+                                            "method" => "DELETE", //deletes a row from the db based on the event_id
+                                            "middlewares" => ["isLoggedIn", "isAdmin"],
+                                            "route" => "attacks/:event_id",
+                                            "handler" => "deleteAttack"
+                                        ]
+                                    ]; 
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            As you can see a route has a method, a route(the given url), middlewares(for security purpouses), and a handler(the one responsible
+                            for the action the api will take).
+                        </p>
+                        <p>
+                            The App takes a route the user gives to us and has to verify for all the routes we defined here if it makes with one and only one. 
+                            It first verifies the method, then the route, the middlewares and if all is good it calls the handlers function. The data the user 
+                            gives through query,body(as a json), and parameters for the route are saved and used by the handlers functions.
+                        </p>
+                    </section>
+                    <section id="routeing_steps">
+                        <h6><span>4.1.2.2</span> Route steps</h6>
+                        <p>
+                            When a url is given the app takes all the attacks_routes and goes through each one:
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                $allRoutes = [
+                                    ...$attacksRoutes
+                                ];
+
+                                foreach ($allRoutes as $routConfig) {
+                                    if ($this->parseRequest($routConfig)) {
+                                        exit;
+                                    }
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            After this the process begins for each one.
+                            First the method, we simply check the method with the route method:
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //check the methods match
+                                if ($this->request_method != $routConfig['method']) {
+                                    return false;
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            To verify the route we first build a regex for it, we att the params of the route that do not have ":"
+                            at the start of them directly and for thouse that have we allow the user to insert any letters and numbers.
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //regex match
+                                $regExpString = $this->routeExpToRegExp($routConfig['route']);
+
+                                //function
+                                function routeExpToRegExp($route)
+                                {
+                                    $regExpString = "";
+                                    $parts = explode('/', $route);
+
+                                    foreach ($parts as $p) {
+                                        $regExpString .= '\/';
+                                        if ($p[0] == ":") {
+                                            $regExpString .= '([a-zA-Z0-9]+)';
+                                        } else {
+                                            $regExpString .= $p;
+                                        }
+                                    }
+                                    $regExpString .= '(\?.*)?$';
+
+                                    return $regExpString;
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            After we got the regex we can compare it to the given url, if it matches the process goes on, if not we try another route.
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //check the route match
+                                if (preg_match("/$regExpString/", $url, $matches)) {
+                                    $parts = explode('/', $routConfig['route']);
+                                    $query = [];
+                                    //Params
+                                    $index = 1;
+                                    foreach ($parts as $p) {
+                                        if ($p[0] == ':') {
+                                            $this->params[substr($p, 1)] = $matches[$index];
+                                            $index++;
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            In the next step we verify if the user gave us a query like : "?item1=value1", and save all of them in an array:
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //query split from url
+                                if (strpos($url, '?')) {
+                                    $queryString = explode('?', $url)[1];
+
+                                    if ($queryString) {
+                                        $queryParts = explode('&', $queryString);
+                                    }
+
+                                    foreach ($queryParts as $part) {
+                                        if (strpos($part, '=')) {
+                                            $query[explode('=', $part)[0]] = explode('=', $part)[1];
+                                        }
+                                    }
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            After this we take the body(json) the user gave us and save it as well:
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //save body
+                                $data = file_get_contents("php://input");
+                                if (strlen($data)) {
+                                    $data = json_decode($data, true);
+                                } else {
+                                    $data = NULL;
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            The last step is to check the middlewares, for each of them we call the functions that return true if the condition
+                            to use the route is fulfilled and false if not. The api need one false to deny the use of the route.
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                //verify middlewares
+                                if (isset($routConfig['middlewares'])) {
+                                    foreach ($routConfig['middlewares'] as $middlewareName) {
+                                        $didPass = call_user_func($middlewareName, [
+                                            "params" => $this->params,
+                                            "query" => $query,
+                                            "data" => $data
+                                        ]);
+
+                                        if (!$didPass) {
+                                            exit();
+                                        }
+                                    }
+                                }
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                        <p>
+                            After all steps are completed the app calls the handler withh all the data it saved, in order for the handler to use it.
+                        </p>
+                        <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                call_user_func($routConfig['handler'], [
+                                    "params" => $this->params,
+                                    "query" => $query,
+                                    "data" => $data
+                                ]);
+                                </code>
+                            </pre>
+                            <figcaption></figcaption>
+                        </figure>
+                    </section>
+                    <section  id = "routeing_handler">
+                    <h6><span>4.1.2.3</span> Route Handler</h6>
+                    <p>
+                        When a handler is called we call it's function to deal with the input. The function calls the Controller. It then
+                        calls the services to deal with the method. the service use the model to give back a response and a body(in form of json).
+                    </p>
+                    </section>
+                    <section  id = "routeing_example">
+                    <h6><span>4.1.2.3</span> Route Handler example</h6>
+                    <p>
+                        The user calls the "/attacks/:id" route. After the routeing process the handler is called it then calls the function:
+                    </p>
+                    <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                function getAttack($req)
+                                {
+                                    $controller = 'AttackController';
+                                    require_once '../apiApp/controllers/' . $controller . '.php';
+                                    $controller = new $controller;
+                                    $response = $controller->getAttack($req);
+                                    Response::status($response['status']);
+                                    Response::json($response['body']);
+                                }
+                                </code>
+                            </pre>
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        The function tells the controller which calls it's own function to deal with the request:
+                    </p>
+                    <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                function getAttack($req){
+                                $res = $this->emptyService('get')->getAttack($req);
+                                $this->response['status'] = $res['status'];
+                                $this->response['body'] = $res['body'];      
+                                return $this->response;
+                                </code>
+                            </pre>
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        It calls the service with the given method. After this the service looks at the model and calls the function there:
+                    </p>
+                    <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                public function getAttack($req) {
+                                $attack = new Attack;
+                                $this->response = $attack->getAttack($req);
+                                return $this->response;
+                                }   
+                                public function getAttack($req)
+                                {
+                                    $this->result = mysqli_query($this->connection, "SELECT * FROM `data` WHERE " . key($req['params']) . "= " . $req['params']['event_id'] . " ");
+                                    $this->response = array();
+
+                                    try {
+                                        while ($row = mysqli_fetch_assoc($this->result)) {
+                                            $this->response[] = $row;
+                                        }
+                                    } catch (Exception $e) {
+                                        $res['body'] = "Unexpected database error";
+                                        $res['status'] = 500; //internal server error
+                                        return $res;
+                                    }
+
+                                    if (sizeof($this->response) > 0) {
+                                        $res['body'] = $this->response;
+                                        $res['status'] = 200;
+                                        return $res;
+                                    }
+                                    else {
+                                        $res['body'] = "No data to show";
+                                        $res['status'] = 404;
+                                        return $res;
+                                    }
+                                }
+                                </code>
+                            </pre>
+                        <figcaption></figcaption>
+                    </figure>
+                    <p>
+                        The model takes the data and tells the handler what to show, for this we use a class response that handle the given response
+                        from the model:
+                    </p>
+                    <figure typeof="schema:SoftwareSourceCode" rol="doc-example">
+                            <pre>
+                                <code>
+                                class Response
+                                {
+                                    static function status($code)
+                                    {
+                                        http_response_code($code);
+                                    }
+                                    static function json($data)
+                                    {
+                                        header('Content-Type: application/json');
+                                        echo json_encode($data, JSON_PRETTY_PRINT);
+                                    }
+                                }
+                                </code>
+                            </pre>
+                        <figcaption></figcaption>
+                    </figure>
+                    </section>
                 </section>
             </section>
 
@@ -569,6 +1194,15 @@
                     We used XAMPP for the localhost and database. phpMyAdmin is where we stored our data.
                     The database is very straight forward. It is called tevi and has 2 tables: data(where we store our data)
                     and users(for all our users accounts).
+                </p>
+            </section>
+            <section id="cookies">
+                <h4><span>4.4</span> Cookies</h4>
+                <p>
+                    The only cookie we use is for the user. If a user has a account we save a token for him in the database.
+                    When a user logs in the token is set as a cookie. It last only for 10 minutes or if the browser is closed. 
+                    The cookie is used only for the api to see the right a user has, we compare the value stored in the cookie with the values in 
+                    the database and see if the user has rights. For admins is just a token for anyone who is an admin.
                 </p>
             </section>
         </section>
@@ -750,6 +1384,7 @@
                     displayed at the top of the page with clickable text that takes you to the desired subject. You can go to the  top of the page 
                     anytime useing the navigation bar, so don't worry to explore.
                 </p>
+                <img src="../img/Arhitecture/DB.PNG" alt="DB">
             </section>
         </section>
 

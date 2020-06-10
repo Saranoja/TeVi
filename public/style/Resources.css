@@ -61,8 +61,13 @@ section {
     padding-top: 50px;
 }
 
+code{
+    text-align: left;
+    white-space: pre-line;
+}
+
 img{
-    max-width: 40%;
+    max-width: 400px;
     height: 100px;
     justify-content: center;
 }
