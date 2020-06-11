@@ -15,7 +15,7 @@ async function fetchData(data = {}) {
 }
 
 function createChart(data = {}) {
-  document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("table-groupBy"));
+  // document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("table-groupBy"));
 
   am4core.useTheme(am4themes_animated);
 
