@@ -1,5 +1,6 @@
 <?php
-function initModal() { ?>
+function initModal()
+{ ?>
     <button onclick="openPopout()" id="menu" class="mobile-menu" type="button"></button>
     <!--Pop-up menu for mobile-->
     <div class="bg-modal">

@@ -61,7 +61,6 @@
         ?>
             <main>
                 <h2 id="query"> Dataset: </h2>
-                <h2 id="filters"> Filters: </h2>
                 <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/PieChart.js"></script>
                 <div id="chartdiv"></div>
@@ -72,7 +71,6 @@
             <main>
                 <h2 id="query"> Dataset: </h2>
                 <h2 id="chosenCountries"> Countries: </h2>
-                <h2 id="filters"> Filters: </h2>
                 <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/BarsChartCountry.js"></script>
                 <div id="chartdiv"></div>
@@ -80,15 +78,12 @@
         <?php } else if (strcmp($chartChoice, $map) == 0) { ?>
             <main>
                 <h2 id="query"> Dataset: </h2>
-                <h2 id="filters"> Filters: </h2>
                 <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/WorldMapChart.js"></script>
                 <div id="chartdiv"></div>
             </main>
         <?php } else { ?>
             <main>
-                <h2 id="query"> Dataset: </h2>
-                <h2 id="filters"> Filters: </h2>
                 <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/Radius.js"></script>
                 <div id="chartdiv"></div>

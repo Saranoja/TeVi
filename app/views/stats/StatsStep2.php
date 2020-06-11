@@ -5,10 +5,12 @@
   <title> TeVi - Statistics </title>
   <?php getBaseHead(); ?>
   <link rel="stylesheet" href="../style/StatsStep2.css">
+  <script src="../js/mobileMenu.js"></script>
 </head>
 
-<body>
-  <?php getMenuInfo(); ?>
+<body id="whole_body">
+  <?php getMenuInfo();
+  initModal(); ?>
 
 
   <?php
@@ -25,6 +27,7 @@
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
+          <script src="../js/FiltersInfoModal.js"></script>
           <span class="close">&times;</span>
           <h3>Event</h3>
           <p> Success - will display whether a certain attack was successful or not (i.e. 0/1)</p>
@@ -54,7 +57,7 @@
           <p> Weapon subtype - will display the subcategory for the used weapon (i.e. Dynamite/TNT/Poisoning/Handgun/Suffocation) </p>
         </div>
       </div>
-      <script src="../js/FiltersInfoModal.js"></script>
+
 
       <div class="wrapper">
         <div class="model-hierarchy">
@@ -132,9 +135,10 @@
           <p> Weapon type - will display the category for the used weapon (i.e. Explosive/Chemical/Firearms)</p>
           <p> Weapon subtype - will display the subcategory for the used weapon (i.e. Dynamite/TNT/Poisoning/Handgun/Suffocation) </p>
         </div>
+        <script src="../js/FiltersInfoModal.js"></script>
       </div>
-      <script src="../js/FiltersInfoModal.js"></script>
 
+      <!-- <script src="../js/mobileMenu.js"></script> -->
       <div class="wrapper">
         <div class="model-hierarchy">
           <img src="../img/HierarchyModel/step2.svg">

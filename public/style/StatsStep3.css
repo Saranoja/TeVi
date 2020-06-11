@@ -1,145 +1,141 @@
-
-*{
-    margin:0;
-    padding: 0;
+@import "All.css";
+* {
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --main-purple: #332285;
-    --light-purple: #D7D5FF;
-    --main-blue: #0090FF;
-    --dark-blue: #0050AB;
-    --darkest-blue: #0a0283;
-    --white-text: #FFFFFF;
-    --purplish-text: #c0abf1;
-    --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
-    --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
-    --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
-    --h1-font-size: 4em;
-    --h2-font-size: 2em;
+  --main-purple: #332285;
+  --light-purple: #D7D5FF;
+  --main-blue: #0090FF;
+  --dark-blue: #0050AB;
+  --darkest-blue: #0a0283;
+  --white-text: #FFFFFF;
+  --purplish-text: #c0abf1;
+  --main-font-family: 1.2em 'Segoe UI', Verdana, sans-serif;
+  --secondary-font: bold 3em 'Segoe UI', Verdana, sans-serif;
+  --bold-italic: bold italic 2em 'Segoe UI', Verdana, sans-serif;
+  --h1-font-size: 4em;
+  --h2-font-size: 2em;
 }
 
-
-.model-hierarchy{
-    width: 50%;
-    margin-top: 30px;
+.model-hierarchy {
+  width: 50%;
+  margin-top: 30px;
 }
 
-
-.wrapper{
-    display: flex;
-    width: 100%;
-
+.wrapper {
+  display: flex;
+  width: 100%;
 }
 
-.model-hierarchy img{
-    width: 100%;
-    /*background-color: red;*/
+.model-hierarchy img {
+  width: 100%;
+  /*background-color: red;*/
 }
 
-.no-restrioctions{
+.no-restrioctions {
   margin-top: 50%;
   margin-left: 30px;
 }
 
 .finish-button {
-    width: 303px;
-    height: 68px;
-    background-image: url("../img/HierarchyModel/finishButton.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: none;
-    background-color: transparent;
-    margin-top: 50px;
-    margin-left: 400px;
-    position: absolute;
-    visibility: hidden;
+  width: 303px;
+  height: 68px;
+  background-image: url("../img/HierarchyModel/finishButton.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+  margin-top: 50px;
+  margin-left: 400px;
+  position: absolute;
+  visibility: hidden;
 }
 
 .back-button {
-    width: 303px;
-    height: 68px;
-    background-image: url("../img/HierarchyModel/step2backButton.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: none;
-    background-color: transparent;
-    margin-top: 50px;
-    margin-left: 60px;
-    position: absolute;
-    visibility: hidden;
+  width: 303px;
+  height: 68px;
+  background-image: url("../img/HierarchyModel/step2backButton.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+  margin-top: 50px;
+  margin-left: 60px;
+  position: absolute;
+  visibility: hidden;
 }
 
 .criteria_wrap {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: minmax(100px, auto);
-    gap: 30px;
-    align-items: center;
-    visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 30px;
+  align-items: center;
+  visibility: hidden;
 }
 
 .criteria_wrap div p {
-    letter-spacing: 1px;
-    color: var(--darkest-blue);
-    font-size: x-large;
+  letter-spacing: 1px;
+  color: var(--darkest-blue);
+  font-size: x-large;
 }
 
-
 .filter-panel {
-        display: inline-block;
-        margin-left: 2%;
-        width: 250px;
-        margin-top: 2%;
-        float: left;
-   }
+  display: inline-block;
+  margin-left: 2%;
+  width: 250px;
+  margin-top: 2%;
+  float: left;
+}
 
-   .filter-panel p{
-       padding: 20px 20px 20px;
-       background-color: #B8D2FF;
-       border-top-left-radius: 10px;
-       border-top-right-radius: 10px;
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       text-transform: uppercase;
-       font-weight: 700;
-       color: #385A64;
-       font-size: 15px;
-   }
+.filter-panel p {
+  padding: 20px 20px 20px;
+  background-color: #B8D2FF;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #385A64;
+  font-size: 15px;
+}
 
+.filter-panel ul {
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #edf3ff;
+  height: 250px;
+  width: 100%;
+  scroll-padding: 10px;
+}
 
-   .filter-panel ul {
-       overflow: hidden; overflow-y: scroll;
-       background-color: #edf3ff;
-       height: 250px;
-       width: 100%;
-       scroll-padding: 10px;    
-    }
+.filter-panel li {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #385A64;
+  font-size: 14px;
+  padding: 20px 0px 0px 50px;
+  font-weight: 500;
+}
 
-    .filter-panel li {
-       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-       color: #385A64;
-       font-size: 14px;
-       padding: 20px 0px 0px 50px;
-       font-weight: 500;
-   }
-    input[type='checkbox'] {
-        width:14px;
-        height:14px;
-        background:white;
-        border-radius:5px;
-        border:2px solid #555;
-        vertical-align: bottom;
-    }
+input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #555;
+  vertical-align: bottom;
+}
 
-    label {
-        padding-left: 10px;
-    }
+label {
+  padding-left: 10px;
+}
 
-
-.loading-screen{
-  background-color:white;
+.loading-screen {
+  background-color: white;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -161,8 +157,7 @@
   animation: rotate-move 2s ease-in-out infinite;
 }
 
-
-.dot { 
+.dot {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -191,39 +186,81 @@
 }
 
 @keyframes dot-3-move {
-  20% {transform: scale(1)}
-  45% {transform: translateY(-18px) scale(.45)}
-  60% {transform: translateY(-90px) scale(.45)}
-  80% {transform: translateY(-90px) scale(.45)}
-  100% {transform: translateY(0px) scale(1)}
+  20% {
+    transform: scale(1)
+  }
+  45% {
+    transform: translateY(-18px) scale(.45)
+  }
+  60% {
+    transform: translateY(-90px) scale(.45)
+  }
+  80% {
+    transform: translateY(-90px) scale(.45)
+  }
+  100% {
+    transform: translateY(0px) scale(1)
+  }
 }
 
 @keyframes dot-2-move {
-  20% {transform: scale(1)}
-  45% {transform: translate(-16px, 12px) scale(.45)}
-  60% {transform: translate(-80px, 60px) scale(.45)}
-  80% {transform: translate(-80px, 60px) scale(.45)}
-  100% {transform: translateY(0px) scale(1)}
+  20% {
+    transform: scale(1)
+  }
+  45% {
+    transform: translate(-16px, 12px) scale(.45)
+  }
+  60% {
+    transform: translate(-80px, 60px) scale(.45)
+  }
+  80% {
+    transform: translate(-80px, 60px) scale(.45)
+  }
+  100% {
+    transform: translateY(0px) scale(1)
+  }
 }
 
 @keyframes dot-1-move {
-  20% {transform: scale(1)}
-  45% {transform: translate(16px, 12px) scale(.45)}
-  60% {transform: translate(80px, 60px) scale(.45)}
-  80% {transform: translate(80px, 60px) scale(.45)}
-  100% {transform: translateY(0px) scale(1)}
+  20% {
+    transform: scale(1)
+  }
+  45% {
+    transform: translate(16px, 12px) scale(.45)
+  }
+  60% {
+    transform: translate(80px, 60px) scale(.45)
+  }
+  80% {
+    transform: translate(80px, 60px) scale(.45)
+  }
+  100% {
+    transform: translateY(0px) scale(1)
+  }
 }
 
 @keyframes rotate-move {
-  55% {transform: translate(-50%, -50%) rotate(0deg)}
-  80% {transform: translate(-50%, -50%) rotate(360deg)}
-  100% {transform: translate(-50%, -50%) rotate(360deg)}
+  55% {
+    transform: translate(-50%, -50%) rotate(0deg)
+  }
+  80% {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
 }
 
 @keyframes index {
-  0%, 100% {z-index: 3}
-  33.3% {z-index: 2}
-  66.6% {z-index: 1}
+  0%, 100% {
+    z-index: 3
+  }
+  33.3% {
+    z-index: 2
+  }
+  66.6% {
+    z-index: 1
+  }
 }
 
 .text {
@@ -237,11 +274,55 @@
   margin: auto;
 }
 
-.text p{
+.text p {
   margin-left: 8px;
   margin-top: 30px;
   font-weight: 700;
   color: var(--darkest-blue);
   font-size: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  img {
+    display: none;
+  }
+  .criteria_wrap {
+    display: block;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filter-panel {
+    display: block;
+  }
+
+  .finish-button {
+    margin-top: 30px;
+    margin-left: 20px;
+    position: unset;
+  }
+
+  .back-button {
+    margin-top: 10px;
+    margin-left: 20px;
+    position: unset;
+  }
+  .menu-info {
+    display: none;
+  }
+  .mobile-menu {
+    display: unset;
+    width: 30px;
+    height: 30px;
+    background-image: url("Backgrounds/menu-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    margin-top: 20px;
+    float: right;
+    margin-right: 40px;
+  }
 }

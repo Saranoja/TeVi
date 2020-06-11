@@ -4,7 +4,7 @@
 <head>
     <title> TeVi - Resources </title>
     <?php getBaseHead(); ?>
-    <link rel="stylesheet" href="http://localhost/TeVi/public/style/Resources.css">
+    <link rel="stylesheet" href="../style/Resources.css">
     <script src="../js/mobileMenu.js"></script>
 </head>
 
