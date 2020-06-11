@@ -480,9 +480,11 @@
         <p></p>
         <section id="arhitecture">
             <h4><span>4.1</span> Architecture</h4>
+            <img src="../img/Diagram.svg" class="diagram" alt="Performance">
             <p>
                 Our project has 2 components: TeVi, the app itself, and the API.
             </p>
+            
             <section id="TeVi">
                 <h5><span>4.1.1</span> TeVi</h5>
                 <p>

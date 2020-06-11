@@ -70,7 +70,7 @@
         ?>
             <main>
                 <h2 id="query"> Dataset: </h2>
-                <h2 id="chosenCountries"> Countries: </h2>
+                <!-- <h2 id="chosenCountries"> Countries: </h2> -->
                 <h3 id="response"> Results for your request: </h3>
                 <script src="http://localhost/TeVi/app/views/Charts/BarsChartCountry.js"></script>
                 <div id="chartdiv"></div>

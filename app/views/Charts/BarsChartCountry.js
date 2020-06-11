@@ -25,7 +25,7 @@ function createChart(data = {}) {
     chart.legend.labels.template.maxWidth = 95
 
     document.getElementById("query").textContent = "Dataset: ".concat(localStorage.getItem("select"));
-    document.getElementById("chosenCountries").textContent = "Countries: ".concat(localStorage.getItem("countries"));
+    //document.getElementById("chosenCountries").textContent = "Countries: ".concat(localStorage.getItem("countries"));
 
     am4core.ready(fetchData(data).then(response => {
 
