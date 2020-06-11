@@ -82,6 +82,6 @@ console.log(globalJson);
 
 globalJson["groupBy"].push({ "column": localStorage.getItem("select").replace("-", "_") });
 
-document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
+//document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);

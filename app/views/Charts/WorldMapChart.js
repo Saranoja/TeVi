@@ -161,6 +161,6 @@ keys.forEach(element => {
 
 });
 
-document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
+//document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);

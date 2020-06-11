@@ -191,7 +191,7 @@ globalJson["groupBy"].push({ "column": "country" });
 console.log("global");
 console.log(globalJson);
 
-document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
+//document.getElementById("filters").textContent = "Filters: ".concat(localStorage.getItem("where"));
 
 createChart(globalJson);
 
